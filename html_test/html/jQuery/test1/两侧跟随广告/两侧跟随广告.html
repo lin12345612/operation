@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>两侧跟随广告</title>
+    <style>
+        .zuo{
+            position: absolute;
+            top:80px;
+            left:20px;
+        }
+        .you{
+            position: absolute;
+            top:80px;
+            right:20px
+        }
+    </style>
+    <script src="../jquery-1.11.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(window).scroll(function(){
+                var gaoDu = $(document).scrollTop();
+                $(".zuo,.you").stop().animate({"top":gaoDu + 80},300);
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <div class="zuo">
+        <img src="images/1.gif" alt="">
+    </div>
+    <div>
+        我是老大<br />
+        我是老大<br />
+        我是老大<br />
+        我是老大<br />
+        我是老大<br />
+        我是老大<br />
+        我是老大<br />
+        我是老大<br />
+        我是老大<br />
+        我是老大<br />
+        我是老大<br />
+        我是老大<br />
+        我是老大<br />我是老大<br />
+        我是老大<br />
+        我是老大<br />我是老大<br />我是老大<br />我是老大<br />
+        我是老大<br />
+        我是老大<br />我是老大<br />我是老大<br />我是老大<br />
+        我是老大<br />
+        我是老大<br />
+        我是老大<br />
+        我是老大<br />
+        我是老大<br />我是老大<br />我是老大<br />
+        我是老大<br />我是老大<br />我是老大<br />我是老大<br />
+        我是老大<br />我是老大<br />我是老大<br />我是老大<br />我是老大<br />
+        我是老大<br />我是老大<br />我是老大<br />我是老大<br />
+        我是老大<br />我是老大<br />我是老大<br />我是老大<br />
+        我是老大<br />我是老大<br />我是老大<br />我是老大<br />
+        我是老大<br />我是老大<br />
+
+    </div>
+    <div class="you">
+        <img src="images/2.gif" alt="">
+    </div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标跟随</title>
+    <style>
+       *{padding:0;
+           margin:0;}
+       #box{
+           width: 100%;
+           height:100%;
+       }
+        #demo{
+            width:277px;
+            height:207px;
+            background: url("images/img.jpg") no-repeat;
+            position: absolute;
+            top:5px;
+            left:0;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <div id="demo" ></div>
+</div>
+</body>
+</html>
+<script>
+    var demo = document.getElementById("demo");
+    var box = document.getElementById("box");
+    var wd = box.offsetWidth;
+    var leader = 0,target = 0,leader1 = 0,target1=0;
+    setInterval(freedom,30);
+    function freedom(){
+        leader  = leader+(target-leader)/10;
+        leader1 = leader1+(target1-leader1)/10;
+        demo.style.top  = leader+"px";
+        demo.style.left = leader1+"px";
+    }
+    document.onclick = function(aa){
+        var event = aa||window.event;
+        target  = event.clientY-demo.offsetHeight/2;
+        if(target<=0) target=0;
+        target1 = event.clientX-demo.offsetWidth/2;
+        if(target1<=0) target1=0;
+        if(target >=wd) target=wd;
+//        console.log(event.clientX);
+//        console.log(event.clientY);
+    }
+</script>

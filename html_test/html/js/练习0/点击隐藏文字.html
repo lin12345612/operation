@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>点击隐藏文字</title>
+    <style>
+       *{
+           margin: 0;
+           padding:0;
+       }
+        .box{
+            width:258px;
+            margin:100px auto;
+        }
+        input{
+            border:none;
+            width:208px;
+            height:40px;
+            outline-style: none;
+            background: url("images/left.jpg") no-repeat;
+            padding-left:8px;
+            color: #CCCCCC;
+            float: left;
+        }
+        button{
+            border:none;
+            width:42px;
+            height:40px;
+            background: url("images/right.jpg") no-repeat;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="bx">
+        <input type="text" value ="请输入">
+        <button></button>
+    </div>
+</body>
+</html>
+<script>
+    var box = document.getElementById("bx");
+    var ip = box.children[0];
+    ip.onfocus = function(){
+        if(ip.value == "请输入"){
+            ip.value = "";
+            ip.style.color = "black";
+;        }
+    }
+    ip.onblur = function(){
+        if(ip.value ==""){
+            ip.value="请输入";
+            ip.style.color = "#cccccc";
+        }
+    }
+</script>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>制作小三角</title>
+</head>
+<body>
+<canvas id="demo" width="600" height="600">
+
+</canvas>
+</body>
+</html>
+<script>
+    var canvas = document.querySelector("#demo");   //获取画布
+    var ctn = canvas.getContext("2d");        //拿到上下文
+    ctn.moveTo(100,100);    //起点为（100，100）
+    ctn.lineTo(200,100);    //线画到（200，100）
+     ctn.lineTo(100,200);   //线画到（100，200）
+//    ctn.lineTo(100,100);    //线画到（100，100）
+    ctn.closePath();     //自动闭合路径，与上一条程序功能相同，可省略坐标
+    ctn.strokeStyle="#f90000";
+    ctn.lineWidth=5;
+    ctn.stroke();    //将线描绘出来
+    ctn.fillStyle="blue";
+    ctn.fillRect(100,100,30,30);
+    ctn.fillStyle="white";
+    ctn.fillText("123",100,100,40)
+    ctn.fill();
+
+</script>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>皮肤更换</title>
+    <style type="text/css">
+        body{
+            background: url("images/1.jpg") top center;
+        }
+        .box{
+            text-align: center;
+            margin-top: 50px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        window.onload =function(){
+            var box  = document.getElementById("bx");
+            var imgs = box.children;  //获取所有图片
+//            console.log(imgs.length);
+            for(var i = 0;i<imgs.length;i++){
+                imgs[i].index = i+1;
+                imgs[i].onclick = function(){
+                    document.body.style.backgroundImage ="url('images/"+this.index+".jpg')" ;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="box" id="bx">
+        <img src="images/1.jpg" alt="" width="200">
+        <img src="images/2.jpg" alt="" width="200">
+        <img src="images/3.jpg" alt="" width="200">
+        <img src="images/4.jpg" alt="" width="200">
+        <img src="images/5.jpg" alt="" width="200">
+    </div>
+</body>
+</html>

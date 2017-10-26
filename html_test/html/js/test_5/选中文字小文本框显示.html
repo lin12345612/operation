@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选中文字小文本框显示</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+        #first{
+            width:300px;
+            margin:50px;
+        }
+        #second{
+            width:300px;
+            margin-left: 50px;
+        }
+        #demo{
+            width:100px;
+            height:100px;
+            background-color: bisque;
+            position: absolute;
+            top:0;
+            left:0;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <span id="demo">试试</span>
+    <div id="first">
+        我来自中国我来自中国我来自中国我来自中国我来自中国我来自中国我来自中国我来自中国我来自中国我来自中国我来自中国
+        我来自中国我来自中国我来自中国我来自中国我来自中国我来自中国我来自中国我来自中国我来自中国我来自中国我来自中国
+        我来自中国我来自中国我来自中国我来自中国我来自中国我来自中国我来自中国我来自中国我来自中国我来自中国我来自中国
+        我来自中国我来自中国我来自中国我来自中国我来自中国我来自中国我来自中国我来自中国我来自中国我来自中国我来自中国
+    </div>
+    <div id="second">
+        我是中国人我是中国人我是中国人我是中国人我是中国人我是中国人我是中国人我是中国人我是中国人我是中国人我是中国人
+        我是中国人我是中国人我是中国人我是中国人我是中国人我是中国人我是中国人我是中国人我是中国人我是中国人我是中国人
+        我是中国人我是中国人我是中国人我是中国人我是中国人我是中国人我是中国人我是中国人我是中国人我是中国人我是中国人
+    </div>
+</body>
+</html>
+<script>
+    var span = document.getElementById("demo");
+    var div1 = document.getElementById("first");
+    var txt;
+    div1.onmouseup =function(event){
+        var event = event||window.event;
+        var x = event.clientX;   //获取点击处的横坐标
+        var y=  event.clientY;   //获取点击处的纵坐标
+//        获取选取的内容
+        if(window.getSelection){
+            txt = window.getSelection().toString();
+        }
+        else
+            txt = document.selection.createRange().text;
+            if (txt) {
+                show(x,y,txt);
+            }
+    }
+//    点击空白处隐藏小框
+    document.onmousedown = function(event){
+        var event = event||window.event;
+        var targetId = event.target?event.target.id:event.srcElement.id;
+        if(targetId!="first")
+            span.style.display = "none";
+    }
+    function show(xClient,yClient,chosenText){
+        setTimeout(function(){
+            span.style.display = "block";
+            span.style.left = xClient+"px";
+            span .style.top  = yClient+"px";
+            span.innerHTML = chosenText;
+        }, 200);
+
+    }
+</script>

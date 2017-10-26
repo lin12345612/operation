@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字符串操作</title>
+</head>
+<body>
+<div ><input type="text" id="d1"></div>
+<div ><input type="text" id="d2"></div>
+<button id="btn1">concat()</button><input type="text"><br>
+<button id="btn2">slice</button><input type="text">
+</body>
+</html>
+<script>
+    function getvalue(id){
+        return document.getElementById(id).value;
+    }
+
+    function onclick1(id1,id2){
+        document.getElementById(id1).onclick = function () {
+            this.nextSibling.value =getvalue(id2);
+        }
+    }
+
+    onclick1("btn1","d1");
+    onclick("btn2","d1");
+
+</script>

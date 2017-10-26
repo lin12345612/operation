@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        ul,ol{
+            list-style: none;
+        }
+        img{
+            display: block;
+        }
+        .box{
+            width:670px;
+            height:240px;
+            margin:100px auto 0;
+            position: relative;
+            overflow: hidden;
+        }
+        ol{
+            width:210px;
+            position: absolute;
+            bottom:10px;
+            left:50%;
+            margin-left:-105px ;
+        }
+        ol li{
+            float: left;
+            width:30px;
+            height:30px;
+            border-radius: 50%;
+            background-color: #cccccc;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+        ol li.current{
+            background-color: orange;
+            color: white;
+        }
+        .clear:after{
+            display: block;clear: both;
+            content: ".";visibility: hidden;
+            height:0;
+        }
+        .clear{
+            zoom: 1;
+        }
+    </style>
+    <script src="../jquery-1.11.1.min.js"></script>
+    <script>
+        $(function(){
+            $("ol li").mouseenter(function(){
+                $(this).addClass("current").siblings().removeClass("current");     //排他思想
+                $("ul li").eq($(this).index()).fadeIn().siblings().fadeOut();
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="box">
+    <ul>
+        <li><img src="images/1.jpg" alt=""></li>
+        <li><img src="images/2.jpg" alt=""></li>
+        <li><img src="images/3.jpg" alt=""></li>
+        <li><img src="images/4.jpg" alt=""></li>
+        <li><img src="images/5.jpg" alt=""></li>
+        <li><img src="images/6.jpg" alt=""></li>
+    </ul>
+    <ol class="clear">
+        <li class="current">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ol>
+</div>
+</body>
+</html>

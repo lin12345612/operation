@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QQ微博</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        body{
+            background: url("img/wrapBg.jpg") no-repeat #EBF1F1;
+        }
+        #logo{
+            margin:20px 0  0 300px;
+        }
+        #box{
+            width:800px;
+            height:200px;
+            border: 1px solid #000;
+        }
+        #bxLeft{
+            width:590px;
+            height:200px;
+            background-color: white ;
+            float: left;
+        }
+        #bxRight{
+            width:210px;
+            height:100%;
+            background-color: #CCEBF5;
+            float: left;
+        }
+        #tkBox{
+            width:565px;
+            height:136px;
+            margin-left: 25px;
+        }
+       #tkBox{
+            text-align: left;
+        }
+       h2{
+           font: normal normal normal 18px/29px 'MicroSoft YaHei' , SimHei;
+       }
+        #click a{
+           text-decoration: none;
+            color: #000;
+            font-size: 14px;
+       }
+        #tkWrite{
+            width: 540px;
+            height: 80px;
+            font-family: Tahoma, Arial;
+            overflow: hidden;
+            font-size: 14px;
+            border: 1px solid gray;
+        }
+        #click{
+            width:540px;
+        }
+        .createNew,.atSome,.insertFace,.uploadPic,.uploadVideo{
+            background-position: -170px -33px;
+            display: inline-block;
+            height: 16px;
+            padding-left: 18px;
+        }
+        .countTxt
+        {
+            color: #999;
+            float: right;
+            line-height: 33px;
+            margin: 0 15px 0 0;
+        }
+        .countTxt em
+        {
+            font-family: Georgia, Tahoma, Arial;
+            font-size: 26px;
+            position: relative;
+            top: -5px;
+            vertical-align: middle;
+        }
+        #sendBox button{
+            float: right;
+            margin: 0 20px 0 0;
+            padding: 0px;
+            background: url(img/bg1.png) -117px -165px no-repeat;
+            line-height: 33px;
+            margin-left: 14px;
+            height: 30px;
+            width: 112px;
+            border: 0px;
+            cursor: pointer;
+        }
+        #sendBox button:hover{
+            background: url(img/bg1.png) 0px -195px no-repeat;
+        }
+        #btnCloFri
+        {
+            cursor: pointer;
+        }
+        .insertFace{
+            position: relative;
+        }
+        .showFace{
+            width:194px;
+            border: 1px solid black;
+            background-color: #f0f0f0;
+            position: absolute;
+            top:20px;
+            left:20px;
+            display: none;
+        }
+    </style>
+    <script src="jquery-1.11.1.min.js"></script>
+    <script src="weibo.js"></script>
+</head>
+<body>
+    <img src="img/b3_100901.png" alt="" id="logo">
+    <center>
+        <div id="box">
+            <div id="bxLeft">
+                <div id="tkBox">
+                    <h2>
+                        <a>夏天来了，你懂得......</a>
+                    </h2>
+                    <textarea  id="tkWrite" ></textarea>
+
+                <div id="click">
+                    <a href="javascript:void(0)" class="createNew">话题</a>
+                    <a href="javascript:void(0)" class="atSome">朋友</a>
+                    <a href="javascript:void(0)" class="insertFace">表情</a>
+                    <a href="javascript:void(0)" class="uploadPic">照片</a>
+                    <a href="javascript:void(0)" class="uploadVideo">视频</a>
+                </div>
+                    <div id="sendBox">
+                        <button></button>
+                        <span class="countTxt">还能输入<em>140</em>字</span>
+                    </div>
+                </div>
+            </div>
+            <div id="bxRight"></div>
+        </div>
+    </center>
+</body>
+</html>

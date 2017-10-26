@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>多按钮动画</title>
+    <style>
+        #box{
+            margin-top: 15px;
+            width:200px;
+            height:200px;
+            background-color: aqua;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn1">200</button>
+    <button id="btn2">400</button>
+    <div id="box"></div>
+</body>
+</html>
+<script>
+     function $(id){return document.getElementById(id);}
+    $("btn1").onclick = function(){
+        goTo($("box"),200);
+    }
+     $("btn2").onclick = function(){
+         goTo($("box"),400);
+     }
+    function goTo(obj,target){
+        clearInterval(obj.timer);
+        //判断起始位置和目标位置的大小，大于时的步长为正数，小于时的步长为负数
+        var speed= obj.offsetLeft<target?5:-5;
+            obj.timer = setInterval(function(){    // 开启定时器
+                    var result = obj.offsetLeft-target;
+                    obj.style.left = obj.offsetLeft + speed + "px";   //每次增加/减少一定距离
+                    if(Math.abs(result)<=5){           //最终的差值不超过步长的绝对值
+                        clearInterval(obj.timer);
+                        obj.style.left = target+"px";
+                    }
+            },20);
+    }
+</script>

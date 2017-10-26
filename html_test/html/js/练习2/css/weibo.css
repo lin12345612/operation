@@ -1,0 +1,75 @@
+*{padding:0;
+    margin:0;}
+textarea {
+    resize: none;
+}
+input{
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline-style: none;
+}
+.clear:after{
+    clear: both;
+    display: block;
+    content: ".";
+    height:0;
+    visibility: hidden;
+}
+.clear{
+    zoom: 1;
+}
+.box{
+    width:600px;
+    margin:100px  auto;
+    border:1px solid darkgray;
+}
+.top{
+    height:152px;
+}
+.top span{
+    display: inline-block;
+    width:100px;
+    height:152px;
+    text-align: center;
+    line-height: 152px;
+    font-size: 20px;
+    color: orangered;
+    float: left;
+}
+.top textarea{
+    display: inline-block;
+    float: left;
+}
+
+.top .btn{
+    float:left;
+    height:152px;
+    line-height: 152px;
+    text-align: center;
+    margin-left: 50px;
+}
+.top .btn button{
+    font-size: 18px;
+    width:70px;
+    heihgt:60px;
+}
+/*底部显示输入的内容*/
+
+.bottom{
+    width: 400px;
+    margin: 10px auto;
+}
+.bottom input{
+    display: inline-block;
+    width:150px;
+    height:20px;
+    font-size: 16px;
+    line-height: 20px;
+    float: left;
+    margin-right: 30px;
+}
+.bottom button{
+    float: left;
+    font-size: 18px;
+}

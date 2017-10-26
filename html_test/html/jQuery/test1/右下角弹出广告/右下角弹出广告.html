@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>右下角弹出广告</title>
+    <style>
+        .box{
+            width:230px;
+            height:120px;
+            background-image: url("imgs/ad.jpg");
+            position: fixed;
+            bottom: 0;
+            right:0;
+            display: none;
+        }
+        span{
+            width:40px;
+            height:18px;
+            background-image: url("imgs/h.jpg");
+            position: absolute;
+            top:0;
+            right:0;
+        }
+    </style>
+    <script src="../jquery-1.11.1.min.js"></script>
+    <script>
+        $(function(){
+            $(".box").slideDown("normal")
+                     .slideUp("slow")
+                    .fadeIn(1000)
+                    .children("span").click(function(){
+                $(this).parent().fadeOut();
+            });
+        })
+    </script>
+</head>
+<body>
+    <div class="box">
+        <span></span>
+    </div>
+</body>
+</html>

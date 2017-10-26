@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bind绑定事件</title>
+</head>
+<script src="jquery-1.11.1.min.js"></script>
+<script>
+    $(document).ready(function(){
+//执行同一个函数
+//        $("button").bind("click mouseleave mouseenter",function(){
+//            console.log("你点击到我了");
+//        });
+
+//        执行不同的函数，采用对象的方法
+        $("button").eq(0).bind({
+            "click":function(){
+                console.log("我是click事件");
+            },
+            "mouseenter":function(){
+                console.log("我是mouseenter事件");
+            },
+            "mouseleave":function(){
+                console.log("我是mouseleave事件")
+            }
+        }
+        );
+        $("button").eq(1).bind(
+            "click",fn,function(e){
+                console.log(e.data());
+            }
+        );
+        function fn(){
+            return "我是传递过来的";
+        }
+        $(".one").on("click","div:eq(1)",function(){
+            console.log($(this).html());
+        });
+    });
+</script>
+<body>
+<button>绑定事件</button>
+<button>传递参数</button>
+<button>on事件</button>
+<div class="one">
+    <section>我是一代元素</section>
+    <section>
+        <div>我是老大</div>
+        <div>我是老二</div>
+    </section>
+</div>
+</body>
+</html>

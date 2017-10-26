@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>球队简介</title>
+    <link rel="stylesheet" href="css/star.css">
+    <script>
+        window.onload = function(){
+            function q(id){ return document.getElementById(id);}
+            var sele = document.getElementById("sel");
+            sele.onchange =function(){
+                switch(this.value){
+                    case "1":
+                        q("lt").style.backgroundImage = "url(images/j.jpg)";
+                        q("ip").value = "No.1";
+                        q("bm").innerHTML =" &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;勒布朗·詹姆斯（LeBron James），1984年12月30 日出生在美国俄亥俄州阿克伦，美国职业篮球运动员，司职小前锋，绰号“小皇帝”，效力于 NBA克利夫兰骑士队。"+"<br />"
+                            +" &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;勒布朗·詹姆斯在2003年NBA选秀中于首轮第1顺位被克利夫兰骑士队选中。2003-2010年， 詹姆斯效力于骑士队，期间2次当选NBA最有价值球员（MVP）。2010年，詹姆斯转会至迈阿密 热火队，与德怀恩·韦德以及克里斯·波什组成“三巨头”阵容。"
+                            +"2012年，詹姆斯得到NBA个人 生涯的第3座常规赛MVP，第1个总冠军和总决赛MVP。詹姆斯代表美国男篮获得了2012年伦敦奥运 会金牌，追平了迈克尔·乔丹在1992年所创的纪录。"
+                            +"2013年，詹姆斯获得第4个常规赛MVP、第2个 NBA总冠军和第2个总决赛MVP，实现两连冠。2014年，詹姆斯回归骑士，与凯里·欧文、凯文·乐 福组成“三巨头”阵容。"
+                            +"2016年，詹姆斯带领骑士逆转战胜卫冕冠军勇士获得队史首个总冠军和个 人第3个总决赛MVP。";
+
+                            break;
+                    case "2":
+                        q("lt").style.backgroundImage = "url(images/w.jpg)";
+                        q("ip").value = "No.2";
+                        q("bm").innerHTML = "雷霆队大当家";
+                        break;
+                    case "3":
+                        q("lt").style.backgroundImage = "url(images/d.jpg)";
+                        q("ip").value = "No.3";
+                        q("bm").innerHTML = "热火队魂！！";
+                        break;
+                    case "4":
+                        q("lt").style.backgroundImage = "url(images/b.jpg)";
+                        q("ip").value = "No.4";
+                        q("bm").innerHTML = "曾经的蜂王和船长";
+                        break;
+                    default:
+
+
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="box">
+    <div class="top clear">
+       <!--//左边图标-->
+        <div class="lt" id="lt"></div>
+
+        <!--//右边选择-->
+        <div class="rt ">
+           <!--//下拉选项-->
+            <div class="shang">
+                <select name="" id="sel">
+                    <option value="1">詹姆斯</option>
+                    <option value="2">威少</option>
+                    <option value="3">韦德</option>
+                    <option value="4">保罗</option>
+                </select>
+            </div>
+            <!--//实力排名-->
+            <div class="xia">
+                球星实力排名 <input id="ip" type="text" value="No.1" readonly="readonly">
+            </div>
+        </div>
+    </div>
+    <!--// 球星简介-->
+    <div class="bottom" id="bm">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;勒布朗·詹姆斯（LeBron James），1984年12月30
+        日出生在美国俄亥俄州阿克伦，美国职业篮球运动员，司职小前锋，绰号“小皇帝”，效力于
+        NBA克利夫兰骑士队。<br />
+        勒布朗·詹姆斯在2003年NBA选秀中于首轮第1顺位被克利夫兰骑士队选中。2003-2010年，
+        詹姆斯效力于骑士队，期间2次当选NBA最有价值球员（MVP）。2010年，詹姆斯转会至迈阿密
+        热火队，与德怀恩·韦德以及克里斯·波什组成“三巨头”阵容。2012年，詹姆斯得到NBA个人
+        生涯的第3座常规赛MVP，第1个总冠军和总决赛MVP。詹姆斯代表美国男篮获得了2012年伦敦奥运
+        会金牌，追平了迈克尔·乔丹在1992年所创的纪录。2013年，詹姆斯获得第4个常规赛MVP、第2个
+        NBA总冠军和第2个总决赛MVP，实现两连冠。2014年，詹姆斯回归骑士，与凯里·欧文、凯文·乐
+        福组成“三巨头”阵容。2016年，詹姆斯带领骑士逆转战胜卫冕冠军勇士获得队史首个总冠军和个
+        人第3个总决赛MVP。
+    </div>
+</div>
+</body>
+</html>

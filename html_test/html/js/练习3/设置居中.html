@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>设置居中</title>
+    <style>
+        *{
+            padding:0;
+            margin: 0;}
+        .box{
+            width: 100%;
+            height:100%;
+            position: relative;
+        }
+        #demo{
+            height:200px;
+            width:200px;
+            background-color: red;
+            position: absolute;
+            top:0;
+            left:50%;
+        }
+    </style>
+</head>
+<body>
+<div class="box" id="bx">
+    <div id="demo"></div>
+</div>
+</body>
+</html>
+<script>
+    var demo = document.getElementById("demo");
+    var bx = document.getElementById("bx");
+//    demo.style.top = body.offsetHeight/2+"px";
+    demo.style.marginLeft = -demo.offsetWidth/2+"px";
+
+
+</script>

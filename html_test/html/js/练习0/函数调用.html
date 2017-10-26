@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数调用试手</title>
+    <style type="text/css">
+        div {
+            height:250px;
+            width: 200px;
+            display: none;
+        }
+        div img{
+            float: left;
+            height:250px;
+            width:200px;
+        }
+
+    </style>
+    <script>
+        function fn(a){
+            var qa = document.getElementById(a);
+            qa.style.display = "block";
+        }
+    </script>
+</head>
+<body>
+<button onclick="fn('pic1')">图一</button>
+<button onclick="fn('pic2')">图二</button>
+<button onclick="fn('pic3')">图三</button>
+<button onclick="fn('pic4')">图四</button>
+<button onclick="fn('pic5')">图五</button>
+<div id="pic1"><img src="images/1.jpg" alt=""></div>
+<div id="pic2"><img src="images/2.jpg" alt=""></div>
+<div id="pic3"><img src="images/3.jpg" alt=""></div>
+<div id="pic4"><img src="images/4.jpg" alt=""></div>
+<div id="pic5"><img src="images/5.jpg" alt=""></div>
+</body>
+</html>

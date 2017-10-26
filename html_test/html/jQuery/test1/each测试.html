@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>each测试</title>
+    <script src="jquery-1.11.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+//            console.log($(".three").index());
+            var num = $(".three").index();
+            $("li").each(function(num,ele){
+                console.log($(ele).html());
+            });
+        }
+        );
+    </script>
+</head>
+<body>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li class="three">3</li>
+    <li>4</li>
+    <li>5</li>
+</ul>
+</body>
+</html>

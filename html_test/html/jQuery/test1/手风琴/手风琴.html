@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>手风琴</title>
+</head>
+<style>
+    *{
+        margin:0;
+        padding:0;
+    }
+    ul{
+        list-style: none;
+    }
+    .box{
+        width:1010px;
+        margin:100px auto 0;
+    }
+    ul li{
+        width:200px;
+        height:400px ;
+        float: left;
+        cursor: pointer;
+    }
+    .clear:after{
+        display: block;
+        clear: both;
+        content: '.';
+        visibility: hidden;
+        height:0;
+    }
+    .clear{
+        zoom: 1;
+    }
+</style>
+<script src="../jquery-1.11.1.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("ul li")
+                .each(function(i,ele){
+                    $(ele).css("background","url(images/"+(i+1)+".jpg)");})
+                .mouseenter(function(){
+                    $(this).stop().animate({width:600},500).siblings("li").stop().animate({width:100},500);})
+                .mouseleave(function(){
+                    $("ul li").stop().animate({width:200},500);})
+                });
+
+</script>
+<body>
+    <div class="box">
+        <ul class="clear">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+</html>

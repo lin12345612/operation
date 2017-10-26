@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body onload="pageLoad();">
+<div style="margin-top:30px">
+    <canvas id="canvas1" width="500" height="500" ></canvas>
+</div>
+<script type="text/javascript">
+    var canvas1=document.getElementById("canvas1");
+    var context=canvas1.getContext("2d");
+    function pageLoad()
+    {
+        var x0=0.1*canvas1.width;   //等于50
+        var y0=0.9*canvas1.height;  //等于450
+        //the begin of the axias
+        var widthAx=0.8*canvas1.width; //等于40
+        var heightAx=0.8*canvas1.height;  //等于40
+        //the width and height of the axais system
+
+        context.moveTo(0.1*canvas1.width,0.1*canvas1.height);
+        context.lineTo(0.1*canvas1.width,0.9*canvas1.height);
+        context.lineTo(0.9*canvas1.width,0.9*canvas1.height);
+        context.moveTo(0.09*canvas1.width,0.115*canvas1.height);
+        context.lineTo(0.1*canvas1.width,0.1*canvas1.height);
+        context.lineTo(0.11*canvas1.width,0.115*canvas1.height);
+        context.moveTo(0.885*canvas1.width,0.89*canvas1.height);
+        context.lineTo(0.9*canvas1.width,0.9*canvas1.height);
+        context.lineTo(0.885*canvas1.width,0.91*canvas1.height);
+        context.strokeStyle='black';
+        context.lineWidth=2;
+        context.stroke();
+        context.beginPath();
+        var textX=[0,1,2,3,4];
+        for(var i=0;i<4&&x0<canvas1.width;i++){
+
+            context.font="20pt Calibri";
+            context.fillText(textX[i],x0,y0+20);
+            x0+=0.2*canvas1.width;
+        }//X轴的数字
+        var textY=[10,20,30,40];
+        x0=0.1*canvas1.width;
+        for(var i=0;i<4&&y0>0;i++)
+        {
+            y0-=0.2*canvas1.height;
+            context.font="20pt Calibri";
+            context.fillText(textY[i],x0-30,y0);
+
+        }
+        // drawData();
+        var tempData=[32,22,30];
+        y0=0.9*canvas1.height;
+        var nowX0=x0+0.2*canvas1.width;
+        context.arc(nowX0,y0-canvas1.height*0.8*tempData[0]/40,6,0,2*Math.PI);
+        context.fillStyle="red";
+        context.fill();
+        context.beginPath();
+        context.moveTo(nowX0,y0-canvas1.height*0.8*tempData[0]/40);
+        for(var i=1;i<3;i++)
+        {
+            nowX0+=0.2*canvas1.width;
+            context.lineTo(nowX0,y0-tempData[i]/40*canvas1.height*0.8);
+            context.strokeStyle='red';
+            context.stroke();
+            context.beginPath();
+            context.fillStyle="red";
+            context.arc(nowX0,y0-tempData[i]/40*canvas1.height*0.8,6,0,2*Math.PI);
+            //context.stroke();
+            context.fill();
+        }
+
+    }
+</script>
+
+</body>
+</html>

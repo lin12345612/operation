@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>调用</title>
+    <style>
+       table{
+           border-collapse: collapse;
+       }
+        td{
+            width:60px;
+            height:40px;
+            background-color: beige;
+            border: 1px solid black;
+            text-align: center;
+        }
+    </style>
+    <script src="jquery-1.11.1.min.js"></script>
+    <script>
+        $(function(){
+            var timer = null;
+            timer = setInterval(function(){
+                $.ajax({
+                    url:"abc.php",
+                    type:"post",
+                    dataType:"json",
+                    data:{},
+                    success:function tran(data){
+                        return data;
+                    },
+                    error:function(){}
+                });
+            },2000);
+        });
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+    </table>
+</body>
+</html>

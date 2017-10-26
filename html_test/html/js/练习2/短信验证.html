@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>短信验证</title>
+</head>
+<body>
+<div class="box">
+    <input type="text">
+    <button id="btn">点击获取验证码</button>
+</div>
+</body>
+</html>
+<script>
+    var btn = document.getElementById("btn");
+    var i = 10;
+    var timer = null;
+    btn.onclick  = function(){
+//        首先判断是否进行倒计时
+        btn.disabled = true;  // 将按钮设为不可点击
+        if(btn.innerHTML=="点击获取验证码"|| btn.innerHTML=="如未收到验证码，请点击重新获取验证码"){
+            timer=setInterval(dj,1000);
+            function dj(){
+                if(i!=0)
+               {
+                   btn.innerHTML = "请等待"+i+"秒";
+                   i--;
+               }
+                // 倒计时结束，提供选择
+                else if(i==0){
+                   btn.innerHTML = "如未收到验证码，请点击重新获取验证码";
+                    clearInterval(timer);  //关闭定时器
+                    i=10;
+                    btn.disabled = false;
+               }
+            }
+        }
+    }
+</script>

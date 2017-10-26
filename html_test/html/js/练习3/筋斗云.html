@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>筋斗云导航</title>
+</head>
+<style>
+   *{margin: 0;padding:0;}
+   ul {
+       list-style-type: none;
+   }
+   body{
+       background-color: #000;
+   }
+   /*大盒子*/
+    .demo{
+        width:800px;
+        height:43px;
+        background-color: #fff;
+        margin: 50px auto;
+        border-radius: 10px;
+        line-height: 43px;
+        position: relative;
+    }
+
+    ul{ position: absolute;
+        top:0;
+        left: 0;
+    }
+    li{
+        float: left;
+        width:83px;
+        height: 43px;
+        /*margin-left:2px ;*/
+        font-size: 18px;
+        text-align: center;
+        cursor: pointer;
+    }
+    span.cloud{
+        display: block;
+        height:43px;
+        width: 83px;
+        position: absolute;
+        top:0;
+        left:0;
+        background: url("images/cloud.gif") no-repeat;
+    }
+</style>
+<body>
+<div class="demo" >
+    <span class="cloud" id="cloud"></span>
+    <div>
+        <ul id="ul">
+            <li>首页新闻</li>
+            <li>师资力量</li>
+            <li>活动策划</li>
+            <li>企业文化</li>
+            <li>招聘信息</li>
+            <li>公司简介</li>
+            <li>上海校区</li>
+            <li>广州校区</li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    var cloud = document.getElementById("cloud");
+    var ul = document.getElementById("ul");
+    var lis = ul.children;
+    var leader = 0, target = 0;
+    var count = 0;
+    setInterval(go,30);
+    function go(){
+        leader = leader+(target-leader)/10;
+        cloud.style.left= leader + "px";
+    }
+    for(var i = 0;i<lis.length;i++){
+        lis[i].onmouseover = function(){
+            target=this.offsetLeft;
+        }
+
+        lis[i].onmouseout = function(){
+                target=count;
+        }
+        lis[i].onclick = function(){
+            count= this.offsetLeft;
+        }
+    }
+
+</script>

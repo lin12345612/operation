@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>品牌显示与隐藏</title>
+    <style>
+       *{
+           padding:0;
+           margin:0;
+       }
+        .box{
+            width:300px;
+            height:100px;
+            border: 1px solid gray;
+            padding-bottom: 60px;
+            margin:100px auto;
+            position: relative;
+        }
+        a{
+            text-decoration: none;
+            color: #000;
+        }
+        a:hover{
+            background-color: #CCEBF5;
+        }
+        ul{
+            list-style: none;
+        }
+        .box li{
+            width:96px;
+            font-size: 16px;
+            text-align: center;
+            color: #000;
+            float: left;
+            padding-bottom: 10px;
+            margin:2px 2px ;
+        }
+        .click{
+            width:200px;
+            height:30px;
+            position: absolute;
+            bottom:10px;
+            left:50%;
+            margin-left: -100px;
+            border: 1px solid black;
+            text-align: center;
+            line-height: 30px;
+        }
+        .click span{
+            display: block;
+            margin:6px 5px 0 45px;
+            width:16px;
+            height:16px;
+            line-height: 16px;
+            border: 1px solid black;
+            float: left;
+            cursor: pointer;
+        }
+        .click section{
+            float: left;
+        }
+        .high{
+            background-color: aquamarine;
+            color: #fff;
+        }
+    </style>
+    <script src="jquery-1.11.1.min.js"></script>
+    <script>
+        $(function(){
+           var $that = $("li").eq(5);
+            $that.nextAll().hide();
+            $(".click span").on("click",function(){
+                var str = $(this).text();
+                if(str=="+"){
+                    $(this).text("-")
+                            .siblings("section").text("显示精简品牌");
+                    $that.nextAll().show().end()
+                            .addClass("high")
+                            .prevAll().addClass("high");
+                    $(".box").css("padding-bottom","120px");
+
+                }
+                else{
+                    $(this).text("+")
+                            .siblings("section").text("显示全部品牌");
+                    $that.nextAll().hide().end()
+                            .removeClass("high")
+                            .prevAll().removeClass("high");
+                    $(".box").css("padding-bottom","60px");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li><a href="#">佳能</a></li>
+            <li><a href="#">三星</a></li>
+            <li><a href="#">索尼</a></li>
+            <li><a href="#">松下</a></li>
+            <li><a href="#">卡西欧</a></li>
+            <li><a href="#">富士</a></li>
+            <li><a href="#">柯达</a></li>
+            <li><a href="#">宾得</a></li>
+            <li><a href="#">理光</a></li>
+            <li><a href="#">奥里巴斯</a></li>
+            <li><a href="#">明基</a></li>
+            <li><a href="#">爱国者</a></li>
+            <li><a href="#">其他</a></li>
+        </ul>
+        <div class="click">
+            <span>+</span><section>显示全部品牌</section>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>追加标签</title>
+    <script src="jquery-1.11.1.min.js"></script>
+    <script>
+        $(function(){
+            $("button").eq(0).click(function(){
+                $("div").eq(0).append("<p>我是老二</p>");
+            });
+            $("button").eq(1).click(function(){
+                $("<span>我也是大佬</span>").appendTo($("div"));
+            });
+            $("button").eq(2).click(function(){
+                $("div").prepend("<i>我也是大哥大</i>");
+            });
+            $("button").eq(3).click(function(){
+                $("<section>我也是大哥大</section>").prependTo($("div"));
+            });
+            $("button").eq(4).click(function(){
+                $("span").wrap($("div"));
+            });
+        })
+    </script>
+</head>
+<body>
+<button>追加标签</button>
+<button>追加div</button>
+<button>往前追加</button>
+<button>往内部前面追加</button>
+<button>div 包含span</button>
+<div>
+    <h1>我是老大</h1>
+</div>
+<span>我是外面来的</span>
+</body>
+</html>

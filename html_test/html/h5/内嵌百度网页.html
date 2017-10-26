@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>内嵌百度网页</title>
+    <style>
+    *{
+        padding:0;
+        margin:0;
+    }
+        .box{
+            width:336px;
+            height:500px;
+            margin: 20px auto;
+            border: 1px solid black;
+            position: relative;
+        }
+        ul{
+            list-style:none;
+        }
+        .ban{
+            height:80px;
+            width:336px;
+            position: absolute;
+            bottom: 0;
+            left:50%;
+            margin-left: -160px;
+
+        }
+        ul li{
+            width:100px;
+            height:80px;
+            border: 1px solid darkgoldenrod;
+            text-align: center;
+            line-height: 80px;
+            float: left;
+            margin-right: 10px;
+        }
+        .box iframe{
+            width:336px;
+            height:420px;
+        }
+
+    </style>
+    <script src="jquery-1.11.1.min.js"></script>
+    <script>
+        addEventListener("1",function(){
+
+        });
+        function $(id){return document.getElementById(id);}
+    </script>
+</head>
+<body>
+<div class="box">
+    <iframe src="https://www.baidu.com" frameborder="0"></iframe>
+    <div class="ban">
+        <ul>
+            <li>新闻</li>
+            <li>娱乐</li>
+            <li>体育</li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

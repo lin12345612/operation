@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>制作表格</title>
+</head>
+<body>
+    <div>
+        <canvas id="demo">
+
+        </canvas>
+    </div>
+</body>
+</html>
+<script>
+    var canvas = document.querySelector("#demo");
+    var ctx = canvas.getContext("2d");
+
+    canvas.width  = 600;
+    canvas.height = 600;
+    canvas.style.border = "1px solid red";
+
+    var lineHeight = 10;
+    var cowWidth   = 10;
+    for(var i = 0;i<canvas.height/lineHeight;i++){
+        ctx.moveTo(0,i*lineHeight);
+        ctx.lineTo(canvas.width,i*lineHeight);
+    }
+    for(var j = 0;j<canvas.width/cowWidth;j++){
+        ctx.moveTo(j*cowWidth,0);
+        ctx.lineTo(j*cowWidth,canvas.height);
+    }
+    ctx.stroke();
+</script>

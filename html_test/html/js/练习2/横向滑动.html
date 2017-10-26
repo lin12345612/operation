@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>横向滑动</title>
+    <style>
+      *{
+          margin: 0;
+          padding: 0;
+      }
+      body{
+
+      }
+        .box{
+            width:640px;
+            height:427px;
+            white-space:nowrap;
+            overflow-x:auto;
+            overflow-y:hidden;
+            margin:200px auto;
+            /*overflow-x: scroll;*/
+        }
+        /*ul{*/
+            /*list-style-type: none;*/
+        /*}*/
+        .clear:after{
+            display: block;clear: both;content: ".";height: 0;visibility: hidden;
+        }
+        .clear{
+            zoom: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="box clear">
+        <img src="images/6.jpg" alt="" width="640" height="427">
+        <img src="images/7.jpg" alt="" width="640" height="427">
+        <img src="images/8.jpg" alt="" width="640" height="427">
+    </div>
+</body>
+</html>

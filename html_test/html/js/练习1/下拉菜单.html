@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>球队队徽</title>
+    <style>
+        body{
+            background: url("images/7.jpg") no-repeat;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var ch = document.getElementById("ch");
+            ch.onchange = function(){
+                switch(this.value){
+                    case "1":
+                        document.body.style.backgroundImage = "url('images/7.jpg')";
+                        break;
+                    case "2":
+                        document.body.style.backgroundImage = "url('images/8.jpg')";
+                        break;
+                    case "3":
+                        document.body.style.backgroundImage = "url('images/9.jpg')";
+                        break;
+                    case "4":
+                        document.body.style.backgroundImage = "url('images/10.jpg')";
+                        break;
+                    case "5":
+                        document.body.style.backgroundImage = "url('images/11.jpg')";
+                        break;
+                    case "6":
+                        document.body.style.backgroundImage = "url('images/13.jpg')";
+                        break;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<select name="" id="ch">
+    <option value="1">骑士</option>
+    <option value="2">雷霆</option>
+    <option value="3">森林狼</option>
+    <option value="4">火箭</option>
+    <option value="5">马刺</option>
+    <option value="6">热火</option>
+</select>
+</body>
+</html>

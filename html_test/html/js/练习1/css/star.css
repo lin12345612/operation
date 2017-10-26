@@ -1,0 +1,51 @@
+*{margin: 0;padding: 0;}
+
+.clear:after{display: block;clear:both;
+    content: '.';visibility: hidden;
+    height:0;}
+.clear{
+    zoom: 1;
+}
+.box{
+    width:494px;
+    margin:100px auto;
+    background: rgba(100,60,90,.5);
+}
+/*左边图标*/
+.lt {
+    width:100px;
+    height:100px;
+    background:url("../images/j.jpg") no-repeat ;
+    float: left;
+}
+/*右边下拉菜单*/
+.rt{
+    height:100px;
+    width:350px;
+    float: left;
+    margin: 2px 0 0 10px ;
+}
+.rt .shang{
+    margin:10px 0 6px 100px;
+    float: left;
+}
+.shang select{
+    display: inline-block;
+    font-size: 18px;
+    color:yellowgreen;
+    padding:3px 3px 4px 3px;
+    border: 2px solid goldenrod;
+}
+.rt .xia {
+   font-size: 20px;
+    color: gold;
+    margin-left: 60px;
+    float: left;
+}
+.top .rt .xia input{
+    font-size: 18px;
+    color: red;
+    width:100px;
+    border: none;
+
+}

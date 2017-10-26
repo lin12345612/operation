@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>手风琴</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+        .box{
+            width:1150px;
+            height:460px;
+            margin:20px auto;
+            border:1px solid red;
+            overflow: hidden;
+        }
+        ul{
+            list-style-type: none;
+            width:1250px;
+        }
+        li{
+            width:240px;
+            height:460px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<div class="box" id="bx">
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+</body>
+</html>
+<script>
+    var box = document.getElementById("bx");
+    var lis = box.children[0].children;
+    for(var i = 0;i<lis.length;i++){
+        lis[i].style.backgroundImage = "url(images/"+(i+1)+".jpg)";
+        lis[i].onmouseover = function(){
+            for(var j=0;j<lis.length;j++){
+                animate(lis[j],{width:100});
+            }
+            animate(this,{width:800});
+        }
+        lis[i].onmouseout = function(){
+            for(var k=0;k<lis.length;k++){
+                animate(lis[k],{width:240});
+            }
+        }
+    }
+
+
+
+    function animate(obj,json,fn){
+        clearInterval(obj.timer);
+        obj.timer = setInterval(function(){      //注意该定时器是obj的定时器！！
+            var flag =true;     //设置一个boolean值作为停止定时器的变量
+            for(var attr in json)
+            {
+                var current = parseInt(getStyle(obj,attr));   //获取当前的属性值
+                var step = (json[attr]-current)/10;        //计算步长
+                step = step>0 ? Math.ceil(step):Math.floor(step);
+                obj.style[attr] = current+step+"px";
+                console.log(obj.style[attr]);
+                if(current!=json[attr])
+                {     //如果某一个属性还没完成变换，则不停止定时器
+                    flag = false;
+                }
+            }
+            if(flag){
+                clearInterval(obj.timer);
+                if(fn){
+                    fn();
+                }
+            }
+
+        },5);
+    }
+
+    //返回属性的值,带单位的
+    function getStyle(obj,attr){
+        if(obj.currentStyle){
+            return obj.currentStyle[attr];
+        }
+        else
+            return window.getComputedStyle(obj,null)[attr];
+    }
+</script>

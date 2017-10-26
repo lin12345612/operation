@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>制作小动画</title>
+</head>
+<body>
+    <div id="box">
+        <canvas id="demo"></canvas>
+        <button class="btn">往前</button>
+        <button class="btn">往左</button>
+        <button class="btn">往右</button>
+        <button class="btn">往后</button>
+    </div>
+    <script>
+        var canvas = document.querySelector("#demo");
+        var ctx = canvas.getContext("2d");
+       var btns  = document.querySelectorAll(".btn");
+        console.log(btns.length);
+
+        canvas.height = 600;
+        canvas.width = 600;
+        canvas.style.border = "1px solid black";
+
+        var img = new Image();
+        img.src = 'gameImgs/DMMban.png';
+        var i = 0;
+        var k = 0;
+        var timer = null;
+            img.onload = function(){
+                auto(0);
+                for(var j = 0;j<btns.length;j++){
+                    btns[j].index = j;
+                    btns[j].addEventListener("click",function(){
+                        clearInterval(timer);    //每次按下先清除原定时器
+                        var k = this.index;   //对应是第几排即往哪个方向走
+                        auto(k);
+                    });
+                }
+               }
+        function auto(d){
+            timer=  setInterval(function(){
+                ctx.clearRect(0,0,canvas.width,canvas.height);   //将原来页面的内容痕迹清楚
+                ctx.drawImage(img,40*i,65*d,40,65,100,100,80,130);
+                i++;
+                if(i==4){
+                    i=0;
+                }
+            },300);
+        }
+
+    </script>
+</body>
+</html>

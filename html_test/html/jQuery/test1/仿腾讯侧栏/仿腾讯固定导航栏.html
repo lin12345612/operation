@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>仿腾讯导航栏</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .main{
+            width:1000px;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+    </style>
+    <script src="../jquery-1.11.1.min.js"></script>
+    <script>
+        $(function(){
+            var $TOP=$(".top").height();
+            $(window).scroll(function(){
+                var docHeight = $(document).scrollTop();
+                if(docHeight>$TOP){
+                    $(".nav").css({"position":"fixed","top":0});     //固定导航栏
+                    $(".main").css("margin-top",106);
+                }else{
+                    $(".nav").css({"position":"static"});      //静态定位
+                    $(".main").css("margin-top",20);
+                }
+
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="top">
+        <img src="images/top.png" alt="">
+    </div>
+    <div class="nav">
+        <img src="images/nav.png" alt="">
+    </div>
+    <div class="main">
+        <img src="images/main.png" alt="">
+    </div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tab栏切换</title>
+    <style>
+        body,div,ul,li,ol,dl,dt,p,dd,img,input,a,span,h1,h2,h3,h4{padding:0; margin:0; border:0; list-style:none;}
+       .box{
+           width:1000px;
+           height:475px;
+           margin:0 auto;
+           margin-top: 100px;
+       }
+        .tab{
+            width:320px;
+            height:38px;
+            border:1px solid #ccc;
+            border-bottom: 0;
+        }
+        .tab li{
+            float: left;
+            width:80px;
+            height:34px;
+            border-top:4px solid #ffffff ;
+            line-height: 34px;
+            text-align: center;
+            cursor: pointer;
+            position: relative;
+        }
+        .tab span{
+            position: absolute;
+            top:10px;
+            right:0;
+            height:14px;
+            width:1px;
+            background: #ddd;
+            overflow: hidden;
+        }
+        .tab li.active{
+            border-color: red;
+        }
+        .products {
+            width:1002px;
+            height:476px;
+            border: 1px solid #cccccc;
+        }
+        .products .main{
+            display: none;
+        }
+        .products .selected{
+            display: block;
+        }
+    </style>
+    <script src="../jquery-1.11.1.min.js"></script>
+    <script>
+        $(function(){
+            $(".tab li").mouseenter(function(){
+                var $this = $(this);
+                var index = $this.index();
+                $this.addClass("active").siblings("li").removeClass("active");
+
+                $(".products div").eq(index).addClass("selected").siblings("div").removeClass("selected");
+
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="box">
+        <ul class="tab">
+            <li class="active">国际大牌<span>◆</span></li>
+            <li>国妆名牌<span>◆</span></li>
+            <li>清洁用品<span>◆</span></li>
+            <li>男士精品</li>
+        </ul>
+        <div class="products">
+            <div class="main selected"><a href="#"><img src="imgs/guojidapai.jpg" alt=""></a></div>
+            <div class="main"><a href="#"><img src="imgs/guozhuangmingpin.jpg" alt=""></a></div>
+            <div class="main"><a href="#"><img src="imgs/nanshijingpin.jpg" alt=""></a></div>
+            <div class="main"><a href="#"><img src="imgs/qingjieyongpin.jpg" alt=""></a></div>
+        </div>
+    </div>
+</body>
+</html>

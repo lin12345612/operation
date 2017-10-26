@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册框移动</title>
+    <style>
+        *{margin:0;padding:0;}
+       .box{
+           position: relative;
+       }
+        .top{
+            width:100%;
+            height:40px;
+            background-color: aqua;
+            line-height: 40px;
+        }
+        .top span{
+            display: block;
+            width:50px;
+            height:100%;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+        .demo{
+            width: 300px;
+            height:300px ;
+            border: 5px solid #ccc;
+            box-shadow: 5px 5px 1px gray;
+            display: none;
+            position: absolute;
+            top:100px;
+            left:50%;
+            cursor:  move;
+        }
+        .high{
+            width:100%;
+            height:24px;
+            background-color: aqua;
+        }
+       .high section{
+           float: left;
+           width:170px;
+       }
+        .high span{
+            display: block;
+            float: right;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+<div class="box" >
+    <div class="top"><span id="sp1">注册</span></div>
+    <div class="demo">
+        <div class="high" id="sp2">
+            <section>注册信息（可以拖动）</section>
+            <span >【关闭】</span></div>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    var span1 = document.getElementById("sp1");
+    var high = document.getElementById("sp2");
+    var demo = high.parentNode;
+    var span2 = high.children[1];
+    span1.onclick = function(){      //点击注册按钮，弹出注册框
+        high.parentNode.style.display = "block";
+        demo.style.top = "100px";
+    }
+    span2.onclick = function(){      // 点击关闭按钮，关闭注册框
+        high.parentNode.style.display = "none";
+    }
+    high.onmousedown = function(){
+        document.onmousemove = function(event){
+            var event = event||window.event;
+            var x= event.clientX;
+            var y = event.clientY;
+            if(x<0)  x=demo.offsetWidth/2;
+            if(y<0) y=0;
+            demo.style.top = y+"px";
+            demo.style.left= x+"px";
+        }
+        document.onmouseup = function () {
+            document.onmousemove = null;
+        }
+    }
+</script>

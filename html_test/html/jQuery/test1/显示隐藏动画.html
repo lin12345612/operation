@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>显示隐藏动画</title>
+    <script src="jquery-1.11.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("div").css({
+                "display":"none",
+                "width":"200px",
+                "height":"200px",
+                "background":"gold"
+            });
+            $("button").eq(0).click(function(){
+                $("div").show(3000,function(){
+                    $("div").css("background","orange");
+                });
+
+            });
+        });
+
+    </script>
+</head>
+<body>
+<button>显示</button>
+<button>隐藏</button>
+<div></div>
+</body>
+</html>

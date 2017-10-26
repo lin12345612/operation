@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>购物导航楼</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+       span{
+           display: block;
+           height:83px;
+       }
+        .img{
+            width:500px;
+            height: 333px;
+            padding-top:80px;
+            margin:0 auto;
+        }
+        .img img{
+            padding-bottom: 80px;
+        }
+        ul{
+            list-style-type: none;
+            position: fixed;
+            top:150px;
+            left:120px;
+            display: none;
+        }
+        ul li{
+            width:50px;
+            height:35px;
+            background-color: saddlebrown;
+            border: 1px solid yellowgreen;
+            color: #ffffff;
+            text-align: center;
+            line-height: 35px;
+            cursor: pointer;
+
+        }
+        .current{
+            background-color: forestgreen;
+            color: #ffffff;
+
+        }
+    </style>
+</head>
+<body>
+    <span><img src="images/nav.png" alt=""></span>
+    <div class="box" id = "bx">
+        <div class="img" >
+            <img src="images/1.jpg" alt="">
+            <img src="images/2.jpg" alt="">
+            <img src="images/3.jpg" alt="">
+            <img src="images/4.jpg" alt="">
+            <img src="images/5.jpg" alt="">
+            <img src="images/6.jpg" alt="">
+            <img src="images/7.jpg" alt="">
+            <img src="images/8.jpg" alt="">
+        </div>
+        <ul>
+            <li class="current">一楼</li>
+            <li>二楼</li>
+            <li>三楼</li>
+            <li>四楼</li>
+            <li>五楼</li>
+            <li>六楼</li>
+            <li>七楼</li>
+            <li>八楼</li>
+        </ul>
+    </div>
+</body>
+</html>
+<script src="function.js" type = "text/javascript"></script>
+<script>
+    var box  = document.getElementById("bx");   //获取大盒子
+    var img  = box.children[0];
+    var imgs = img.children;  //获取图片
+    var ul   = box.children[1];
+    var lis  = ul.children;  //获取列表
+    var imgTop = img.offsetTop;   //获取第一张图片以上的高度
+    var arr =[];    //设一个数组存放每一楼距离顶部减去需要留存的距离
+    var arr1 = [];   //设一个数组存放每一楼距离顶部的距离
+    var leader = 0,target = 0;
+    var timer = null;
+    for(var i=0;i<imgs.length;i++){
+        arr.push(imgs[i].offsetTop-83);
+    }
+    for(var i=0;i<imgs.length;i++){
+        arr1.push(imgs[i].offsetTop+imgs[i].offsetHeight/2);
+    }
+    window.onscroll = function(){
+//        当导航栏不在屏幕内时，显示左侧导航栏，否则隐藏左侧导航栏
+        if(scroll().top>=imgTop){
+            ul.style.display = "block";
+        }
+        else if(scroll().top<arr[0]){
+            ul.style.display = "none";
+        }
+
+//页面滑动时，设置楼梯的样式
+    var s = 0;
+    for(var d=0;d<arr1.length-1;d++){
+        if(scroll().top>arr1[d]&&scroll().top<=arr1[d+1]){
+            s=d+1;
+        }
+    }
+    console.log("卷去的高度为"+scroll().top);
+    console.log("s的值为："+s);
+    for(var k = 0;k<lis.length;k++){
+        lis[k].className = "";
+    }
+    lis[s].className = "current";
+
+//    点击楼梯时，设置相关操作
+        for(var j = 0;j<lis.length;j++){
+            lis[j].index = j;
+             lis[j].onclick = function(){
+                clearInterval(timer);
+    //           点击时设置楼梯样式
+                for(var k = 0;k<lis.length;k++){
+                    lis[k].className = "";
+                }
+                this.className = "current";
+
+    //            页面滑动
+                target = arr[this.index];
+                timer  = setInterval(function(){
+                    if(scroll().top==target){
+                        console.log(scroll().top);
+                        clearInterval(timer);
+                    }else{
+                        leader = leader+(target-leader)/10;
+                        window.scrollTo(0,leader);}},1);
+                    }
+
+
+    }
+    }
+
+</script>

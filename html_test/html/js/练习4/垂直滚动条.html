@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>垂直滚动条</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        .box{
+            width:300px;
+            height:500px;
+            border: 1px solid red;
+            margin:50px auto;
+            overflow: hidden;
+            position: relative;
+        }
+        .demo{
+            height:auto;
+            padding:5px 20px 5px 5px ;
+            background-color: antiquewhite;
+            position: absolute;
+            top:0;
+            left:0;
+        }
+        .rt{
+            width:20px;
+            height:500px;
+            background-color: #cccccc;
+            position: absolute;
+            top:0;
+            right:0;
+        }
+        .mark{
+            width:100%;
+            height:70px;
+            background-color: aqua;
+            border-radius: 10px;
+            position: absolute;
+            top:0;
+            left:0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="box" id="bx">
+    <div class="demo">
+        撒阿萨德撒放阿帆水电费水电费sd沙发水电费水电费山东水电费发送到山东服务而委屈而王夫人士大夫人二额热人啊输入法SDR
+        撒阿萨德撒放阿帆水电费水电费sd沙发水电费水电费山东水电费发送到山东服务而委屈而王夫人士大夫人二额热人啊输入法SDR
+        撒阿萨德撒放阿帆水电费水电费sd沙发水电费水电费山东水电费发送到山东服务而委屈而王夫人士大夫人二额热人啊输入法SDR
+        撒阿萨德撒放阿帆水电费水电费sd沙发水电费水电费山东水电费发送到山东服务而委屈而王夫人士大夫人二额热人啊输入法SDR
+        撒阿萨德撒放阿帆水电费水电费sd沙发水电费水电费山东水电费发送到山东服务而委屈而王夫人士大夫人二额热人啊输入法SDR
+        撒阿萨德撒放阿帆水电费水电费sd沙发水电费水电费山东水电费发送到山东服务而委屈而王夫人士大夫人二额热人啊输入法SDR
+        撒阿萨德撒放阿帆水电费水电费sd沙发水电费水电费山东水电费发送到山东服务而委屈而王夫人士大夫人二额热人啊输入法SDR
+        撒阿萨德撒放阿帆水电费水电费sd沙发水电费水电费山东水电费发送到山东服务而委屈而王夫人士大夫人二额热人啊输入法SDR
+        撒阿萨德撒放阿帆水电费水电费sd沙发水电费水电费山东水电费发送到山东服务而委屈而王夫人士大夫人二额热人啊输入法SDR
+        撒阿萨德撒放阿帆水电费水电费sd沙发水电费水电费山东水电费发送到山东服务而委屈而王夫人士大夫人二额热人啊输入法SDR
+
+    </div>
+    <div class="rt">
+        <div class="mark"></div>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    var box  = document.getElementById("bx");  //获取box盒子
+    var mark = box.children[1].children[0]; //  获取滚动条
+    var demo = box.children[0];     //获取内容盒子
+    // 动态设置滚动条长度，等于大盒子的高度乘以大盒子高度与内容高度之间的比值
+    var height = box.offsetHeight/demo.offsetHeight*box.offsetHeight;
+
+    //内容移动时的比例，等于内容高度和大盒子高度的差值与大盒子高度和滚动条高度的差值之比
+    var leng  = (demo.offsetHeight-box.offsetHeight)/(box.offsetHeight-height);
+    mark.style.height = height+"px";
+    mark.onmousedown = function(event){
+        var event =event||window.event;
+        var y =event.clientY-this.offsetTop;
+        document.onmousemove = function(event){
+            var event =event||window.event;
+            var distance = event.clientY-y;
+            if(distance<0) distance=0;
+            else if(distance>box.offsetHeight-mark.offsetHeight) distance =box.offsetHeight-mark.offsetHeight;
+            mark.style.top=distance+"px";
+            demo.style.top = -(distance*leng)+"px";
+            window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty();
+        }
+        document.onmouseup = function(){
+            document.onmousemove = null;
+        }
+
+    }
+</script>

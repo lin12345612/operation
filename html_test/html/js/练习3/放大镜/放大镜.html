@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>放大镜</title>
+    <style>
+        *{margin: 0;padding:0;}
+        .box{
+            width:350px;
+            height:350px;
+            border: 1px solid #cccccc;
+            margin:100px;
+            position: relative;
+        }
+        .big{
+            height:460px;
+            width:460px;
+            position: absolute;
+            top:0;
+            left:360px;
+            border: 1px solid #cccccc;
+            overflow: hidden;
+            /*display: none ;*/
+        }
+        .big img  {
+            position: absolute;
+            top:0;
+            left:0;
+        }
+        .mark{
+            width:100px ;
+            height:100px ;
+            background: rgba(255,255,0,0.3);
+            position: absolute;
+            top:0;
+            left:0;
+            cursor: move;
+            display: none;
+        }
+        .small{
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+<div class="box" id = "bx">
+    <div class="small" >
+        <img src="images/001.jpg" alt="">
+        <div class="mark"></div>
+    </div>
+    <div class="big">
+        <img src="images/0001.jpg" alt="">
+    </div>
+</div>
+</body>
+</html>
+<script>
+    var box = document.getElementById("bx");
+    var small = box.children[0];
+    var big = box.children[1];
+    var img = big.children[0];
+    var mark = small.children[1];
+    var leader= 0,leader1 = 0,target = 0,target1 = 0,leader3=0;
+    small.onmouseout = function(){
+        big.style.display = "none";
+        mark.style.display = "none";
+    }
+    small.onmouseover = function(){
+        big.style.display = "block";
+        mark.style.display = "block";
+    }
+    document.onmousemove = function(event){
+        var event = event||window.event;
+        target = event.clientX-box.offsetLeft-mark.offsetWidth/2;
+        target1 = event.clientY-box.offsetTop-mark.offsetHeight/2 ;
+        if(target<0) target = 0;
+        else if(target>(small.offsetWidth-mark.offsetWidth)) target = (small.offsetWidth-mark.offsetWidth);
+        mark.style.left = target+"px";
+        img.style.left = -(target*(big.offsetWidth/small.offsetWidth))+"px"; //大盒子移动的距离应与大盒子与小盒子之间的比例相关
+        //即小盒子内移动的距离应乘以大盒子的宽度与小盒子的宽度之比
+        if(target1<0) target1 = 0;
+        else if(target1>(small.offsetHeight-mark.offsetHeight)) target1 = (small.offsetHeight-mark.offsetHeight);
+        mark.style.top= target1+"px";
+        img.style.top = -(target1*(big.offsetHeight/small.offsetHeight))+"px";//大盒子移动的距离应与大盒子与小盒子之间的比例相关
+       //即小盒子内移动的距离应乘以大盒子的高度与小盒子的高度之比
+    }
+</script>

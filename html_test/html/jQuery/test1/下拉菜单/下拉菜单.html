@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>下拉菜单</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width:330px;
+            height:30px;
+            margin:100px auto ;
+            background-image: url("imgs/bg.jpg");
+            padding-left: 10px;
+        }
+        ul{
+            list-style-type: none;
+        }
+        ul a{
+            text-decoration: none;
+            color: black;
+        }
+        .box li{
+            float: left;
+            width:100px;
+            height:30px;
+            text-align: center;
+            line-height: 30px;
+            background-image: url("imgs/libg.jpg");
+            margin-right: 10px;
+            position: relative;
+        }
+        .box li ul{
+            position: absolute;
+            display: none;
+        }
+    </style>
+    <script src="jquery-1.11.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".box li").mouseenter(function(){
+                $(this).children("ul").show(2000);
+            });
+            $(".box li").mouseleave(function(){
+                $(this).children("ul").hide(1000);
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="box">
+    <ul>
+        <li>
+            <a href="#">一级菜单</a>
+            <ul>
+                <li><a href="#">二级菜单1</a></li>
+                <li><a href="#">二级菜单2</a></li>
+                <li><a href="#">二级菜单3</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">一级菜单</a>
+            <ul>
+                <li><a href="#">二级菜单1</a></li>
+                <li><a href="#">二级菜单2</a></li>
+                <li><a href="#">二级菜单3</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">一级菜单</a>
+            <ul>
+                <li><a href="#">二级菜单1</a></li>
+                <li><a href="#">二级菜单2</a></li>
+                <li><a href="#">二级菜单3</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

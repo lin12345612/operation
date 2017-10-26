@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>国庆倒计时</title>
+    <style>
+        body{
+            text-align: center;
+            color: red;
+            font-size: 30px;
+        }
+    </style>
+    <script>
+        window.onload =function(){
+            var guoqing  = new Date("2017/9/30"); //将时间设为9月30日
+            setInterval(gq,1000);
+            function gq(){
+              var now = new Date();
+                //获取距离国庆之间的秒数
+                var sec = parseInt((guoqing.getTime()-now.getTime())/1000);
+                //剩余天数
+                var day = parseInt(sec/3600/24);
+                //剩余时数
+                var hour = parseInt(sec/3600%24);
+                //剩余分钟数
+                var min = parseInt(sec/60%60);
+                //剩余秒数
+                var se = parseInt(sec%60);
+                day<10  ? day ="0"+day : day;
+                hour<10 ? hour="0"+hour: hour;
+                min<10  ? min ="0"+min : min;
+                se <10  ? se  ="0"+se  : se;
+                document.body.innerHTML = "国庆倒计时："+day+"天"+hour+"时"+min+"分"+se+"秒！";
+            }
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>

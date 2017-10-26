@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>网站导航</title>
+    <style>
+        *{margin:0;padding:0}
+       ul{
+           list-style-type: none;
+       }
+        img {
+            display: block;
+            border: 0;
+        }
+        .box{
+            width:752px;
+            border:1px solid #ccc;
+            padding:10px 0 0 10px;
+            overflow: hidden;
+            margin:100px auto;
+        }
+        .box li {
+            float: left;
+            margin:0 10px 10px 0;
+            width:178px;
+            height:125px;
+            overflow: hidden;
+            position: relative;
+        }
+        .box li div,.box li p{
+            width:178px;
+            height: 25px;
+            position: absolute;
+            font-size:14px;
+            text-align: center;
+            line-height: 25px;
+            color:white;
+            left:0;
+            bottom:-25px;
+            _bottom:-26px;
+        }
+        .box li div{
+            background-color:#000;
+        }
+        .box li p{
+            background: url(images/bg.png) no-repeat 5px 0;
+        }
+    </style>
+    <script type="text/javascript" src="../jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            var div = $("<div></div>"),speed = 388,$p = $(".box p");
+            $p.before(div);
+            $(".box div").fadeTo(0,0.5);
+            $p.each(function(index,ele){
+                var y=index*25;
+                $(ele).css("background-position","5px -"+y+"px");
+            });
+
+            $(".box li").hover(function(){
+                $(this).children("div,p").stop().animate({"bottom":0},speed);
+            },function(){
+                $(this).children("div,p").stop().animate({"bottom":-26},speed);
+            });
+        })
+    </script>
+</head>
+<body>
+<div class="box">
+    <ul>
+        <li><a href="#"><img src="images/01.JPG" alt=""></a><p>百度一下，你就知道</p></li>
+        <li><a href="#"><img src="images/02.JPG" alt=""></a><p>百度一下，你就知道</p></li>
+        <li><a href="#"><img src="images/03.JPG" alt=""></a><p>百度一下，你就知道</p></li>
+        <li><a href="#"><img src="images/04.JPG" alt=""></a><p>百度一下，你就知道</p></li>
+        <li><a href="#"><img src="images/05.JPG" alt=""></a><p>百度一下，你就知道</p></li>
+        <li><a href="#"><img src="images/06.JPG" alt=""></a><p>百度一下，你就知道</p></li>
+        <li><a href="#"><img src="images/07.JPG" alt=""></a><p>百度一下，你就知道</p></li>
+        <li><a href="#"><img src="images/08.JPG" alt=""></a><p>百度一下，你就知道</p></li>
+    </ul>
+</div>
+</body>
+</html>

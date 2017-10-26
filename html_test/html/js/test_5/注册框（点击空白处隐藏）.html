@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册框</title>
+    <style>
+        .box{
+            width:100%;
+            height:100%;
+            opacity: 0.4;
+            filter: alpha(opacity=40);
+            background-color: black;
+            position: fixed;
+            top:0;
+            left:0;
+            display: none;
+        }
+        .mask{
+            width:300px;
+            height:300px ;
+            position: absolute;
+            top:50%;
+            left:50%;
+            background-color: white;
+            margin:-150px 0 0 -150px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<span><a href="javascript:;" id="login">注册</a></span>
+<span><a href="javascript:;">登录</a></span>
+<div class="box"  id="box"></div>
+<div class="mask"  id = "show"></div>
+</body>
+</html>
+<script>
+    function $(id){return document.getElementById(id);}
+    login.onclick = function(event){
+        show("box");
+        show("show");
+        if(event&&event.stopPropagation()){
+            event.stopPropagation();
+        }
+        else
+            event.cancelBubble = true;
+    }
+    document.onclick = function(event){
+       var targetId = event.target?event.target.id:event.srcElement.id;
+        if(targetId!="show"){
+            hide("box");
+            hide("show");
+        }
+    }
+    function show(id){
+        $(id).style.display = "block";
+    }
+    function hide(id){
+        $(id).style.display = "none";
+    }
+</script>

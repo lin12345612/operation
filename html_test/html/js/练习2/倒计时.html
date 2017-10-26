@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>倒计时</title>
+</head>
+<style>
+    .box{
+        width:300px;
+        height:200px;
+        background-color: brown;
+        margin:50px auto;
+        text-align: center;
+        line-height: 200px;
+        font-size: 20px;
+        color: #ffffff;
+    }
+</style>
+<script>
+    window.onload = function(){
+        var box = document.getElementById("box");
+        setInterval(f,1000);
+        var tian = 29,xiaoshi= 23,fen = 59,miao = 59;
+        function  f(){
+            box.innerHTML = "倒计时:"+tian+"天"+xiaoshi+"小时"+fen+"分"+miao+"秒";
+            if(miao==0){
+                fen--;
+                miao=60;
+            }
+            if(fen==0)
+            {
+                xiaoshi--;
+                fen=59;
+            }
+            if(xiaoshi==0){
+                tian--;
+                xiaoshi=23;
+            }
+            miao--;
+        }
+    }
+</script>
+<body>
+    <div id="box" class="box">倒计时：30天0时0分0秒</div>
+</body>
+</html>

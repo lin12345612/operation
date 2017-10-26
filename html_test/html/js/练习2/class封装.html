@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>class封装</title>
+    <style>
+        div{
+            width:100px;
+            height:100px;
+            background-color: red;
+            margin-bottom:5px;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            function getClass(classname){
+//                针对支持getelementsByClassName的浏览器
+                if(document.getElementsByClassName){
+                    return document.getElementsByClassName(classname);
+                }
+//                针对不支持getelementsByClassName的浏览器
+                var arr=[];
+                var te = document.getElementsByTagName("*");
+                for(var i = 0;i<te.length;i++){
+                    var list = te[i].className.split(" ");
+                    for(var j=0;j<list.length;j++){
+                        if(list[j]==classname){
+                            arr.push(te[i]);
+                        }
+                    }
+                }
+                return arr;
+            }
+            var fr=getClass("demo");
+            for(var g=0;g<fr.length;g++){
+                fr[g].style.backgroundColor = 'blue';
+            }
+        }
+    </script>
+</head>
+<body>
+<div></div>
+<div class="demo"></div>
+<div></div>
+<div class="demo test"></div>
+<div></div>
+<div></div>
+<div class="demo"></div>
+<div></div>
+</body>
+</html>

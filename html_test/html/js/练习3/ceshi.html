@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字符索引</title>
+</head>
+<body>
+请输入字符串：<input type="text" id ="i1"> 请输入要索引的字符：<input type="text" id="i2">
+<button id="btn">点击进行位置搜索</button>
+</body>
+</html>
+<script>
+    function $(id){return document.getElementById(id);}
+    $("btn").onclick = function(){
+        var value1 = $("i1").value;
+        console.log(value1);
+        var value2 = $("i2").value;
+        console.log(value2);
+        var po=value1.indexOf(value2);
+        alert(po);
+
+    }
+</script>

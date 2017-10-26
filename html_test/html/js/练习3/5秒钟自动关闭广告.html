@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>五秒钟关闭广告</title>
+</head>
+<body>
+<div class="box">
+    <div style="float:left; "  id="left"><img src="images/1.gif" alt=""></div>
+    <div style="float: right;" id="right"><img src="images/2.gif" alt=""></div>
+    kobe lebron james haden westbrook
+</div>
+</body>
+</html>
+<script>
+    function $(id){ return document.getElementById(id);}
+    function hide(id){
+        $(id).style.display = "none";
+    }
+    function show(id){
+        $(id).style.display = "block";
+    }
+    setTimeout(closeAd,5000);
+    function  closeAd(){
+        hide("left");
+        hide("right");
+    }
+
+</script>

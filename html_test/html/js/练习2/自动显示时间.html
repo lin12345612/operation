@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自动显示时间</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        .box{
+            width:200px;
+            height:150px;
+            text-align: center;
+            background-color: brown;
+            margin:20px auto;
+            /*-webkit-text-size-adjust:none;*/
+        }
+        .shang{
+            width:200px;
+            height:50px;
+            line-height: 50px;
+            font-size: 16px;
+            color: #ffffff;
+        }
+        /*//显示当天的号数*/
+        .box span{
+            display: inline-block;
+            width:150px;
+            height:80px;
+            color: #ffffff;
+            font-size:36px;
+            line-height: 80px;
+            background-color: chocolate;
+        }
+    </style>
+    <script>
+        window.onload =function(){
+            var arr=["星期日","星期一","星期二","星期三","星期四","星期五","星期六"]
+            var box = document.getElementById("box");
+            var child = box.children;
+            var data =  new Date();
+            child[0].innerHTML = data.getFullYear()+"年"+(data.getMonth()+1)+"月"+data.getDate()+"日"+"   "+arr[data.getDay()];
+            child[1].innerHTML = data.getDate();
+        }
+    </script>
+</head>
+<body>
+<div class="box" id="box">
+    <div class="shang"></div><span></span>
+</div>
+</body>
+</html>

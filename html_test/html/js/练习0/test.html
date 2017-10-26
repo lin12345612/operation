@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .box{
+            width:400px;
+            height:400px;
+        }
+
+        .im{
+            height:164px;
+            width:250px;
+            margin:0 auto;
+        }
+        #er{
+            display: none;
+            }
+        #ty{
+            display: none;
+            }
+        #ui{
+            display: none;
+            }
+        .it{
+            height:25px;
+            width:300px;
+            margin: 0 auto;
+        }
+      .it  li{
+            height:20px;
+            width: 20px;
+            border-radius: 50%;
+          background-color: aqua;
+            font-size: 14px;
+            color: #fff;
+            text-align: center;
+            list-style: none;
+            float: left;
+            margin-left: 10px;
+            margin-bottom: 0;
+        }
+      .it  a{
+            text-decoration:none;
+
+        }
+
+        .clear:after{
+            display: block;clear: both;content: ".";visibility: hidden;
+            height:0;
+        }
+        .clear{  zoom: 1;}
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <div class="im">
+            <div id="qw">
+                <img src="1.jpg" alt="">
+            </div>
+            <div id="er">
+                <img src="2.jpg" alt="">
+            </div>
+            <div id="ty">
+                <img src="3.jpg" alt="">
+            </div>
+            <div id="ui">
+                <img src="4.jpg" alt="">
+            </div>
+        </div>
+        <div class="it">
+            <ul class="clear">
+                <li><a href="javascript:;"  id="as"> a</a></li>
+                <li><a href="javascript:;"  id="df"> b</a></li>
+                <li><a href="javascript:;"  id="gh"> c</a></li>
+                <li><a href="javascript:;"  id="jk"> d</a></li>
+            </ul>
+        </div>
+    </div>
+<script>
+   <!--图片-->
+    var qw = document.getElementById("qw");
+    var er = document.getElementById("er");
+    var ty = document.getElementById("ty");
+    var ui = document.getElementById("ui");
+//    a标签
+    var as = document.getElementById("as");
+    var df = document.getElementById("df");
+    var gh = document.getElementById("gh");
+    var jk = document.getElementById("jk");
+    as.onmouseover = function () {
+        qw.style.display = "block";
+        er.style.display = "none";
+        ty.style.display = "none";
+        ui.style.display = "none";
+    }
+   df.onmouseover = function () {
+       qw.style.display = "none";
+       er.style.display = "block";
+       ty.style.display = "none";
+       ui.style.display = "none";
+   }
+   gh.onmouseover = function () {
+       qw.style.display = "none";
+       er.style.display = "none";
+       ty.style.display = "block";
+       ui.style.display = "none";
+   }
+   jk.onmouseover = function () {
+       qw.style.display = "none";
+       er.style.display = "none";
+       ty.style.display = "none";
+       ui.style.display = "block";
+   }
+</script>
+</body>
+</html>

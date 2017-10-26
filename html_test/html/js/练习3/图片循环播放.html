@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片循环播放</title>
+    <style>
+     *{padding:0;margin:0;}
+      ul,ol{
+          list-style-type: none;
+      }
+      img {border:0;	vertical-align:top; }  /*  去掉图片低测默认的3像素空白缝隙*/
+     .clear:after{
+         display: block;clear: both;content: ".";height: 0;visibility: hidden;
+     }
+     .clear{
+         zoom: 1;
+     }
+        .box{
+            width:500px;
+            height:353px;
+            margin:20px auto;
+            overflow: hidden;
+            position: relative;
+        }
+        .zong{
+            width:3000px;
+            height:353px;
+        }
+        ul{
+            position: relative;
+            top:0;
+            left:0;
+        }
+        ul li{
+            float: left;
+        }
+        ol{
+            text-align: center;
+            position: absolute;
+            bottom:10px;
+            left:50%;
+            margin-left: -65px;
+
+        }
+        ol li{
+            float: left;
+            width: 20px;
+            height: 20px;
+            margin-left: 6px;
+            background:rgba(255,255,255,.5) ;
+            cursor: pointer;
+        }
+        .current{
+            background-color: cyan;
+            color:brown;
+        }
+     .box section {
+         font-size: 30px;
+         font-weight:bold;
+         font-family:'黑体';
+         height:40px;
+         width: 40px;
+         text-align: center;
+         line-height: 40px;
+         background: rgba(255,255,255,.5);
+         cursor: pointer;
+     }
+     #an{
+         display: none;
+     }
+     #left{
+            position: absolute;
+            top:50%;
+            left:0;
+        }
+        #right{
+            position: absolute;
+            top:50%;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="box" id="jd">
+    <div class="zong">
+        <ul  class="clear">
+            <li><img src="images/1.jpg" alt=""></li>
+            <li><img src="images/2.jpg" alt=""></li>
+            <li><img src="images/3.jpg" alt=""></li>
+            <li><img src="images/4.jpg" alt=""></li>
+            <li><img src="images/5.jpg" alt=""></li>
+        </ul>
+    </div>
+    <ol class="clear">
+            <li class="current">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ol>
+    <div id="an">
+        <section id="left"><</section>
+        <section id="right">></section>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    function $(id){return document.getElementById(id);}
+    var ul = $("jd").children[0].children[0]; //获取图片列表
+    var six = ul.children[0];
+    var ol = $("jd").children[1];     //获取按钮列表
+    var olList = ol.children;
+    var target = 0;
+    var count=0;
+    ul.appendChild(six.cloneNode(true));
+    for(var i=0;i<olList.length;i++){
+        olList[i].index = i;  // 获取当前的索引号
+        olList[i].onclick = function(){
+            clear();
+            this.className ="current";
+            target=-this.index*500;//当前索引号乘以盒子的宽度
+            autoPlay(ul,target);
+        count = key=this.index;
+        }
+    }
+//    自动播放
+    var timer = null;
+    var key = 0;
+    var count=0;
+    timer = setInterval(goTo,1000);
+    function goTo(){
+        key++;
+        count++;
+        if(key==6)
+        {
+            key=1;
+            ul.style.left=0+"px";
+        }
+        autoPlay(ul,-key*500);
+
+//        下标样式处理
+        clear();
+        if(count==5)
+            count=0;
+        olList[count].className = "current";
+    }
+
+//    鼠标经过大盒子时，清除定时器，鼠标离开大盒子时，开启定时器
+    $("jd").onmouseover = function(){
+        clearInterval(timer);
+    }
+    $("jd").onmouseout = function(){
+        timer = setInterval(goTo,1000);
+    }
+
+    //盒子移动
+    function autoPlay(obj,target){
+        clearInterval(obj.timer);
+        //判断起始位置和目标位置的大小，大于时的步长为正数，小于时的步长为负数
+        var speed= obj.offsetLeft<target?25:-25;
+        obj.timer = setInterval(function(){    // 开启定时器
+            var result = obj.offsetLeft-target;
+            obj.style.left = obj.offsetLeft + speed + "px";   //每次增加/减少一定距离
+            if(Math.abs(result)<=25){           //最终的差值不超过步长的绝对值
+                clearInterval(obj.timer);
+                obj.style.left = target+"px";
+            }
+        },10);
+    }
+//    将按钮的样式全部清零
+    function clear(){
+        for(var k=0;k<olList.length;k++)
+            olList[k].className="";
+    }
+</script>

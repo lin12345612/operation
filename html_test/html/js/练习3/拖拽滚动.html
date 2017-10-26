@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>拖拽滚动</title>
+    <style>
+        .box{
+            width: 400px;
+            height:8px;
+            background-color: #cccccc;
+            margin:100px ;
+            position: relative;
+        }
+        .small{
+            width:10px;
+            height:22px;
+            background-color: blue;
+            position: absolute;
+            top:-8px;
+            left:0;
+            cursor: pointer;
+        }
+        .mask{
+            height:100%;
+            width:0;
+            background-color: blue;
+            position: absolute;
+            top:0;
+            left:0;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="bx">
+        <div class="small"></div>
+        <div class="mask"></div>
+    </div>
+    <span id="sp">滚动条目前已经前进：0%。</span>
+</body>
+</html>
+<script>
+    var box = document.getElementById("bx");
+    var small = box.children[0];
+    var mask = box.children[1];
+    var span=document.getElementById("sp");
+    var pe = 0;
+    small.onmousedown = function(event){
+        document.onmousemove = function(event){
+            var event = event||window.event;
+            var length = event.clientX-box.offsetLeft;
+//            console.log(length);
+//            var pe =parseInt(length/box.offsetWidth) ;
+            if(length<0) {length=0;pe=0;}
+            else if(length>(box.offsetWidth-small.offsetWidth))
+            {
+                length= box.offsetWidth-small.offsetWidth;
+                pe=box.offsetWidth;
+            }
+            else{
+                pe=length;
+            }
+           small.style.left= length+"px";
+            mask.style.width = length+"px";
+            span.innerHTML = "滚动条目前已经前进:"+parseInt(pe/box.offsetWidth*100)+"%。";
+            window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty();
+        }
+    }
+    document.onmouseup = function(){
+        document.onmousemove = null;
+    }
+</script>

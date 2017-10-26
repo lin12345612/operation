@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定时器</title>
+    <script>
+        window.onload= function(){
+            var box = document.getElementById("box");
+            var timer = null;
+            timer=setInterval(fun,1000);
+            var num = 10;
+            function fun(){
+                box.innerHTML = "惊喜倒计时："+ num;
+                if(num==-1){
+                    clearInterval(timer);
+                    alert("陈秋华是大逗逼！哈哈哈");
+                    num=0;
+                    box.innerHTML = "惊喜倒计时："+ num;
+                }
+                num--;
+            }
+
+        }
+    </script>
+</head>
+<body>
+<div id="box"></div>
+</body>
+</html>
