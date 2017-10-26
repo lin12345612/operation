@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片绕本身中心旋转</title>
+</head>
+<body>
+<canvas id="demo"></canvas>
+<script>
+    var canvas = document.querySelector("#demo");
+    var ctx = canvas.getContext("2d");
+    canvas.width =100;       //画布大小应该与图片大小一致
+    canvas.height= 100;
+
+    var img = new Image();
+    img.src = "img/123.jpg";
+    img.onload = function(){
+        ctx.drawImage(img,0 ,0);
+    }
+    function rotate(){
+        ctx.clearRect(0,0,canvas.width,canvas.height);  //先清掉画布上的内容
+        var x = canvas.width/2;    ////画布宽度的一半
+        var y = canvas.height/2;   //画布高度的一半
+        ctx.translate(x,y);
+        ctx.rotate(10*Math.PI/180);
+        ctx.translate(-x,-y);
+        ctx.scale(1,1);
+        ctx.drawImage(img,0,0);
+    }
+    self.setInterval(rotate,80);
+
+</script>
+</body>
+</html>

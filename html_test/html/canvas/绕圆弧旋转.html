@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>canvas绘制矩形</title>
+    <script src="konva.min.js"></script>
+</head>
+<body>
+<div id="container"></div>
+<script>
+    var stage = new Konva.Stage({
+        container : "container",
+        width : window.innerWidth,
+        height:window.innerHeight
+    });
+    var layer = new Konva.Layer();
+    stage.add(layer);
+//    圆心
+    var x0 = 1/2*stage.width();
+    var y0 = 1/2*stage.height();
+    var radius = 10;
+
+//    创建组
+    var group = new Konva.Group({
+        clipFunc: function(ctx) {
+            ctx.arc(x0, y0, radius, 0, 0, false);
+        },
+        draggable: true
+    });
+    layer.add(group);
+
+//    创建照片
+    var img = new Image();
+    img.src = "img/123.jpg";
+
+    img.onload = function(){
+        var KImage = new Konva.Image({
+            image : img,
+            x:x0,
+            y:y0,
+            width:100,
+            height:100*img.height/img.width,
+
+//            scale:0.05,
+//            偏移
+            offsetX:img.width/2,
+            offsetY:img.height/2
+            // offset的设置是使得围绕中心旋转
+        });
+        group.add(KImage);
+
+//        开始动画
+        //每秒转60度
+        var rotateAnglePerSecond = 60;
+        var anim = new Konva.Animation(function (frame) {
+            //上一帧到当前帧的时间差 ms -->s
+            var timeDiff = frame.timeDiff /1000;//距离上一帧的时间差
+            //一帧转多少度
+            var rotateAngle = timeDiff * rotateAnglePerSecond;
+            //旋转
+            KImage.rotate(rotateAngle);
+        }, layer);
+//        开启动画
+        anim.start();
+    }
+</script>
+</body>
+</html>

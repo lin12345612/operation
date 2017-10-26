@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>进度条</title>
+    <script src="konva.min.js"></script>
+    <style>
+        body{
+            padding:0;
+            margin:0;
+        }
+        #container{
+            position: absolute;
+            top:0;
+            left:0;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    <canvas id = "can"></canvas>
+    <script>
+        var canvas = document.querySelector("#can");
+        var ctx = canvas.getContext("2d");
+
+        canvas.width = 160;
+        canvas.height = 40;
+        canvas.style.position = "absolute";
+        canvas.style.left = "100px";
+        canvas.style.top = "100px";
+
+        ctx.moveTo(0,0);
+        ctx.lineTo(0,canvas.height);
+        ctx.lineTo(canvas.width,canvas.height);
+        ctx.lineTo(canvas.width,0);
+        ctx.closePath();
+        ctx.font = "30px 宋体";
+        setInterval(function(){
+            var nowTime = new Date();
+            ctx.clearRect(1/5*canvas.width,1/5*canvas.height, 3/4*canvas.width,25);
+            var hour = nowTime.getHours();
+            var min  = nowTime.getMinutes();
+            var sec  = nowTime.getSeconds();
+
+            ctx.fillText(hour+":"+min+":"+sec,1/5*canvas.width,3/4*canvas.height);
+        },1000);
+
+        ctx.strokeStyle = "blue";
+        ctx.lineWidth = 10;
+        ctx.stroke();
+        <!--创建舞台-->
+        var stage = new Konva.Stage({
+            container: 'container',
+            width    : window.innerWidth,
+            height   : window.innerHeight
+        });
+//        创建层
+        var layer = new Konva.Layer();
+        stage.add(layer);
+
+//        坐标中心
+        var cenx = stage.width()/2;
+        var ceny = stage.height()/2;
+
+        var x0 = 1/8*stage.width();   //设置原点
+        var y0 = 5/8*stage.height();
+        var height = 1/12*stage.height();//进度条的高度
+        var maxWidth = 5/8*stage.width();  //进度条的宽度
+
+        var outerRect = new Konva.Rect({
+            x     :   x0,
+            y     :   y0,
+            width :  maxWidth,
+            height:  height,
+            stroke:  "blue",
+            strokeWidth:4,
+            cornerRadius: height/2
+        });
+        layer.add(outerRect);
+
+//        setInterval(function(){
+//            var time = new Date();
+//            var innerText = new Konva.Text({
+//                x  : x0,
+//                y  : y0+10,
+//                fontSize:16,
+//                width:60,
+//                text:time.getSeconds()+"秒",
+//                align:"center"
+//            });
+//            layer.add(innerText);
+//        },1000);
+        var innerRect = new Konva.Rect({
+            x         :   x0,
+            y         :   y0,
+            width     :   100,
+            height    :   height,
+            fill      :   "lightblue",
+            cornerRadius: height/2,
+            opacity   :   0.7
+        });
+
+        layer.add(innerRect);
+        innerRect.to({
+            width:maxWidth,
+            duration:3
+        });
+        layer.draw();
+    </script>
+</body>
+</html>
