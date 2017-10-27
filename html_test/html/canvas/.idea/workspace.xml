@@ -31,10 +31,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="面向过程版本的绕圆环滚动.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="面向过程版本的绕圆环滚动.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/面向过程版本的绕圆环滚动.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.6666665">
+            <state vertical-scroll-proportion="0.5317919">
               <caret line="102" column="28" selection-start-line="102" selection-start-column="28" selection-end-line="102" selection-end-column="28" />
               <folding>
                 <element signature="e#693#849#0" expanded="false" />
@@ -42,30 +42,6 @@
                 <element signature="e#1150#1240#0" expanded="false" />
                 <element signature="e#1307#1450#0" expanded="false" />
                 <element signature="e#1514#1708#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mycss.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mycss.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.5">
-              <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="myJs.js" pinned="false" current-in-tab="true">
-        <entry file="file://$USER_HOME$/Desktop/myJs.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2936937">
-              <caret line="251" column="36" selection-start-line="251" selection-start-column="36" selection-end-line="251" selection-end-column="36" />
-              <folding>
-                <element signature="e#2993#3351#0" expanded="false" />
-                <element signature="e#4901#5083#0" expanded="false" />
-                <element signature="e#5136#5302#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -252,7 +228,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1376" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1376" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16367713" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -428,28 +404,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/面向过程版本的绕圆环滚动.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.6666665">
-          <caret line="102" column="28" selection-start-line="102" selection-start-column="28" selection-end-line="102" selection-end-column="28" />
-          <folding>
-            <element signature="e#693#849#0" expanded="false" />
-            <element signature="e#922#1078#0" expanded="false" />
-            <element signature="e#1150#1240#0" expanded="false" />
-            <element signature="e#1307#1450#0" expanded="false" />
-            <element signature="e#1514#1708#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mycss.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.5">
-          <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Desktop/myJs.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2936937">
@@ -458,6 +412,28 @@
             <element signature="e#2993#3351#0" expanded="false" />
             <element signature="e#4901#5083#0" expanded="false" />
             <element signature="e#5136#5302#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mycss.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.10404624">
+          <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/面向过程版本的绕圆环滚动.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5317919">
+          <caret line="102" column="28" selection-start-line="102" selection-start-column="28" selection-end-line="102" selection-end-column="28" />
+          <folding>
+            <element signature="e#693#849#0" expanded="false" />
+            <element signature="e#922#1078#0" expanded="false" />
+            <element signature="e#1150#1240#0" expanded="false" />
+            <element signature="e#1307#1450#0" expanded="false" />
+            <element signature="e#1514#1708#0" expanded="false" />
           </folding>
         </state>
       </provider>
