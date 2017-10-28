@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单跳转测试</title>
+    <script src="jquery-1.11.3.min.js"></script>
+</head>
+<body>
+
+    用户：<input type="text" id="user">
+    密码：<input type="text" id="password">
+    <button id="btn">提交</button>
+    <script>
+        $(function(){
+            var txt = $("#user").value;
+            var psw  = $("#password").value;
+            $("#btn").on("click",function(){
+                $.ajax({
+                    url  : "ab.php",
+                    type : "get",
+                    success :function(data){
+                        var num = data;
+                        if(num == "1" ){
+                            window.location.href = "http://www.jb51.net";
+                        }
+                        else
+                        {
+                            console.log(num);
+                        }
+                    },
+                    error :function(){
+                        console.log(3333);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>面向过程的绕圆环滚动</title>
+    <script src="konva.min.js"></script>
+    <style>
+        body{
+            margin:0;
+            padding:0;
+        }
+    </style>
+</head>
+<body>
+<div id = "container"></div>
+<script>
+    var stage = new Konva.Stage({
+        container : "container",
+        width     : window.innerWidth,
+        height    : window.innerHeight
+    });
+
+    var cenx  = stage.width()/2;
+    var ceny  = stage.height()/2;
+
+//    背景层
+    var bgLayer = new Konva.Layer();
+    stage.add(bgLayer);
+
+    var innerRadius = 126;   //内圆的半径
+    var outerRadius = 220;   //外圆的半径
+
+    var innerCircle = new Konva.Circle({      //画内圆
+        x : cenx,
+        y : ceny,
+        radius : innerRadius,
+        stroke : "#ccc",
+        strokeWidth : 4,
+        dash : [10,4]
+    });
+    bgLayer.add(innerCircle);
+
+    var outerCircle = new Konva.Circle({      //画内圆
+        x : cenx,
+        y : ceny,
+        radius : outerRadius,
+        stroke : "#ccc",
+        strokeWidth : 4,
+        dash : [10,4]
+    });
+    bgLayer.add(outerCircle);
+
+    var cen1Circle = new Konva.Circle({
+        x : cenx,
+        y : ceny,
+        radius : 66,
+        fill : "#525A82",
+    });
+    bgLayer.add(cen1Circle);
+
+    var cen2Ring = new Konva.Ring({
+        x : cenx,
+        y : ceny,
+        innerRadius : 66,
+        outerRadius : 90,
+        fill : "#E1E1E1",
+        opacity : 0.9
+    });
+    bgLayer.add(cen2Ring);
+
+    var cenText = new Konva.Text({
+        x : cenx-90,
+        y : ceny-10,
+        fontSize : 20,
+        fontStyle : "bold",
+        text : "Web全栈",
+        width : 180,
+        align : "center",
+        fill  : "#fff"
+    });
+    bgLayer.add(cenText);
+    bgLayer.draw();
+//    动画层
+    var runLayer = new Konva.Layer();
+    stage.add(runLayer);
+function RingCircle(option){
+    var firstCircle = new Konva.Circle({
+        x : option.x,
+        y : option.y,
+        radius : option.rad,
+        fill : option.color1,
+        opacity :option.opa
+    });
+    runLayer.add(firstCircle);
+    var firstRing = new Konva.Ring({
+        x : option.x,
+        y : option.y,
+        innerRadius : option.rad,
+        outerRadius : option.rad1,
+        opacity     : option.opa1,
+        fill : option.color2
+    });
+    runLayer.add(firstRing);
+    runLayer.draw();
+}
+</script>
+</body>
+</html>

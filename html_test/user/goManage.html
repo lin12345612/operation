@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>管理系统</title>
+    <link rel="stylesheet" href="css/manageSystem.css">
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/manageSystem.js"></script>
+</head>
+<body>
+<div class="manageSystem">
+    <!--版头部分-->
+    <div class="banner" id="banner">
+        <span class="name">管理系统</span>
+        <span class="showUser"></span>
+        <span class="logout"></span>
+    </div>
+    <!--主要显示框-->
+    <div class="main" id="main">
+        <!--左侧导航栏-->
+        <div class="nav" id="nav">
+            <!--  //管理导航栏 -->
+            <section id="nav-manage" class="ui-accordion-header ui-state-default ui-state-active ui-corner-top">
+                管理
+                <span id="triangle1" class="ui-icon ui-icon-triangle-1-s"></span>
+            </section>
+            <!--"管理"内容-->
+            <div id="manage" class="manage-text">
+                <ul>
+                    <li>人员管理</li>
+                    <li>站位表管理</li>
+                </ul>
+            </div>
+
+            <!--//报表导航栏-->
+            <section id="nav-report" class="ui-accordion-header ui-state-default ui-corner-all ui-corner-top">
+                报表
+                <span id="triangle2" class="ui-icon ui-icon-triangle-1-e"></span>
+            </section>
+            <div id="report" class="manage-text   yinCan">
+                <ul>
+                    <li>客户报表</li>
+                    <li>IPQC</li>
+                    <li>仓库报表</li>
+                </ul>
+            </div>
+
+        </div>
+    <div></div></div>
+</div>
+</body>
+</html>
