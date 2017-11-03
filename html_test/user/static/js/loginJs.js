@@ -6,7 +6,7 @@ $(function(){
         "height":screenHeight
     });
 //        登录按钮事件
-    $("#login").hover(function(){$(this).addClass("ui-state-hover")},
+    $("#denglu").hover(function(){$(this).addClass("ui-state-hover")},
         function(){$(this).removeClass("ui-state-hover")
             .on("click",function(){
                 $.ajax({
@@ -14,7 +14,7 @@ $(function(){
                     type : "post",
                     dataType : "json",
                     data : {
-                        id : $("#name").val(),
+                        id : $("#user").val(),
                         password : $("#password").val()
                     },
                     success : function(data){

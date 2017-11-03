@@ -34,9 +34,20 @@ $(function(){
      $(".manage-text li").on("click",function(){
          $(this).addClass("current").siblings("li").removeClass("current");
      });
-    console.log($(".manage-text li").length);
     //  点击菜单右侧相应显示
     $("#manage li:eq(0)").on("click",function(){
+        $.ajax({
+            url: "user/list",
+            type: "post",
+            dataType: "json",
+            data: {},
+            success: function (data){
+                autoCreateTable(data);
+            },
+            error:function(){
+                console.log("数据传输失败");
+            }
+        });
         $("#main-text section").css("display","none");
         $("#staff").css("display","block");
     });
@@ -80,19 +91,7 @@ $(function(){
     var btnMoveRatio = 0 ;     //按键下滑的系数
     //点击保存按钮触发的事件
     $("#new-position-save").on("click",function(){
-        var btnNum = $(".modify").length;   //获取原先按键的个数
         btnMoveRatio++;
-        var createTime = new Date();    //存储保存时间
-        var year = createTime.getFullYear();
-        var month = createTime.getMonth()+1;
-        var day = createTime.getDate();
-        var hour = createTime.getHours();
-        var min = createTime.getMinutes();
-        var sec = createTime.getSeconds();
-        hour < 10 ? hour = "0" + hour : hour;
-        min < 10 ? min = "0" + min : min;
-        sec < 10 ? sec = "0" + sec : sec;
-        var time  = year + "-" + month + "-" + day + " " + hour+":"+min+":"+sec;
         $.ajax({
             url: "user/add",
             type: "post",
@@ -106,48 +105,18 @@ $(function(){
             success: function (data){
                 if(data.result == "succeed"){
                     alert("保存成功！");
-                    var html = "";
-                    html += "<tr>"
-                    html +=      "<td>" + $("#newId").val() + "</td>"
-                    html +=      "<td>" + $("#newName").val() + "</td>"
-                    html +=      "<td>" + $("#newType option:selected").text() + "</td>"
-                    html +=      "<td>" + $("#newClassType option:selected").text() + "</td>"
-                    html +=      "<td>" + "是" +"</td>"
-                    html +=      "<td>" + time + "</td>"
-                    html += "</tr>";
-                    $("#ShowTable tr").eq(btnNum-1).after(html);
-                    var btn3 = $("<button id='0" + btnNum + "' class='operateBtn ui-state-default ui-corner-all ui-corner-top modify'>修改</button>");
-                    //删除按钮
-                    var btn4 = $("<button id='"+btnNum+"' class='operateBtn ui-state-default ui-corner-all ui-corner-top delete'>删除</button>");
-                    btn3.css("top",65+btnNum*55);
-                    btn4.css("top",65+btnNum*55);
-
-                    //新增的修改键的点击事件
-                    btn3.hover(function(){
-                        $(this).addClass("ui-state-hover")
-                    },function(){
-                        $(this).removeClass("ui-state-hover");
+                    $.ajax({
+                        url: "user/list",
+                        type: "post",
+                        dataType: "json",
+                        data: {},
+                        success: function (data){
+                            autoCreateTable(data);
+                        },
+                        error:function(){
+                            console.log("数据传输失败");
+                        }
                     });
-                    btn3.on("click",function(){
-                        var d = parseInt($(this).attr("id"));     //id对应的按键的数据
-                        markNum = d;
-                        modifyBtn(d);
-                    });
-
-                    //新增的删除键点击事件
-                    btn4.on("click",function(){
-                        $(this).attr("disabled","disabled")
-                            .removeClass("ui-state-default ui-state-hover");
-                        var  j = parseInt($(this).attr("id"));
-                        deleteBtn(j);
-                    });
-                    btn4.hover(function(){
-                        $(this).addClass("ui-state-hover")
-                    },function(){
-                        $(this).removeClass("ui-state-hover");
-                    });
-                    $("#mainTable").append(btn3)
-                        .append(btn4);
                     trLength++;
                     setBakcGroundColor();
                 }
@@ -173,18 +142,18 @@ $(function(){
     });
 
     //页面一加载就获得的数据
-    $.ajax({
-        url: "user/list",
-        type: "post",
-        dataType: "json",
-        data: {},
-        success: function (data){
-            autoCreateTable(data);
-        },
-        error:function(){
-            console.log("数据传输失败");
-        }
-    });
+    //$.ajax({
+    //    url: "user/list",
+    //    type: "post",
+    //    dataType: "json",
+    //    data: {},
+    //    success: function (data){
+    //        autoCreateTable(data);
+    //    },
+    //    error:function(){
+    //        console.log("数据传输失败");
+    //    }
+    //});
 
 //    员工信息修改页面按钮操作
     $("#modify-position-back").on("click",function(){    //返回按钮
@@ -227,6 +196,7 @@ $(function(){
             }
         });
     });
+
     //    动态生成表格
     function autoCreateTable(data){
         $("#ShowTable").empty();
@@ -250,6 +220,12 @@ $(function(){
             var btn1 = $("<button id='0" + i + "' class='operateBtn ui-state-default ui-corner-all ui-corner-top modify'>修改</button>");
             //删除按钮
             var btn2 = $("<button id='"+i+"' class='operateBtn ui-state-default ui-corner-all ui-corner-top delete'>删除</button>");
+            if(data[i].isEnabled == "否"){
+                btn1.attr("disabled","disabled")
+                    .removeClass("ui-state-default");
+                btn2.attr("disabled","disabled")
+                    .removeClass("ui-state-default");
+            }
             btn1.css("top",65+i*55);
             btn2.css("top",65+i*55);
             btn1.hover(function(){

@@ -3,6 +3,10 @@
 <html lang="en">
 <head>
     <base href="/eps_server/">
+    <%
+		request.setCharacterEncoding("utf-8");
+		String userid = request.getParameter("userid");
+	%>
     <meta charset="UTF-8">
     <title>管理系统</title>
     <link rel="stylesheet" href="static/css/manageSystem.css">
@@ -10,6 +14,9 @@
     <script src="static/js/manageSystem.js"></script>
 </head>
 <body>
+<script>
+	console.log(<%=userid%>);
+</script>
 <div class="manageSystem">
     <!--版头部分-->
     <div class="banner" id="banner">

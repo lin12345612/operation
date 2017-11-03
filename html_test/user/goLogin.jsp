@@ -18,12 +18,14 @@
             <div class="login">
                 <span class="title">系统登录</span>
               <section class="login-main">
-                  账号：<input id="name" type="text" value = "S444222"><br>
- 						<input id="transportName" type="text" name = "transportName" style="display: none">                  
-                  	密码：<input id="password" type="password" value = "12345678">
+		          <form action="goManage.jsp" id="login-form" method="post">     	
+		                  	账号：<input id="user" type="text" value = "S444222" name = "userid"><br>
+		 						  <input id="transportName" type="text" name = "transportName" value = "123456" style="display: none">                  
+		                  	密码：<input id="password" type="password" value = "12345678">
+		          </form>
               </section>
                 <section>
-                    <button id="login" class="ui-state-default ui-corner-all ui-corner-top login-btn">登录</button>
+                    <button id="denglu" class="ui-state-default ui-corner-all ui-corner-top login-btn">登录</button>
                 </section>
             </div>
         </div>
