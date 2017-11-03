@@ -14,7 +14,7 @@
     <!--版头部分-->
     <div class="banner" id="banner">
         <span class="name">SMT防错料管理系统</span>
-        <span class="showUser"></span>
+        <span id="showUser" class="showUser"></span>
         <span class="logout"></span>
     </div>
     <!--主要显示框-->
@@ -39,11 +39,13 @@
                 报表
                 <span id="triangle2" class="ui-icon ui-icon-triangle-1-e"></span>
             </section>
-            <div id="report" class="manage-text   yinCan">
+            <div id="report" class="manage-text yinCan">
                 <ul>
                     <li>客户报表</li>
                     <li>IPQC</li>
                     <li>仓库报表</li>
+                    <li>实时表格显示</li>
+                    <li>实时柱形图显示</li>
                 </ul>
             </div>
 
@@ -59,7 +61,7 @@
             <section class="staff" id="staff" style="display: none">
                 <span class="manage-staff">人员管理</span>
                 <!--搜索框-->
-                <section class="search" id="search">
+                <div class="search" id="search">
                     <span>输入或者选择相关信息进行查询：</span>
                     工号：<input type="text" id="id">
                     姓名：<input type="text" id="name">
@@ -81,14 +83,14 @@
                                 <option value =false>否</option>
                            </select>
                     <button id="find" class="ui-button ui-corner-all ui-state-default locative">查询</button>
-                </section>
+                </div>
                 <!--新增按钮-->
-                <section class="addNew" id="addNew">
+                <div class="addNew" id="addNew">
                     点击新增
                     <button id="addBtn" class="ui-accordion-header ui-state-default ui-corner-all ui-corner-top">增加</button>
-                </section>
+                </div>
                 <!--表格显示内容-->
-                <section id="mainTable" class="mainTable">
+                <div id="mainTable" class="mainTable">
                     <table>
                         <thead>
                             <tr id="tableTitle">
@@ -103,7 +105,7 @@
                         <tbody id="ShowTable"></tbody>
                     </table>
                     <div id="btnControl"></div>
-                </section>
+                </div>
             </section>
 
              <!--员工表增加具体操作页面-->
@@ -144,12 +146,18 @@
                     <option value=>不限</option>
                     <option value=0>白班</option>
                     <option value=1>夜班</option>
+                </select><br />
+                     在职：<select id="modifyEnable">
+                     <option value=>不限</option>
+                     <option value=true>是</option>
+                     <option value=false>否</option>
                 </select>
                     <button id="modify-position-save" class="ui-button ui-corner-all ui-state-default new-position-save" >保存</button>
                 </div>
                 <button id="modify-position-back" class="ui-button ui-corner-all ui-state-default new-position-back">返回</button>
 
             </section>
+
         </div>
     </div>
 </div>

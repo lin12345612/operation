@@ -86,20 +86,21 @@ s, i, em {
 
 /*版头样式*/
 .banner{
-    height:120px;
+    height:80px;
     background : url("../images/banner.png") no-repeat;
     overflow: hidden;
     position: relative;
 }
 .banner .name{
     display: block;
-    height:120px;
-    line-height: 120px;
+    height:80px;
+    line-height: 80px;
     font-size: 40px;
     color : #ffffff;
     position: absolute;
     top:0;
     left:15%;
+    letter-spacing: 25px;
 }
 .banner .logout {
     display: block;
@@ -125,6 +126,7 @@ s, i, em {
 .main{
     background-color: antiquewhite;
     padding-top: 1px;    /* 为防止整个div向下移动*/
+
 }
 /*左侧导航栏*/
 .main .nav{
@@ -132,6 +134,8 @@ s, i, em {
     height:70%;
     margin-top:10px;
     margin-left:20px;
+    float: left;
+    overflow-x: hidden;
 }
 /*样式*/
 .ui-accordion-header {
@@ -175,12 +179,18 @@ s, i, em {
 .manage-text li{
     width:100%;
     height:30px;
-    font-size: 20px;
-    padding-left: 8px;
+    font-size: 15px;
+    padding-left: 28px;
     margin-bottom: 3px;
     line-height: 30px;
     cursor: pointer;
     font-weight: bold;
+}
+
+/*设置当前显示的样式*/
+.current{
+    background-color: #000;
+    color: #ffffff;
 }
 /*隐藏*/
 .yinCan{
@@ -216,3 +226,218 @@ s, i, em {
     font-weight: normal;
     color: #ffffff;
 }
+
+/*右侧显示栏*/
+.main-text{
+    background-color: #ffffff;
+    width:80%;
+    height:99%;
+    float: left;
+    margin-left: 10px;
+    margin-top: 5px;
+    overflow: hidden;
+}
+/*一开始的导航界面*/
+.guard{
+    width:100%;
+    height:100%;
+    /*position: relative;*/
+}
+.guard span{
+    position: absolute;
+    top:16%;
+    left:22%;
+    width:100px;
+    height:100px;
+    background: url("../images/pointguard.png") no-repeat;
+}
+.guard p{
+    font-size: 30px;
+    width:50%;
+    margin:160px auto;
+    line-height: normal;
+    text-indent: 2em;
+}
+/*员工页面*/
+.staff{
+    width:100%;
+    height:100%;
+    background-color: #77d5f7;
+    overflow-y: scroll;
+}
+.manage-staff{
+    display: block;
+    height:60px;
+    width:300px;
+    margin:0 auto;
+    background-color: #6eac2c;
+    color: #ffffff;
+    font-size: 30px;
+    line-height: 60px;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 20px;
+}
+/*搜索框*/
+.search{
+    height:60px;
+    width:82%;
+    background-color: #ffffff;
+    font-size: 18px;
+    padding-top: 10px;
+    padding-left: 14px;
+    float: left;
+    position: relative;
+}
+.search input{
+    border:2px solid black;
+    width:100px;
+    height:20px;
+    padding-left: 3px;
+    margin-right: 18px;
+    margin-left: -8px;
+}
+.search select{
+    height:25px;
+    margin-right: 14px;
+    margin-left: -8px;
+}
+.search span{
+    display: block;
+    width:100%;
+    height:30px;
+    margin-left: -11px;
+}
+.ui-button {
+    display: inline-block;
+    margin-right: .1em;
+    cursor: pointer;
+    vertical-align: middle;
+    text-align: center;
+    margin-left: 40px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    /* Support: IE <= 11 */
+    overflow: visible;
+}
+.locative{
+    line-height: 53px;
+    width:60px;
+    height:53px;
+    position: absolute;
+    top:10px;
+    right:1%;
+    font-size: 20px;
+}
+/*新增部分*/
+.addNew{
+    height:60px;
+    width:15%;
+    background-color: #ffffff;
+    float: right;
+    font-size: 18px;
+    padding-top:10px;
+    padding-left: 16px;
+    line-height: 53px;
+}
+/*表格显示内容*/
+.mainTable{
+    color: #000;
+    width:100%;
+    background-color: #ffffff;
+    margin-top: 75px;
+    position: relative;
+}
+.mainTable table{
+    margin-left: 8px;
+}
+.mainTable td{
+    padding:12px 16px;
+    height:30px;
+    border: 1px solid black;
+    font-size: 20px;
+}
+.mainTable thead td{
+    font-size: 24px;
+    font-weight: bold;
+}
+.operateBtn{
+    width:54px;
+    height:38px;
+    position: absolute;
+    top:65px;
+    right:90px;
+    cursor: pointer;
+}
+.delete{
+    right:20px;
+}
+
+.goDown{
+    top:66px;
+}
+/*员工具体操作界面*/
+.staff-operation{
+    width:100%;
+    height:100%;
+    padding-top: 1px;
+    overflow-y: auto;
+    position: relative;
+}
+.new-position{
+    width:300px;
+    height:234px;
+    background-color: #ffffff;
+    margin:100px auto;
+    font-size: 25px;
+    line-height: normal;
+    padding-top: 15px;
+    padding-left:20px;
+    border: 2px solid black;
+    position: relative;
+}
+.new-position input{
+    border: 1px solid black;
+    height:25px;
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-left: -11px;
+    padding-left: 4px;
+}
+.new-position select{
+    height:25px;
+    font-size: 18px;
+    margin-bottom: 14px;
+}
+.staff-operation button{
+    width:60px;
+    height:35px;
+    font-size: 20px;
+}
+
+.new-position-save{
+    position: absolute;
+    bottom:10px;
+    left:90px;
+}
+.new-position-back{
+    position: absolute;
+    top:10px;
+    left:-10px;
+}
+
+/*实时表格显示*/
+.showTrueTimeTable{
+    width:100%;
+    height:100%;
+    overflow-x: scroll;
+    overflow-y: scroll;
+}
+.iframeCSS,.iframeCSS1{
+    width:100%;
+    height:100%;
+}
+
