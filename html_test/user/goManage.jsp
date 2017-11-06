@@ -3,10 +3,6 @@
 <html lang="en">
 <head>
     <base href="/eps_server/">
-    <%
-		request.setCharacterEncoding("utf-8");
-		String userid = request.getParameter("userid");
-	%>
     <meta charset="UTF-8">
     <title>管理系统</title>
     <link rel="stylesheet" href="static/css/manageSystem.css">
@@ -14,9 +10,6 @@
     <script src="static/js/manageSystem.js"></script>
 </head>
 <body>
-<script>
-	console.log(<%=userid%>);
-</script>
 <div class="manageSystem">
     <!--版头部分-->
     <div class="banner" id="banner">
@@ -60,7 +53,7 @@
         <!--右侧主要显示框-->
         <div class="main-text" id="main-text">
                 <!--刚进入时显示的界面-->
-            <section class="guard" id="guard">
+            <section class="guard" id="guard" style="display: none">
                 <span></span>
                 <p>欢迎来到SMT防错料管理系统，请通过左侧导航栏进入相关界面进行操作</p>
             </section>
@@ -139,6 +132,7 @@
 
             <!--员工表修改操作界面-->
             <section class="staff-operation" id="staff-modify"  style="display: none">
+
                 <div class="new-position">
                     工号：<input type="text" id="modifyId"> <br>
                     姓名：<input type="text" id="modifyName"><br>
@@ -164,7 +158,10 @@
                 <button id="modify-position-back" class="ui-button ui-corner-all ui-state-default new-position-back">返回</button>
 
             </section>
-
+			<!--排位表显示-->
+			<section class="positionManage" id="positionManage"> 
+				<iframe class="connectGoManage" src="http://wx.jimi-iot.com/eps_server/program/goManage" frameborder="0"></iframe>
+			</section>
         </div>
     </div>
 </div>

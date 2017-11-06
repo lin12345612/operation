@@ -141,20 +141,6 @@ $(function(){
         $("#newClassType").find('option[value= '+ $("#newClassType").val()+']').removeAttr("selected");
     });
 
-    //页面一加载就获得的数据
-    //$.ajax({
-    //    url: "user/list",
-    //    type: "post",
-    //    dataType: "json",
-    //    data: {},
-    //    success: function (data){
-    //        autoCreateTable(data);
-    //    },
-    //    error:function(){
-    //        console.log("数据传输失败");
-    //    }
-    //});
-
 //    员工信息修改页面按钮操作
     $("#modify-position-back").on("click",function(){    //返回按钮
         $("#staff").css("display","block");
@@ -221,8 +207,6 @@ $(function(){
             //删除按钮
             var btn2 = $("<button id='"+i+"' class='operateBtn ui-state-default ui-corner-all ui-corner-top delete'>删除</button>");
             if(data[i].isEnabled == "否"){
-                btn1.attr("disabled","disabled")
-                    .removeClass("ui-state-default");
                 btn2.attr("disabled","disabled")
                     .removeClass("ui-state-default");
             }
