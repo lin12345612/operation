@@ -90,9 +90,6 @@ $(function(){
                 $("#"+a).css("top",totalHeight);
                 $("#0"+a).css("top",totalHeight);
             }
-            for(var asd = 0;asd<array1.length;asd++){
-                console.log(array1[asd]);
-            }
         },
         error : function(){
             console.log("数据传输失败");
