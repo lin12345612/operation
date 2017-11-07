@@ -1,0 +1,72 @@
+!SESSION 2017-11-03 10:02:20.418 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.7.0_51
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Framework arguments:  -login -application com.aptana.commandline.launcher.LauncherApplication C:\Users\啊烁\Desktop\user\goManage.jsp
+Command-line arguments:  -os win32 -ws win32 -arch x86 -login -data   -application com.aptana.commandline.launcher.LauncherApplication C:\Users\啊烁\Desktop\user\goManage.jsp
+
+!ENTRY org.eclipse.ui 2 0 2017-11-03 10:02:21.309
+!MESSAGE Warnings while parsing the key bindings from the 'org.eclipse.ui.commands' extension point
+!SUBENTRY 1 org.eclipse.ui 2 0 2017-11-03 10:02:21.309
+!MESSAGE Could not parse key sequence: plug-in='com.pandora.ui', id='org.eclipse.ui.edit.text.contentAssist.proposals', keySequence='Ctrl+Sapce'
+
+!ENTRY com.aptana.rcp 4 0 2017-11-03 10:02:21.494
+!MESSAGE ********HBuilder正常启动：preStartup********
+
+!ENTRY com.aptana.scripting 4 0 2017-11-03 10:02:23.167
+!MESSAGE (Build null) [ERROR]  An error occurred while parsing scope 'Build–in constant' : Cannot recover from the syntax error
+
+!ENTRY com.aptana.scripting 4 0 2017-11-03 10:02:23.168
+!MESSAGE (Build null) [ERROR]  An error occurred while parsing scope 'library class/type' : Cannot recover from the syntax error
+
+!ENTRY com.aptana.rcp 4 0 2017-11-03 10:02:23.446
+!MESSAGE ---------------------start check----------------------
+
+!ENTRY com.aptana.rcp 4 0 2017-11-03 10:02:23.447
+!MESSAGE check mode
+
+!ENTRY com.aptana.rcp 4 0 2017-11-03 10:02:23.577
+!MESSAGE workspace : file:\C:\Users\啊烁\Desktop\user
+
+!ENTRY com.aptana.rcp 4 0 2017-11-03 10:02:24.192
+!MESSAGE ********HBuilder正常启动：postStartup********
+
+!ENTRY com.pandora.rcp.upgrade 4 0 2017-11-03 10:02:24.274
+!MESSAGE (Build null) [ERROR]  HBuilder当前版本: 8.8.0.201706142254
+!SESSION 2017-11-03 14:45:53.630 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.7.0_51
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Framework arguments:  -login -application com.aptana.commandline.launcher.LauncherApplication C:\Users\啊烁\Desktop\user\goLogin.jsp
+Command-line arguments:  -os win32 -ws win32 -arch x86 -login -data   -application com.aptana.commandline.launcher.LauncherApplication C:\Users\啊烁\Desktop\user\goLogin.jsp
+
+!ENTRY org.eclipse.ui 2 0 2017-11-03 14:45:54.592
+!MESSAGE Warnings while parsing the key bindings from the 'org.eclipse.ui.commands' extension point
+!SUBENTRY 1 org.eclipse.ui 2 0 2017-11-03 14:45:54.592
+!MESSAGE Could not parse key sequence: plug-in='com.pandora.ui', id='org.eclipse.ui.edit.text.contentAssist.proposals', keySequence='Ctrl+Sapce'
+
+!ENTRY com.aptana.rcp 4 0 2017-11-03 14:45:54.806
+!MESSAGE ********HBuilder正常启动：preStartup********
+
+!ENTRY com.aptana.scripting 4 0 2017-11-03 14:45:56.465
+!MESSAGE (Build null) [ERROR]  An error occurred while parsing scope 'Build–in constant' : Cannot recover from the syntax error
+
+!ENTRY com.aptana.scripting 4 0 2017-11-03 14:45:56.466
+!MESSAGE (Build null) [ERROR]  An error occurred while parsing scope 'library class/type' : Cannot recover from the syntax error
+
+!ENTRY com.aptana.rcp 4 0 2017-11-03 14:45:56.720
+!MESSAGE ---------------------start check----------------------
+
+!ENTRY com.aptana.rcp 4 0 2017-11-03 14:45:56.721
+!MESSAGE check mode
+
+!ENTRY com.aptana.rcp 4 0 2017-11-03 14:45:56.882
+!MESSAGE workspace : file:\C:\Users\啊烁\Desktop\user
+
+!ENTRY com.aptana.rcp 4 0 2017-11-03 14:45:57.250
+!MESSAGE ********HBuilder正常启动：postStartup********
+
+!ENTRY com.pandora.rcp.upgrade 4 0 2017-11-03 14:45:57.320
+!MESSAGE (Build null) [ERROR]  HBuilder当前版本: 8.8.0.201706142254
