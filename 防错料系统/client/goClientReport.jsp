@@ -31,7 +31,28 @@
         	订单号：<input id="OrderNum" type="text" />
         	工单号 ：<input id="workOrderNum" type="text" />
        		起止时间：<input id="startTime" type="text" /> <em>--</em> <input id="endTime" type="text" />
-            <button id="searchBtn" class="ui-accordion-header ui-state-default ui-corner-all ui-corner-top clientSearchBtn">查询</button>
+            <button id="searchBtn" class="ui-accordion-header ui-state-default ui-corner-all ui-corner-top clientSearchBtn btnCommon">查询</button>
+            <button id = "downloadBtn" class="ui-accordion-header ui-state-default ui-corner-all ui-corner-top downloadBtn btnCommon">报表下载</button>
+        </div>
+        <!-- 表格显示 -->
+        <div class="clientTable">
+            <table style=word-break:break-all>
+                <thead>
+                    <tr>
+                        <td width = 60>线号</td>
+                        <td width = 60>工单号</td>
+                        <td width = 60>客户订单号</td>
+                        <td width = 60>槽位</td>
+                        <td width = 220>物料编号</td>
+                        <td width = 50>物料描述</td>
+                        <td width = 330>物料规格</td>
+                        <td width = 60>操作类型</td>
+                        <td width = 110>操作者</td>
+                        <td width = 100>操作时间</td>
+                    </tr>
+                </thead>
+                <tbody id="clientMainTable"></tbody>
+        </table>
         </div>
     </section>
 </body>

@@ -55,6 +55,10 @@ $(function(){
         $("#main-text section").css("display","none");
         $("#positionManage").css("display","block");
     });
+    $("#report li:eq(0)").on("click",function(){
+        $("#main-text section").css("display","none");
+        $("#clientReport").css("display","block");
+    })
     $("#report li:eq(3)").on("click",function(){
         window.location.href = "../eps_server/operation/goDisplayReport";
     });

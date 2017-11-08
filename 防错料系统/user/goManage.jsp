@@ -53,7 +53,7 @@
         <!--右侧主要显示框-->
         <div class="main-text" id="main-text">
                 <!--刚进入时显示的界面-->
-            <section class="guard" id="guard" style="display: none">
+            <section class="guard" id="guard" >
                 <span></span>
                 <p>欢迎来到SMT防错料管理系统，请通过左侧导航栏进入相关界面进行操作</p>
             </section>
@@ -163,7 +163,7 @@
 				<iframe class="connectGoManage" src="program/goManage" frameborder="0"></iframe>
 			</section>
 			<!--客户报表-->
-			<section class="positionManage" id="clientReport"> 
+			<section class="positionManage" id="clientReport" style="display: none"> 
 				<iframe class="connectGoManage" src="operation/goClientReport" frameborder="0"></iframe>
 			</section>
         </div>
