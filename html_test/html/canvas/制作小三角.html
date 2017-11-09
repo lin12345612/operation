@@ -18,13 +18,44 @@
      ctn.lineTo(100,200);   //线画到（100，200）
 //    ctn.lineTo(100,100);    //线画到（100，100）
     ctn.closePath();     //自动闭合路径，与上一条程序功能相同，可省略坐标
+    ctn.lineJoin = "round";
     ctn.strokeStyle="#f90000";
-    ctn.lineWidth=5;
-    ctn.stroke();    //将线描绘出来
-    ctn.fillStyle="blue";
-    ctn.fillRect(100,100,30,30);
-    ctn.fillStyle="white";
-    ctn.fillText("123",100,100,40)
-    ctn.fill();
+    ctn.lineWidth=7;
 
+    ctn.fillStyle = "blue";
+    ctn.fill();
+    ctn.stroke();    //将线描绘出来
+
+    ctn.save();
+    ctn.translate(200,200);
+    ctn.beginPath();
+    ctn.moveTo(0,0);
+    ctn.quadraticCurveTo(450,30,150,300);
+    ctn.moveTo(0,0);
+    ctn.lineTo(150,300);
+    ctn.strokeStyle = "red";
+    ctn.lineWidth = 6 ;
+    ctn.stroke();
+
+    ctn.restore();
+
+    ctn.save();
+    ctn.translate(300,50);
+    ctn.beginPath();
+    ctn.transform(1,0.5,0.2,1,0.3,0.1)
+    ctn.moveTo(0,0);
+    ctn.lineTo(0,200);
+    ctn.lineTo(200,200);
+    ctn.lineTo(200,0);
+    ctn.lineTo(0,0);
+//    ctn.closePath();
+    ctn.lineWidth = 4 ;
+    ctn.strokeStyle = "green";
+    var gradient = ctn.createLinearGradient(0,0,200,200);
+    gradient.addColorStop(0,"red");
+    gradient.addColorStop(0.5,"blue");
+    gradient.addColorStop(1,"yellow");
+    ctn.fillStyle = gradient;
+
+    ctn.fill();ctn.stroke();
 </script>

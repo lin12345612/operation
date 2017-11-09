@@ -13,7 +13,7 @@ $(function(){
         },function(){
             $(this).removeClass("ui-state-hover");})
         .on("click",function(){
-            console.log(111);
+            ExcelDownload();
         });
     //查询时输出传输
     function searchAndCreate(){
