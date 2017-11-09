@@ -24,8 +24,18 @@
       <file leaf-file-name="ClientCss.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/css/ClientCss.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.8333335">
+            <state vertical-scroll-proportion="-15.833333">
               <caret line="54" column="14" selection-start-line="54" selection-start-column="14" selection-end-line="54" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="positionCss.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/static/css/positionCss.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="6.1797237">
+              <caret line="224" column="0" selection-start-line="224" selection-start-column="0" selection-end-line="227" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -46,10 +56,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="manageSystem.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="manageSystem.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../user/manageSystem.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7176128">
+            <state vertical-scroll-proportion="0.0">
               <caret line="59" column="50" selection-start-line="59" selection-start-column="50" selection-end-line="59" selection-end-column="50" />
               <folding>
                 <element signature="e#1857#2151#0" expanded="false" />
@@ -192,7 +202,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../program" />
+    <property name="last_opened_file_path" value="D:/git/Git/operation/html_test/html/canvas" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
@@ -262,7 +272,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1456" height="876" extended-state="7" />
+    <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12552892" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -359,22 +369,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/positionCss.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.25">
-          <caret line="224" column="0" selection-start-line="224" selection-start-column="0" selection-end-line="227" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/ClientCss.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.8333335">
-          <caret line="54" column="14" selection-start-line="54" selection-start-column="14" selection-end-line="54" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../user/manageSystem.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -398,13 +392,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../user/manageSystem.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7176128">
+        <state vertical-scroll-proportion="0.0">
           <caret line="59" column="50" selection-start-line="59" selection-start-column="50" selection-end-line="59" selection-end-column="50" />
           <folding>
             <element signature="e#1857#2151#0" expanded="false" />
             <element signature="e#2635#2716#0" expanded="false" />
             <element signature="e#2766#2848#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/ClientCss.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.833333">
+          <caret line="54" column="14" selection-start-line="54" selection-start-column="14" selection-end-line="54" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/positionCss.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="6.1797237">
+          <caret line="224" column="0" selection-start-line="224" selection-start-column="0" selection-end-line="227" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>

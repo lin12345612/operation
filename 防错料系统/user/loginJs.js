@@ -20,7 +20,7 @@ $(function(){
                     success : function(data){
                        if(data.result == "succeed"){
                            $("#login-form").submit();
-                           window.location.href = "http://wx.jimi-iot.com/eps_server/user/goManage";
+                           window.location.href = "user/goManage";
                        }
                     },
                     error : function(){

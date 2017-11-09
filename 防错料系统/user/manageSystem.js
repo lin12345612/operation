@@ -58,11 +58,15 @@ $(function(){
     $("#report li:eq(0)").on("click",function(){
         $("#main-text section").css("display","none");
         $("#clientReport").css("display","block");
-    })
-    $("#report li:eq(3)").on("click",function(){
+    });
+    $("#report li:eq(1)").on("click",function(){
+        $("#main-text section").css("display","none");
+        $("#operationReport").css("display","block");
+    });
+    $("#report li:eq(2)").on("click",function(){
         window.location.href = "../eps_server/operation/goDisplayReport";
     });
-    $("#report li:eq(4)").on("click",function(){
+    $("#report li:eq(3)").on("click",function(){
         window.location.href = "../eps_server/operation/goDisplayReport2";
     });
 

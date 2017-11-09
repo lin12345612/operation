@@ -36,7 +36,9 @@ $(function(){
                            }
                         });
                     },
-                    error : function(){}
+                    error : function(){
+                        console.log("数据传输失败！");
+                    }
                 }
             );
     });

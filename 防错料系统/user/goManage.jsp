@@ -42,8 +42,7 @@
             <div id="report" class="manage-text yinCan">
                 <ul>
                     <li>客户报表</li>
-                    <li>IPQC</li>
-                    <li>仓库报表</li>
+                    <li>操作报表</li>
                     <li>实时表格显示</li>
                     <li>实时柱形图显示</li>
                 </ul>
@@ -53,7 +52,7 @@
         <!--右侧主要显示框-->
         <div class="main-text" id="main-text">
                 <!--刚进入时显示的界面-->
-            <section class="guard" id="guard" >
+            <section class="guard" id="guard" style="display: none">
                 <span></span>
                 <p>欢迎来到SMT防错料管理系统，请通过左侧导航栏进入相关界面进行操作</p>
             </section>
@@ -165,6 +164,11 @@
 			<!--客户报表-->
 			<section class="positionManage" id="clientReport" style="display: none"> 
 				<iframe class="connectGoManage" src="operation/goClientReport" frameborder="0"></iframe>
+			</section>
+			
+						<!--操作报表-->
+			<section class="positionManage" id="operationReport" > 
+				<iframe class="connectGoManage" src="operation/goIPQCReport" frameborder="0"></iframe>
 			</section>
         </div>
     </div>
