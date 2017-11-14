@@ -52,13 +52,13 @@
         <span class="show-warm">请选择xls格式的文件!!!</span>
     </div>
     <div class="mainTable positionTable">
-		<table width = 750>
-            <thead>
+		<table width = 750 cellpadding="0" cellspacing="0">
+            <thead id="positionThead">
             <tr id="positionTableTitle">
-                <td width = 70>站位表</td>
-                <td width = 70>工单</td>
-                <td width = 70>状态</td>
-                <td width = 100>线号</td>
+                <td >站位表</td>
+                <td >工单</td>
+                <td >状态</td>
+                <td >线号</td>
             </tr>
             </thead>
             <tbody id="positionTable"></tbody>

@@ -103,3 +103,81 @@ Command-line arguments:  -os win32 -ws win32 -arch x86 -login -data   -applicati
 
 !ENTRY com.pandora.rcp.upgrade 4 0 2017-11-06 15:47:19.643
 !MESSAGE (Build null) [ERROR]  HBuilder当前版本: 8.8.0.201706142254
+!SESSION 2017-11-10 09:34:33.523 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.7.0_51
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Framework arguments:  -login -application com.aptana.commandline.launcher.LauncherApplication C:\Users\啊烁\Desktop\program\goManage.jsp
+Command-line arguments:  -os win32 -ws win32 -arch x86 -login -data   -application com.aptana.commandline.launcher.LauncherApplication C:\Users\啊烁\Desktop\program\goManage.jsp
+
+!ENTRY org.eclipse.ui 2 0 2017-11-10 09:34:34.187
+!MESSAGE Warnings while parsing the key bindings from the 'org.eclipse.ui.commands' extension point
+!SUBENTRY 1 org.eclipse.ui 2 0 2017-11-10 09:34:34.187
+!MESSAGE Could not parse key sequence: plug-in='com.pandora.ui', id='org.eclipse.ui.edit.text.contentAssist.proposals', keySequence='Ctrl+Sapce'
+
+!ENTRY com.aptana.rcp 4 0 2017-11-10 09:34:34.390
+!MESSAGE ********HBuilder正常启动：preStartup********
+
+!ENTRY com.aptana.scripting 4 0 2017-11-10 09:34:36.059
+!MESSAGE (Build null) [ERROR]  An error occurred while parsing scope 'Build–in constant' : Cannot recover from the syntax error
+
+!ENTRY com.aptana.scripting 4 0 2017-11-10 09:34:36.060
+!MESSAGE (Build null) [ERROR]  An error occurred while parsing scope 'library class/type' : Cannot recover from the syntax error
+
+!ENTRY com.aptana.rcp 4 0 2017-11-10 09:34:36.494
+!MESSAGE ---------------------start check----------------------
+
+!ENTRY com.aptana.rcp 4 0 2017-11-10 09:34:36.494
+!MESSAGE check mode
+
+!ENTRY com.aptana.rcp 4 0 2017-11-10 09:34:36.657
+!MESSAGE workspace : file:\C:\Users\啊烁\Desktop\program
+
+!ENTRY com.aptana.rcp 4 0 2017-11-10 09:34:37.157
+!MESSAGE ********HBuilder正常启动：postStartup********
+
+!ENTRY com.pandora.rcp.upgrade 4 0 2017-11-10 09:34:37.215
+!MESSAGE (Build null) [ERROR]  HBuilder当前版本: 8.8.0.201706142254
+!SESSION 2017-11-13 11:41:22.266 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.7.0_51
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Framework arguments:  -login -application com.aptana.commandline.launcher.LauncherApplication C:\Users\啊烁\Desktop\program\goManage.jsp
+Command-line arguments:  -os win32 -ws win32 -arch x86 -login -data   -application com.aptana.commandline.launcher.LauncherApplication C:\Users\啊烁\Desktop\program\goManage.jsp
+
+!ENTRY org.eclipse.ui 2 0 2017-11-13 11:41:22.989
+!MESSAGE Warnings while parsing the key bindings from the 'org.eclipse.ui.commands' extension point
+!SUBENTRY 1 org.eclipse.ui 2 0 2017-11-13 11:41:22.989
+!MESSAGE Could not parse key sequence: plug-in='com.pandora.ui', id='org.eclipse.ui.edit.text.contentAssist.proposals', keySequence='Ctrl+Sapce'
+
+!ENTRY com.aptana.rcp 4 0 2017-11-13 11:41:23.162
+!MESSAGE ********HBuilder正常启动：preStartup********
+
+!ENTRY com.aptana.scripting 4 0 2017-11-13 11:41:24.411
+!MESSAGE (Build null) [ERROR]  An error occurred while parsing scope 'Build–in constant' : Cannot recover from the syntax error
+
+!ENTRY com.aptana.scripting 4 0 2017-11-13 11:41:24.412
+!MESSAGE (Build null) [ERROR]  An error occurred while parsing scope 'library class/type' : Cannot recover from the syntax error
+
+!ENTRY com.aptana.rcp 4 0 2017-11-13 11:41:24.888
+!MESSAGE ---------------------start check----------------------
+
+!ENTRY com.aptana.rcp 4 0 2017-11-13 11:41:24.889
+!MESSAGE check mode
+
+!ENTRY com.aptana.rcp 4 0 2017-11-13 11:41:25.033
+!MESSAGE workspace : file:\C:\Users\啊烁\Desktop\program
+
+!ENTRY com.aptana.rcp 4 0 2017-11-13 11:41:25.429
+!MESSAGE ********HBuilder正常启动：postStartup********
+
+!ENTRY com.pandora.rcp.upgrade 4 0 2017-11-13 11:41:25.500
+!MESSAGE (Build null) [ERROR]  HBuilder当前版本: 8.8.0.201706142254
+
+!ENTRY com.aptana.editor.css 4 0 2017-11-13 11:41:25.740
+!MESSAGE (Build null) [ERROR]  开始清理css错误marker...
+
+!ENTRY com.aptana.editor.css 4 0 2017-11-13 11:41:25.753
+!MESSAGE (Build null) [ERROR]  清理css错误marker结束

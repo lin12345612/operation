@@ -22,13 +22,16 @@ $(function(){
                 line : line
             },
             success :function(data){
-                console.log(data.length);
                 autoCreateTable(data);
-                var totalHeight = 0;
-                for(var a = 0;a<10;a++){
-                    totalHeight += $("#positionTable td").eq(3+4*a).height()+26 ;
-                    $("#"+a).css("top",totalHeight);
-                    $("#0"+a).css("top",totalHeight);
+                var totalWidth = $("#positionTable").width()+50;
+                for(var a = 0 ; a < data.length ; a++){
+                    var totalHeight = $("#positionTable td").eq(3+4*a).offset().top+5;
+                    $("#"+a).css("top",totalHeight)
+                        .css("left",totalWidth);
+                    $("#0"+a).css("top",totalHeight)
+                        .css("left",totalWidth+60);
+                    $("#00"+a).css("top",totalHeight)
+                        .css("left",totalWidth+150);
                 }
             },
             error : function(){
@@ -76,6 +79,8 @@ $(function(){
         });
     });
 
+    //设置按钮位置
+
 //    生成表格部分
     $.ajax({
         url :"program/list",
@@ -84,12 +89,18 @@ $(function(){
         data :{},
         success :function(data){
             autoCreateTable(data);
-            var totalHeight = 0;
+            var totalWidth = $("#positionTable").width()+50;
             for(var a = 0 ; a < data.length ; a++){
-              totalHeight += $("#positionTable td").eq(3+4*a).height()+26 ;
-                $("#"+a).css("top",totalHeight);
-                $("#0"+a).css("top",totalHeight);
+                var totalHeight = $("#positionTable td").eq(3+4*a).offset().top+5;
+                console.log(totalHeight);
+                $("#"+a).css("top",totalHeight)
+                        .css("left",totalWidth);
+                $("#0"+a).css("top",totalHeight)
+                         .css("left",totalWidth+60);
+                $("#00"+a).css("top",totalHeight)
+                          .css("left",totalWidth+150);
             }
+            //console.log("表格高度为："+$("#positionTable").offset().top);
         },
         error : function(){
             console.log("数据传输失败");
@@ -118,12 +129,14 @@ $(function(){
             html += "</tr>";
             $("#positionTable").html(html);
             //增加按钮
+        //    状态修改按钮
         var btn = $("<button id='"+ i +"' class='ui-button ui-corner-all ui-state-default stateModifyCommon stateModifyBtn'>修改状态</button>");
             //判断状态是否为已作废
             if(data[i].stateName == "已作废"  || data[i].stateName == "已完成"){
                 btn.attr("disabled", "disabled")
                     .removeClass("ui-state-default ui-state-hover");
             }
+
             //鼠标放置事件
        btn.hover(function(){
            $(this).addClass("ui-state-hover")
@@ -137,6 +150,7 @@ $(function(){
                     $(this).text("保存");
                      gdh =  $("#positionTable td").eq(1+4*id).text();  //获取工单号
                     originState =  $("#positionTable td").eq(2+4*id).text();  //获取原先状态
+
                     switch (originState){
                         case "未开始" : originStateVal = 0;
                             break;
@@ -145,7 +159,10 @@ $(function(){
                         case "已完成" : originStateVal = 2;
                             break;
                     }
+                    console.log("原始状态"+originState);
+                    console.log("原始值"+originStateVal);
                     $("#0"+id).css("display","block");
+                    $("#00"+id).css("display","block");
                 }else if($(this).text() == "保存"){
                     if(stateChange1 > originStateVal)
                     {
@@ -160,11 +177,11 @@ $(function(){
                                 boardType : data[id].boardType
                             },
                             success : function(data){
-                                console.log(data);
                                 if(data.result == "succeed"){
                                     alert("修改状态成功");
-                                    $(this).text("修改状态");
+                                    $("#"+id).text("修改状态");
                                     $("#0" + id).css("display", "none");
+                                    $("#00" + id).css("display", "none");
                                     $("#positionTable td").eq(2 + 4 * id).text(stateChange);
                                     if (stateChange == "已作废") {
                                         $(this).attr("disabled", "disabled")
@@ -195,9 +212,8 @@ $(function(){
             //下拉事件
             $sel.on("change",function(){
                 var sd = $(this).attr("id");
-                
                 stateChange1 = parseInt($(this).val());    //获取修改后的状态对应的value值
-                stateChange =  $("#"+sd+"  option:selected").text();
+                stateChange =  $("#"+sd+" option:selected").text();
                 switch (stateChange1){                //传递链接
                     case 1 : modifyUrl = "program/start";
                         break;
@@ -207,7 +223,26 @@ $(function(){
                         break;
                 }
             });
+
+
+            //取消按钮
+        var btn1 = $("<button id='00"+ i +"' class='ui-button ui-corner-all ui-state-default stateModifyCommon stateModifyBtn' style='display: none'>取消</button>");
+           btn1.hover(function(){
+               $(this).addClass("ui-state-hover")
+           },function(){
+               $(this).removeClass("ui-state-hover");
+           });
+            btn1.on("click",function(){
+                var id1 =parseInt($(this).attr("id")) ;
+                $(this).css("display","none");
+                console.log(id1);
+                $("#0"+id1).css("display","none");
+                $("#"+id1).text("修改状态");
+            });
+
+
             $("#stateModify").append(btn)
+                             .append(btn1)
                              .append($sel);
 
     }
