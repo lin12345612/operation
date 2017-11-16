@@ -6,8 +6,10 @@
     <meta charset="UTF-8">
     <title>操作报表</title>
     <link rel="stylesheet" href="static/css/operationCss.css">
+    <link rel="stylesheet" href="static/css/jquery.autocompleter.css" />
     <link rel="stylesheet" href="static/css/positionCss.css">
     <script src="static/js/jquery-1.11.3.min.js"></script>
+    <script src="static/js/jquery.autocompleter.js"></script>
     <script src="static/js/operationJs.js"></script>
 
 </head>
@@ -37,7 +39,9 @@
 	        		<option value=6>307</option>
 	        		<option value=7>308</option>
         	    </select><br />
-     		工单号 ：<input id = "workOrderNum" type="text" />
+        	    <div class="autoCom">
+        	    	<p style="float: left;">工单号 ：</p><input id = "workOrderNum" type="text" class="autoInput"/>
+        	    </div>
      		起止时间 ：<input id="startTime" type="text" class="location"/> <em>--</em> <input id="endTime" type="text" />
      		<button id="searchBtn" class = "ui-accordion-header ui-state-default ui-corner-all ui-corner-top commonBtn btnSearch" >查询</button>
      		<button id="loadBtn" class = "ui-accordion-header ui-state-default ui-corner-all ui-corner-top commonBtn btnLoad">下载报表</button>

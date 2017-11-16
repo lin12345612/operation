@@ -35,7 +35,7 @@
 .operation-search em{
     position: absolute;
     top:56px;
-    left:534px;
+    left:529px;
 }
 .operation-search select{
     font-size: 18px;
@@ -54,6 +54,15 @@
 }
 .btnLoad{
     right:6%;
+}
+
+.autoCom{
+    width:265px ;
+    position: relative;
+    z-index: 999;
+}
+.autoInput{
+    float: left;
 }
 .operationTable{
     color: #000;

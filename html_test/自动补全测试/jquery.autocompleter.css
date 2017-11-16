@@ -10,6 +10,10 @@
     width: 100%;
     background-color: antiquewhite;
     display: none;
+    top:31px;
+    left:42px;
+    padding-left: 6px;
+    padding-top: 2px;
 }
 
 .autocompleter-show {
@@ -31,10 +35,12 @@
 
 .autocompleter-item {
     cursor: pointer;
+    margin-bottom: 2px;
 }
 
 .autocompleter-item:hover {
-    /* Hover State */
+    background-color: #000;
+    color: #ffffff;
 }
 
 .autocompleter-item-selected {
