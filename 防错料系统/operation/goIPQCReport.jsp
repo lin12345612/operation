@@ -26,8 +26,9 @@
         						<option value=4>仓库</option>
         			       </select>
         	</span><br />
-        	<input type="text" readonly = "readonly" class="youhua"/>
-     		客户名 ：<input id="clientName" type="text" />
+        	<div>
+        		<input type="text" readonly = "readonly" class="youhua"/>
+        		客户名 ：<input id="clientName" type="text" />
      		线号 ：<select id="line">
 	        		<option value=>不限</option>
 	        		<option value=0>301</option>
@@ -38,11 +39,14 @@
 	        		<option value=5>306</option>
 	        		<option value=6>307</option>
 	        		<option value=7>308</option>
-        	    </select><br />
+        	    </select>
+        	</div>
+     		<br />
         	    <div class="autoCom">
         	    	<p style="float: left;">工单号 ：</p><input id = "workOrderNum" type="text" class="autoInput"/>
         	    </div>
-     		起止时间 ：<input id="startTime" type="text" class="location"/> <em>--</em> <input id="endTime" type="text" />
+        	    
+     		起止时间 ：<input id="startTime" type="date" class="location"/> <em>--</em> <input id="endTime" type="date" />
      		<button id="searchBtn" class = "ui-accordion-header ui-state-default ui-corner-all ui-corner-top commonBtn btnSearch" >查询</button>
      		<button id="loadBtn" class = "ui-accordion-header ui-state-default ui-corner-all ui-corner-top commonBtn btnLoad">下载报表</button>
         </div>

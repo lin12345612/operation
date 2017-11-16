@@ -19,27 +19,32 @@
     <section class="position-table" id="clientReport">
         <span class="manage-staff">客户报表</span>
         <!--搜索框-->
-        <div class="search" id="search">
-        	客户名：<input id= "client" type="text" />
-        	程序表编号：<input id="programNum" type="text" />
-        	线号 ：<select id="line">
-	        		<option value=>不限</option>
-	        		<option value=0>301</option>
-	        		<option value=1>302</option>
-	        		<option value=2>303</option>
-	        		<option value=3>304</option>
-	        		<option value=4>305</option>
-	        		<option value=5>306</option>
-	        		<option value=6>307</option>
-	        		<option value=7>308</option>
-        	    </select> <br />
+        <div class="search clearfix" id="search">
+	        <div style="float: left; margin-right: 18px;">
+	        	客户名：<input id= "client" type="text" />
+	        	程序表编号：<input id="programNum" type="text" />
+	        	线号 ：<select id="line">
+		        		<option value=>不限</option>
+		        		<option value=0>301</option>
+		        		<option value=1>302</option>
+		        		<option value=2>303</option>
+		        		<option value=3>304</option>
+		        		<option value=4>305</option>
+		        		<option value=5>306</option>
+		        		<option value=6>307</option>
+		        		<option value=7>308</option>
+	        	    </select> 
+	        </div>
         	<div class="autoFinish">
         		订单号：<input id="OrderNum" type="text" />
         	</div>
-        	<div class="autoFinish"> 
+
+        	<div class="autoFinish1"> 
         		工单号 ：<input id="workOrderNum" type="text" />
         	</div>
-       		起止时间：<input id="startTime" type="text" /> <em>--</em> <input id="endTime" type="text" />
+        	<div class="date">
+        		起止时间：<input id="startTime" type="date" /> <em>--</em> <input id="endTime" type="date"/>
+        	</div>
             <button id="searchBtn" class="ui-accordion-header ui-state-default ui-corner-all ui-corner-top clientSearchBtn btnCommon">查询</button>
             <button id = "downloadBtn" class="ui-accordion-header ui-state-default ui-corner-all ui-corner-top downloadBtn btnCommon">报表下载</button>
         </div>

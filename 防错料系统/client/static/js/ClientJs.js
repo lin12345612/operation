@@ -12,54 +12,31 @@ $(function(){
             $(this).removeClass("ui-state-hover");
         })
         .on("click",function(){
-            $("#showWaiting").css("display","block");
-            $.ajax({
-                    url : "operation/listClientReport",
-                    type : "post",
-                    dataType : "json",
-                    data :{
-                        client :  $("#client").val(),
-                        programNo : $("#programNum").val(),
-                        line : $("#line option:selected").text() == "不限" ? null : $("#line option:selected").text() ,
-                        orderNo : $("#OrderNum").val(),
-                        workOrderNo : $("#workOrderNum").val(),
-                        startTime : $("#startTime").val(),
-                        endTime : $("#endTime").val()
-                    },
-                    success : function(data){
-                        $("#showWaiting").css("display","none");
-                        dataLength  = data.length ; //获取数据长度
-                        for(var i = 0;i<data.length;i++){
-                            var $json = {};
-                            $json.label = data[i].orderNo;
-                            array1.push($json);
-
-                            var $json1 = {};
-                            $json1.label = data[i].workOrderNo;
-                            array2.push($json1);
-                        }
-                        autoComplete("OrderNum",array1,orderCallBack);
-                        autoComplete("workOrderNum",array2,workOrderCallBack);
-                        $("#clientMainTable").empty();
-                        if(dataLength != 0){
-                            autoCreateTable(data,dataLength);
-                            $(window).on("scroll",function(){
-                                newNum = originNum ;
-                                if(newNum < dataLength){
-                                    originNum += 3;
-                                    originNum = (originNum >= dataLength ? dataLength : originNum);  //判断加3后是否长度大于数据长度
-                                    for(var de = newNum ; de < originNum ; de++){
-                                        CreateOneTable(de ,data);
-                                    }
-                                }
-                            });
-                        }
-                    },
-                    error : function(){
-                        console.log("数据传输失败！");
+            var sT = $("#startTime").val() == "" ? $("#startTime").val() : $("#startTime").val()+" 00:00:00";
+            var eT = $("#endTime").val() == "" ? $("#endTime").val() : $("#endTime").val() + " 23:59:59";
+            //开始和结束时间都有输入时进行判断
+            if($("#startTime").val() != "" && $("#endTime").val() != ""){
+                var aa = $("#startTime").val().split("-");
+                var bb = $("#endTime").val().split("-");
+                for(var i = 0;i<aa.length;i++){
+                    aa[i] = parseInt(aa[i]);
+                    bb[i] = parseInt(bb[i])
+                    if(aa[i]>bb[i]){
+                        alert("时间输入错误！请重新输入");
+                        $("#startTime").val("");
+                        $("#endTime").val("");
+                    }
+                    else if( i == 2){
+                        $("#showWaiting").css("display","block");
+                        searchAjax(sT,eT);
                     }
                 }
-            );
+            }
+            //开始时间和终止时间都没有输入
+            else if($("#startTime").val() == "" && $("#endTime").val() == ""){
+                $("#showWaiting").css("display","block");
+                searchAjax(sT,eT);
+            }
     });
     //下载按钮事件
     $("#downloadBtn").hover(function(){
@@ -139,6 +116,56 @@ $(function(){
         form.remove();
     }
 
+//    调用ajax函数
+    function  searchAjax(sT,eT){
+        $.ajax({
+            url : "operation/listClientReport",
+            type : "post",
+            dataType : "json",
+            data :{
+                client :  $("#client").val(),
+                programNo : $("#programNum").val(),
+                line : $("#line option:selected").text() == "不限" ? null : $("#line option:selected").text() ,
+                orderNo : $("#OrderNum").val(),
+                workOrderNo : $("#workOrderNum").val(),
+                startTime : sT,
+                endTime : eT
+            },
+            success : function(data){
+                $("#showWaiting").css("display","none");
+                dataLength  = data.length ; //获取数据长度
+                for(var i = 0;i<data.length;i++){
+                    var $json = {};
+                    $json.label = data[i].orderNo;
+                    array1.push($json);
+
+                    var $json1 = {};
+                    $json1.label = data[i].workOrderNo;
+                    array2.push($json1);
+                }
+                autoComplete("OrderNum",array1,orderCallBack);
+                autoComplete("workOrderNum",array2,workOrderCallBack);
+                $("#clientMainTable").empty();
+                if(dataLength != 0){
+                    autoCreateTable(data,dataLength);
+                    $(window).on("scroll",function(){
+                        newNum = originNum ;
+                        if(newNum < dataLength){
+                            originNum += 3;
+                            originNum = (originNum >= dataLength ? dataLength : originNum);  //判断加3后是否长度大于数据长度
+                            for(var de = newNum ; de < originNum ; de++){
+                                CreateOneTable(de ,data);
+                            }
+                        }
+                    });
+                }
+            },
+            error : function(){
+                console.log("数据传输失败！");
+            }
+        });
+    }
+
 //    自动补全函数
     function autoComplete(id,array,fn){
         $("#"+id).autocompleter({
@@ -192,6 +219,8 @@ $(function(){
 
 //    工单回调函数
     function workOrderCallBack(a){
+        var sT = $("#startTime").val() == "" ? $("#startTime").val() : $("#startTime").val()+" 00:00:00";
+        var eT = $("#endTime").val() == "" ? $("#endTime").val() : $("#endTime").val() + " 23:59:59";
         $.ajax({
             url : "operation/listClientReport",
             type : "post",
@@ -202,8 +231,8 @@ $(function(){
                 line : $("#line option:selected").text() == "不限" ? null : $("#line option:selected").text() ,
                 orderNo : $("#OrderNum").val(),
                 workOrderNo : a,
-                startTime : $("#startTime").val(),
-                endTime : $("#endTime").val()
+                startTime : sT,
+                endTime :eT
             },
             success : function(data){
                 dataLength  = data.length ; //获取数据长度
