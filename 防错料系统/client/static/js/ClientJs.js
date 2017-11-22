@@ -148,6 +148,7 @@ $(function(){
                 $("#clientMainTable").empty();
                 if(dataLength != 0){
                     autoCreateTable(data,dataLength);
+
                     $(window).on("scroll",function(){
                         newNum = originNum ;
                         if(newNum < dataLength){

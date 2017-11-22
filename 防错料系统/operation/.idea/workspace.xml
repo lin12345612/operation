@@ -20,31 +20,7 @@
     <favorites_list name="operation" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="operationJs.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/static/js/operationJs.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.39010188">
-              <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
-              <folding>
-                <element signature="e#619#1220#0" expanded="false" />
-                <element signature="e#1660#1706#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="operationCss.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/css/operationCss.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.0">
-              <caret line="36" column="10" selection-start-line="36" selection-start-column="10" selection-end-line="36" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -58,8 +34,9 @@
       <list>
         <option value="$PROJECT_DIR$/goOperation.html" />
         <option value="$PROJECT_DIR$/../client/static/js/ClientJs.js" />
-        <option value="$PROJECT_DIR$/static/css/operationCss.css" />
         <option value="$PROJECT_DIR$/static/js/operationJs.js" />
+        <option value="$PROJECT_DIR$/static/css/operationCss.css" />
+        <option value="$PROJECT_DIR$/../goOperation/myJs.js" />
       </list>
     </option>
   </component>
@@ -69,8 +46,8 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-130" />
-    <option name="y" value="12" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="1456" />
     <option name="height" value="876" />
   </component>
@@ -121,7 +98,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -178,11 +155,11 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="D:/git/Git/operation/html_test/自动补全测试" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
@@ -251,10 +228,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-130" y="12" width="1456" height="876" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1456" height="876" extended-state="0" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16220029" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17066291" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="版本控制" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="调试" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -295,8 +272,85 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#619#1220#0" expanded="false" />
-            <element signature="e#1660#1706#0" expanded="false" />
+            <element signature="e#908#1074#0" expanded="false" />
+            <element signature="e#1788#1834#0" expanded="false" />
+            <element signature="e#2021#3740#0" expanded="false" />
+            <element signature="e#3793#4463#0" expanded="false" />
+            <element signature="e#4519#4693#0" expanded="false" />
+            <element signature="e#4749#5941#0" expanded="false" />
+            <element signature="e#6958#7108#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/operationCss.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/operationJs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+          <folding>
+            <element signature="e#908#1074#0" expanded="false" />
+            <element signature="e#1788#1834#0" expanded="false" />
+            <element signature="e#2021#3740#0" expanded="false" />
+            <element signature="e#3793#4463#0" expanded="false" />
+            <element signature="e#4519#4693#0" expanded="false" />
+            <element signature="e#4749#5941#0" expanded="false" />
+            <element signature="e#6958#7108#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/operationCss.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/operationJs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#908#1074#0" expanded="false" />
+            <element signature="e#1788#1834#0" expanded="false" />
+            <element signature="e#2021#3740#0" expanded="false" />
+            <element signature="e#3793#4463#0" expanded="false" />
+            <element signature="e#4519#4693#0" expanded="false" />
+            <element signature="e#4749#5941#0" expanded="false" />
+            <element signature="e#6958#7108#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/operationCss.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="36" column="10" selection-start-line="36" selection-start-column="10" selection-end-line="36" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/operationJs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#908#1074#0" expanded="false" />
+            <element signature="e#1788#1834#0" expanded="false" />
+            <element signature="e#2021#3740#0" expanded="false" />
+            <element signature="e#3793#4463#0" expanded="false" />
+            <element signature="e#4519#4693#0" expanded="false" />
+            <element signature="e#4749#5941#0" expanded="false" />
+            <element signature="e#6958#7108#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -314,8 +368,13 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#619#1220#0" expanded="false" />
-            <element signature="e#1660#1706#0" expanded="false" />
+            <element signature="e#908#1074#0" expanded="false" />
+            <element signature="e#1788#1834#0" expanded="false" />
+            <element signature="e#2021#3740#0" expanded="false" />
+            <element signature="e#3793#4463#0" expanded="false" />
+            <element signature="e#4519#4693#0" expanded="false" />
+            <element signature="e#4749#5941#0" expanded="false" />
+            <element signature="e#6958#7108#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -325,8 +384,13 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#619#1220#0" expanded="false" />
-            <element signature="e#1660#1706#0" expanded="false" />
+            <element signature="e#908#1074#0" expanded="false" />
+            <element signature="e#1788#1834#0" expanded="false" />
+            <element signature="e#2021#3740#0" expanded="false" />
+            <element signature="e#3793#4463#0" expanded="false" />
+            <element signature="e#4519#4693#0" expanded="false" />
+            <element signature="e#4749#5941#0" expanded="false" />
+            <element signature="e#6958#7108#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -336,8 +400,13 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#619#1220#0" expanded="false" />
-            <element signature="e#1660#1706#0" expanded="false" />
+            <element signature="e#908#1074#0" expanded="false" />
+            <element signature="e#1788#1834#0" expanded="false" />
+            <element signature="e#2021#3740#0" expanded="false" />
+            <element signature="e#3793#4463#0" expanded="false" />
+            <element signature="e#4519#4693#0" expanded="false" />
+            <element signature="e#4749#5941#0" expanded="false" />
+            <element signature="e#6958#7108#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -353,7 +422,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="111" column="37" selection-start-line="111" selection-start-column="37" selection-end-line="111" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -371,21 +439,49 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../client/static/css/ClientCss.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.0">
+          <caret line="20" column="1" selection-start-line="0" selection-start-column="0" selection-end-line="20" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../goOperation/myJs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.47161573">
+          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+          <folding>
+            <element signature="e#1351#1519#0" expanded="false" />
+            <element signature="e#1530#1700#0" expanded="false" />
+            <element signature="e#1744#1913#0" expanded="false" />
+            <element signature="e#1924#2095#0" expanded="false" />
+            <element signature="e#2152#2448#0" expanded="false" />
+            <element signature="e#4085#15155#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/static/css/operationCss.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.0">
-          <caret line="36" column="10" selection-start-line="36" selection-start-column="10" selection-end-line="36" selection-end-column="10" />
+        <state vertical-scroll-proportion="0.5391705">
+          <caret line="82" column="16" selection-start-line="82" selection-start-column="16" selection-end-line="82" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/js/operationJs.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.39010188">
-          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.80349344">
+          <caret line="216" column="55" selection-start-line="216" selection-start-column="55" selection-end-line="216" selection-end-column="55" />
           <folding>
-            <element signature="e#619#1220#0" expanded="false" />
-            <element signature="e#1660#1706#0" expanded="false" />
+            <element signature="e#908#1074#0" expanded="false" />
+            <element signature="e#1788#1834#0" expanded="false" />
+            <element signature="e#2021#3740#0" expanded="false" />
+            <element signature="e#3793#4463#0" expanded="false" />
+            <element signature="e#4519#4693#0" expanded="false" />
+            <element signature="e#4749#5941#0" expanded="false" />
+            <element signature="e#6958#7108#0" expanded="false" />
           </folding>
         </state>
       </provider>

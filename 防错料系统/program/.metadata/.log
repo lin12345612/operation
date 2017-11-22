@@ -252,3 +252,39 @@ Caused by: java.net.BindException: Address already in use: JVM_Bind
 	at sun.rmi.transport.proxy.RMIMasterSocketFactory.createServerSocket(Unknown Source)
 	at sun.rmi.transport.tcp.TCPEndpoint.newServerSocket(Unknown Source)
 	... 15 more
+!SESSION 2017-11-17 14:21:14.556 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.7.0_51
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Framework arguments:  -login -application com.aptana.commandline.launcher.LauncherApplication C:\Users\啊烁\Desktop\program\goManage.jsp
+Command-line arguments:  -os win32 -ws win32 -arch x86 -login -data   -application com.aptana.commandline.launcher.LauncherApplication C:\Users\啊烁\Desktop\program\goManage.jsp
+
+!ENTRY org.eclipse.ui 2 0 2017-11-17 14:21:15.379
+!MESSAGE Warnings while parsing the key bindings from the 'org.eclipse.ui.commands' extension point
+!SUBENTRY 1 org.eclipse.ui 2 0 2017-11-17 14:21:15.379
+!MESSAGE Could not parse key sequence: plug-in='com.pandora.ui', id='org.eclipse.ui.edit.text.contentAssist.proposals', keySequence='Ctrl+Sapce'
+
+!ENTRY com.aptana.rcp 4 0 2017-11-17 14:21:15.687
+!MESSAGE ********HBuilder正常启动：preStartup********
+
+!ENTRY com.aptana.scripting 4 0 2017-11-17 14:21:17.281
+!MESSAGE (Build null) [ERROR]  An error occurred while parsing scope 'Build–in constant' : Cannot recover from the syntax error
+
+!ENTRY com.aptana.scripting 4 0 2017-11-17 14:21:17.282
+!MESSAGE (Build null) [ERROR]  An error occurred while parsing scope 'library class/type' : Cannot recover from the syntax error
+
+!ENTRY com.aptana.rcp 4 0 2017-11-17 14:21:17.850
+!MESSAGE ---------------------start check----------------------
+
+!ENTRY com.aptana.rcp 4 0 2017-11-17 14:21:17.852
+!MESSAGE check mode
+
+!ENTRY com.aptana.rcp 4 0 2017-11-17 14:21:18.071
+!MESSAGE workspace : file:\C:\Users\啊烁\Desktop\program
+
+!ENTRY com.aptana.rcp 4 0 2017-11-17 14:21:18.493
+!MESSAGE ********HBuilder正常启动：postStartup********
+
+!ENTRY com.pandora.rcp.upgrade 4 0 2017-11-17 14:21:18.541
+!MESSAGE (Build null) [ERROR]  HBuilder当前版本: 8.8.0.201706142254
