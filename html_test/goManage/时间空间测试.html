@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>时间空间测试</title>
+    <script src="static/js/jquery-1.11.3.min.js"></script>
+</head>
+<body>
+<input id = "date" type="date">
+<input type="date" id="date1">
+<button id="btn">输出时间</button>
+<script>
+    $(function(){
+        $("#btn").on("click",function(){
+            var time = $("#date").val() == "" ? $("#date").val() : $("#date").val()+" 00:00:00";
+            var time2 = $("#date1").val() == "" ? $("#date1").val() : $("#date1").val()+" 00:00:00";
+            var aa = $("#date").val().split("-");
+            var bb = $("#date1").val().split("-");
+            if($("#date").val() != "" && $("#date1").val() != ""){
+                for(var i = 0;i<aa.length;i++){
+                aa[i] = parseInt(aa[i]);
+                bb[i] = parseInt(bb[i]);
+                if(aa[i]>bb[i]){
+                    console.log("出错了!!!");
+                    break;
+                }
+                else if(i == 2){
+                    console.log("开始时间为："+time);
+                    console.log("结束时间为："+time2);
+                }
+                console.log(i);
+            }
+            }
+        });
+    });
+</script>
+</body>
+</html>

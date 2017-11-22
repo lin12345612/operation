@@ -11,7 +11,7 @@
     background-color: antiquewhite;
     display: none;
     top:31px;
-    left:42px;
+    left:76px;
     padding-left: 6px;
     padding-top: 2px;
 }
@@ -35,7 +35,8 @@
 
 .autocompleter-item {
     cursor: pointer;
-    margin-bottom: 2px;
+    margin-bottom: 5px;
+    margin-top: 3px;
 }
 
 .autocompleter-item:hover {

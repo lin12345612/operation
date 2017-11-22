@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>color测试</title>
+    <script src="jquery-3.1.1.min.js"></script>
+</head>
+<body>
+<form>
+    <input id="demo" type="number" min="2" maxlength="5" required>
+</form>
+<button id="btn">点击</button>
+    <script>
+        $(function() {
+            var user = document.getElementById("demo");
+           $("#btn").on("click",function(){
+               console.log($("#demo").val());
+               console.log(user.validity.tooLong);
+               if(user.validity.valueMissing){
+                  user.setCustomValidity("用户名为空.");
+               }else if(user.validity.tooLong){
+                   user.setCustomValidity("用户名过长.");
+               }
+           });
+            $("#demo").on("invalid",function(){
+                console.log(333);
+            });
+        })
+    </script>
+</body>
+</html>

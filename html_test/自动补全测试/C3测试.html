@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.1.1.min.js"></script>
+    <style>
+        div{
+            width: 200px;
+            height:200px;
+            background-color: red;
+            transition: all 2s;
+            -webkit-transition: all 2s;
+        }
+        div:hover{
+            width:300px;
+            height:300px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <select name="" id="line">
+        <option value="0">1</option>
+        <option value="1">2</option>
+        <option value="2">3</option>
+        <option value="3">4</option>
+    </select>
+    <button id="btn">按钮</button>
+    <script>
+        $(function(){
+            $("#btn").on("click",function(){
+               var length = $("#line option").length ;
+                for( var i = 0 ; i < length ; i++){
+                    $("#line option").eq(i).removeAttr("selected");
+                }
+                $("#line option").eq(2).attr("selected",true);
+            });
+        });
+    </script>
+</body>
+</html>
