@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>布局测试</title>
+    <style>
+        .demo:nth-child(1){
+            width:400px;
+            height:200px;
+            background-color: antiquewhite;
+            display: flex;
+            justify-content: center;
+        }
+        .demo1{
+            width:100px;
+            height:150px;
+            background-color: aqua;
+        }
+        .demo:nth-child(2){
+            width:400px;
+            height:200px;
+            background-color: antiquewhite;
+            display: flex;
+            justify-content: space-around;
+        }
+        .demo:nth-child(3){
+            flex-direction: row;
+            width:400px;
+            height:200px;
+            background-color: antiquewhite;
+            display: flex;
+            justify-content: space-between;
+        }
+        .demo:nth-child(4){
+            flex-direction: row-reverse;
+            width:400px;
+            height:200px;
+            background-color: antiquewhite;
+            display: flex;
+            justify-content: flex-start;
+        }
+        .demo:nth-child(5){
+            width:400px;
+            height:200px;
+            background-color: antiquewhite;
+            display: flex;
+            justify-content: flex-end;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo">
+        <div class="demo1">1</div>
+        <div class="demo1">2</div>
+        <div class="demo1">3</div>
+    </div>
+    <div class="demo">
+        <div class="demo1">1</div>
+        <div class="demo1">2</div>
+        <div class="demo1">3</div>
+    </div>
+    <div class="demo">
+        <div class="demo1">1</div>
+        <div class="demo1">2</div>
+        <div class="demo1">3</div>
+    </div>
+    <div class="demo">
+        <div class="demo1">1</div>
+        <div class="demo1">2</div>
+        <div class="demo1">3</div>
+    </div>
+    <div class="demo">
+        <div class="demo1">1</div>
+        <div class="demo1">2</div>
+        <div class="demo1">3</div>
+    </div>
+</body>
+</html>

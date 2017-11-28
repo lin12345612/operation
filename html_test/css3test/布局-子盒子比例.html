@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>子盒子比例</title>
+    <style>
+        .demo{
+            width:1000px;
+            height:200px;
+            background-color: #cccccc;
+            display: flex;
+
+        }
+        .demo1:nth-child(1){
+            flex: 1;
+            background-color: blueviolet;
+            border:1px solid red;
+            box-sizing: border-box;
+        }
+        .demo1:nth-child(2){
+            flex: 2;
+            background-color: blueviolet;
+            border:1px solid red;
+            box-sizing: border-box;
+        }
+        .demo1:nth-child(3){
+            flex: 1;
+            background-color: blueviolet;
+            border:1px solid red;
+            box-sizing: border-box;
+        }
+        .demo1:nth-child(4){
+            width:300px;
+            background-color: blueviolet;
+            border:1px solid red;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+<div class="demo">
+    <div class="demo1">1</div>
+    <div class="demo1">2</div>
+    <div class="demo1">3</div>
+    <div class="demo1">4</div>
+</div>
+</body>
+</html>

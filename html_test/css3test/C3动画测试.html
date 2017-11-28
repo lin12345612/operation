@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>C3动画</title>
+    <script src="jquery-3.1.1.min.js"></script>
+    <style>
+        .demo{
+            width:20px;
+            height:20px;
+            background-color: aqua;
+            animation-name: work;
+            animation-duration: 4s;
+            animation-fill-mode: forwards ;
+            animation-iteration-count: infinite;
+            /*animation-direction:alternate ;*/
+        }
+        @keyframes work {
+            0% {
+                width:20px ;
+                height:20px;
+                background-color: tomato;
+            }
+            100% {
+                width:100px;
+                height:100px;
+                background-color: blueviolet;
+            }
+        }
+        .demo:hover{
+            animation-play-state: running;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">开始</button>
+    <div class="demo">
+    </div>
+
+    <script>
+        $(function(){
+            $("#btn").on("click",function(){
+                $(".demo").css("animation-play-state","running");
+            });
+        });
+    </script>
+</body>
+</html>

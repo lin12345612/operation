@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>跳动的心</title>
+    <style>
+        .demo{
+            width:200px;
+            height:200px;
+            margin:50px auto;
+            position: relative;
+        }
+        .left,.right{
+            width:200px;
+            height:200px;
+            background-color: red;
+            border-radius: 100px;
+            position: absolute;
+            animation: autoplay 0.5s infinite linear;
+        }
+        .left{
+            left:-65px;
+
+        }
+        .right {
+            right:-65px;
+        }
+        .bottom{
+            width:194px;
+            height:200px;
+            background-color: red;
+            position: absolute;
+            left:5px;
+            bottom:-64px;
+            animation: autoplay 0.5s infinite linear;
+        }
+
+        @keyframes autoplay {
+            0%{
+                transform : scale(1) rotate(45deg);
+            }
+            50%{
+                transform : scale(1.2) rotate(45deg);
+            }
+            100%{
+                transform : scale(1) rotate(45deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="demo">
+        <span class="left"></span>
+        <span class="right"></span>
+        <span class="bottom"></span>
+    </div>
+</body>
+</html>

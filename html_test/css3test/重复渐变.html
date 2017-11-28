@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>重复渐变</title>
+    <style>
+        .demo{
+            width:300px;
+            height:80px;
+            border: 1px solid red;
+        }
+        .demo1{
+            width:200px;
+            height:30px;
+            background-image: repeating-linear-gradient(150deg,yellow 15%,blue 25%);
+        }
+        .demo2{
+            width:200px;
+            height:60px;
+            background-image: repeating-radial-gradient( blue 20% ,orange 30%);
+        }
+    </style>
+</head>
+<body>
+    <div class="demo">
+        <div class="demo1"></div>
+    </div>
+    <div class="demo">
+        <div class="demo2"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆角</title>
+    <style>
+        .aa,.bb{
+            width:180px;
+            height:90px;
+            background-color: red;
+            border-bottom-width : 90px ;
+            border-bottom-color: green;
+            border-bottom-style:solid ;
+            border-radius: 50%;
+            position: relative;
+        }
+        .bb::before,.bb::after{
+            content: " ";
+            display: block;
+            width:20px;
+            height:20px;
+            position: absolute;
+            border-radius: 45px;
+            top:50%;
+        }
+        .bb::before{
+            border:35px solid green ;
+            background-color: red;
+            left:0;
+        }
+        .bb::after{
+            border:35px solid red ;
+            background-color: green;
+            position: absolute;
+            right:0;
+        }
+    </style>
+</head>
+<body>
+    <div class="aa"></div>
+    <div class="bb"></div>
+</body>
+</html>

@@ -5,21 +5,31 @@
     <title>Title</title>
     <script src="jquery-3.1.1.min.js"></script>
     <style>
-        div{
-            width: 200px;
-            height:200px;
-            background-color: red;
-            transition: all 2s;
-            -webkit-transition: all 2s;
+
+        dt:first-child{
+            color: red;
         }
-        div:hover{
-            width:300px;
-            height:300px;
+        dd:nth-of-type(2){
+            color: blue;
+        }
+        .borderRadius{
+            width:50px;
+            height:100px;
+            background-color: aquamarine;
+            border-radius: 25px / 50px;
+        }
+        div:after{
+            content : attr(data-brief);
+            color: #000;
+            font-size: 18px;
+        }
+        p:before{
+            content : "我是更衣室的老大-";
         }
     </style>
 </head>
 <body>
-    <div></div>
+    <p>我是老大-</p>
     <select name="" id="line">
         <option value="0">1</option>
         <option value="1">2</option>
@@ -27,6 +37,20 @@
         <option value="3">4</option>
     </select>
     <button id="btn">按钮</button>
+
+
+    <dl>
+
+        <dt>1</dt>
+        <dd>2</dd>
+        <dd>3</dd>
+        <dd>4</dd>
+        <dd>5</dd>
+        <dd>6</dd>
+    </dl>
+
+    <div class="borderRadius" data-brief="椭圆"></div>
+
     <script>
         $(function(){
             $("#btn").on("click",function(){

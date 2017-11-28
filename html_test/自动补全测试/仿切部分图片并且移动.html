@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>box-sizing测试</title>
+    <style>
+        .box{
+            width:500px;
+            height:334px;
+            margin:50px auto;
+            background-image: url("33.jpg");
+            background-repeat: no-repeat;
+            position: relative;
+        }
+        .box::before,
+        .box::after{
+            content: " ";
+            width:100%;
+            height:100%;
+            border:1px solid black;
+            padding:20px;
+            box-sizing: border-box;
+            position: absolute;
+        }
+        .box::before{
+            background-clip: content-box;
+            background-color: #ffffff;
+        }
+        .box::after{
+            background-image: url("33.jpg");
+            background-repeat: no-repeat;
+            background-clip: content-box;
+            top:20px;
+            left:14px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

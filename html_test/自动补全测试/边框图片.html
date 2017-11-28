@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>边框图片</title>
+    <style>
+        .borderIamges:nth-of-type(1) {
+            width:200px;
+            height:200px;
+            margin:0 auto;
+            background-color: antiquewhite;
+            border : 20px solid #cccccc;
+            border-image-source : url("border.png") ;
+            border-image-slice: 26;
+        }
+        .borderIamges:nth-of-type(2){
+            width:200px;
+            height:200px;
+            margin:50px auto;
+            background-color: antiquewhite;
+            border : 20px solid #cccccc;
+            border-image-source : url("border.png") ;
+            border-image-slice: 26;
+            border-image-repeat: repeat;
+        }
+        .borderIamges:nth-of-type(3){
+            width:200px;
+            height:200px;
+            margin-top: -500px;
+            background-color: antiquewhite;
+            border : 40px solid #cccccc;
+            border-image-source : url("border.png") ;
+            border-image-slice: 26;
+            border-image-repeat: repeat;
+        }
+        .borderIamges:nth-of-type(4){
+            width:200px;
+            height:200px;
+            background-color: antiquewhite;
+            border : 80px solid #cccccc;
+            border-image-source : url("border.png") ;
+            border-image-slice: 26;
+            border-image-repeat: round;
+        }
+    </style>
+</head>
+<body>
+    <div class="borderIamges"></div>
+    <div class="borderIamges"></div>
+    <div class="borderIamges"></div>
+    <div class="borderIamges"></div>
+</body>
+</html>

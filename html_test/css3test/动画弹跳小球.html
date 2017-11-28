@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>弹跳小球</title>
+    <style>
+        .demo{
+            width:180px;
+            height:180px;
+            border-radius: 90px;
+            background-color: tomato;
+            background-image: radial-gradient(rgba(0,0,0,0),rgba(0,0,0,.6));
+            position: absolute;
+            left:50%;
+            margin-left: -90px;
+            top:10px;
+            animation: down 1s infinite alternate ease-in;
+        }
+        @keyframes down {
+            0% {
+                top:10px;
+            }
+            10% {
+                top:20px
+            }
+            30% {
+                top:35px;
+            }
+            50% {
+                top:63px;
+            }
+            80%{
+                top:96px;
+            }
+            100%{
+                top:126px;
+            }
+        }
+        span{
+            display: block;
+            width:180px;
+            height:20px;
+            border-radius: 90px / 10px;
+            background-color: #cccccc;
+            position: absolute;
+            top:306px;
+            left:50%;
+            margin-left: -90px;
+            animation : downto 1s infinite alternate ease-in;
+        }
+        @keyframes downto {
+            0% {
+
+            }
+            10% {
+
+            }
+            30% {
+                width:170px;
+            }
+            50% {
+                width:160px;
+                height:18px;
+                border-radius: 80px / 9px;
+                margin-left: -80px;
+            }
+            80%{
+                width:100px;
+                height:12px;
+                border-radius: 50px / 8px;
+                margin-left: -50px;
+            }
+            100%{
+                width:80px;
+                height:8px;
+                border-radius: 40px / 4px;
+                margin-left: -40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="demo">
+    </div>
+    <span></span>
+</body>
+</html>
