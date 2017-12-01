@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动画</title>
+    <link rel="stylesheet" href="font-awesome.min.css">
+    <style>
+        body{
+            background-color: #cccccc;
+        }
+        section{
+            width:400px;
+            height:400px;
+            background-color: white;
+            margin:100px auto;
+            position: relative;
+        }
+        .search{
+            width:150px;
+            height:30px;
+            border:1px solid black;
+            position: absolute;
+            top:10px;
+            left:-150px;
+            animation: goRight 1s forwards;
+        }
+        @keyframes goRight {
+            0% {}
+            100% {
+                left:10px;
+            }
+        }
+        .text{
+            display: inline-block;
+            width:0;
+            height:30px;
+            font-size: 20px;
+            position: absolute;
+            overflow: hidden;
+            top:0;
+            left:0;
+            animation: goWidth 3.5s steps(5) forwards 1s;
+        }
+        @keyframes goWidth {
+            0% {
+
+            }
+            100% {
+                width:120px;
+            }
+        }
+        .tip{
+            width:150px;
+            height:174px;
+            overflow: hidden;
+            position: absolute;
+            top:32px;
+            left:0;
+        }
+        .tip span{
+            position: absolute;
+            top:-100%;
+            left:0;
+            animation: goDown 2s forwards 5.5s;
+        }
+        @keyframes goDown {
+            0%{
+
+            }
+            100%{
+                top:5px;
+            }
+        }
+        p{
+            color: red;
+            font-size: 60px;
+        }
+    </style>
+</head>
+<body>
+   <section>
+       <div class="search">
+            <span class="text">兵哥哥站岗</span>
+            <div class="tip">
+                <span><img src="33.jpg" alt=""></span>
+            </div>
+        </div>
+   </section>
+    <p class="fa fa-battery-empty"></p>
+</body>
+</html>
