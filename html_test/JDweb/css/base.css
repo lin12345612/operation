@@ -1,0 +1,75 @@
+* , ::before,::after{
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: red;/*  清除点击默认的高亮效果 */
+    box-sizing: border-box;
+}
+body{
+    font-size: 14px;
+    font-family: "Microsoft YaHei",sans-serif;
+    color: #000;
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+ul{
+    list-style: none;
+}
+input , textarea{
+    border: 0;
+    resize: none;
+    outline: none;/*  清除默认的选中效果*/
+    -webkit-appearance: none ;/*清除浏览器的input默认的样式  */
+}
+img {
+    border: 0;
+    vertical-align: middle;
+}
+.clear::before,.clear::after{
+    display: block;
+    content: '.';
+    height:0;
+    visibility: hidden;
+    clear: both;
+}
+.clear{
+    zoom: 1;
+}
+
+[class^= "icon_"]{
+    background: url("../images/sprites.png") no-repeat;
+    background-size: 200px 200px;
+}
+
+/*头部通栏*/
+.JDTop-banner{
+    height:45px;
+    width:100%;
+    background: url("../images/header-bg.png") repeat-x;
+    background-size: 1px 44px;
+    border-bottom:1px solid #e4dfdf;
+    position: absolute;
+    z-index: 1000;
+}
+.JDTop-banner > .icon-left{
+    display: block;
+    width: 50px;
+    height:45px;
+    line-height: 41px;
+    font-size: 44px;
+    text-align: center;
+    color: #afabab;
+    position: absolute;
+    top:0;
+    left:0;
+}
+.JDTop-banner > .icon_menu {
+    width: 32px;
+    height:35px;
+    position: absolute;
+    top:0;
+    right: 2px;
+    background-position: -72px 10px;
+    background-size: 250px 250px;
+}

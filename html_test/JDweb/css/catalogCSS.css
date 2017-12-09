@@ -1,0 +1,107 @@
+body{
+    position: absolute;
+    width:100%;
+    height:100%;
+    background-color: #fff;
+}
+
+/*头部通栏*/
+
+.JDTop-banner > form{
+    width:100%;
+    padding: 4px 40px 0 50px;
+}
+.JDTop-banner > form > input{
+    width:100%;
+    height:35px;
+    border-radius: 5px;
+    font-size: 16px;
+    border:1px solid #cccccc;
+    padding-left: 10px;
+}
+
+
+/*分类大盒子*/
+.JDCatalog{
+    width:100%;
+    height:100%;
+    padding-top:45px;
+    position: relative;
+}
+
+.JDCatalog >.JDCatalog-left{
+    position: absolute;
+    top:0;
+    left:0;
+    width:90px;
+    height:100%;
+    padding-top: 45px;
+    overflow: hidden;
+    z-index: 999;
+}
+.JDCatalog > .JDCatalog-left > .JDCatalog-left-box {
+    width:90px;
+}
+.JDCatalog > .JDCatalog-left > .JDCatalog-left-box ul{
+    
+}
+.JDCatalog > .JDCatalog-left > .JDCatalog-left-box ul li{
+    width:90px;
+    height:50px;
+    background: #f3f4f6;
+    font-size: 12px;
+    font-family: sans-serif;
+}
+.JDCatalog > .JDCatalog-left > .JDCatalog-left-box ul li a{
+    display: block;
+    width:90px;
+    height:50px;
+    line-height: 50px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+.JDCatalog > .JDCatalog-left > .JDCatalog-left-box  ul li.active a{
+    background: #fff;
+    color:red;
+    font-size: 12px;
+    border-right: 0 ;
+}
+.JDCatalog > .JDCatalog-right{
+    width:100%;
+    height:100%;
+    padding-left: 90px;
+    overflow: hidden;
+}
+.JDCatalog > .JDCatalog-right > .JDCatalog-right-box{
+    width:94%;
+    height:100%;
+    margin:10px auto;
+}
+.JDCatalog > .JDCatalog-right > .JDCatalog-right-box >.JDCatalog-right-box-banner{
+    width:100%;
+}
+.JDCatalog > .JDCatalog-right > .JDCatalog-right-box >.JDCatalog-right-box-banner img{
+    display: block;
+    width:100%;
+}
+.JDCatalog > .JDCatalog-right > .JDCatalog-right-box >.JDCatalog-right-box-main{
+    width:100%;
+    margin-top: 20px;
+}
+.JDCatalog > .JDCatalog-right > .JDCatalog-right-box >.JDCatalog-right-box-main ul {
+    margin-top: 7px;
+}
+.JDCatalog > .JDCatalog-right > .JDCatalog-right-box >.JDCatalog-right-box-main li{
+    width:33.333%;
+    float: left;
+    text-align: center;
+}
+.JDCatalog > .JDCatalog-right > .JDCatalog-right-box >.JDCatalog-right-box-main li img{
+    display: block;
+    width:62px;
+    margin:0 auto;
+}
+.JDCatalog > .JDCatalog-right > .JDCatalog-right-box >.JDCatalog-right-box-main li p{
+    margin:5px 0;
+}

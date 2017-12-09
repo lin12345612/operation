@@ -1,0 +1,292 @@
+body{
+    background-color: #f5f5f5;
+}
+.JDbox{
+    min-width: 300px;
+    max-width: 640px;
+    margin:0 auto;
+    position: relative;
+}
+
+/*头部区域开始*/
+.JDbox-header {
+    width:100%;
+    position: fixed;
+    height:40px;
+    top:0;
+    left:0;
+    z-index: 999;
+}
+
+.JDbox-header > .top_banner{
+    min-width: 300px;
+    max-width: 640px;
+    height:100%;
+    margin:0 auto;
+    background:rgba(201,21,35,0.85);
+    position: relative;
+}
+
+.JDbox-header > .top_banner > .icon_logo{
+    width:60px;
+    height:38px;
+    position: absolute;
+    top: 2px;
+    left: 4px;
+    color: #ffffff;
+    display: block;
+    background-position: 4px -103px;
+}
+
+.JDbox-header > .top_banner > form{
+    width:100%;
+    height:100%;
+    padding-left: 78px;
+    padding-right: 60px;
+    position: relative;
+}
+.JDbox-header > .top_banner > form .icon_search{
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 10px;
+    left: 80px;
+    background-position: -79px 4px;
+}
+.JDbox-header > .top_banner > form input {
+    font-size: 17px;
+    height:30px;
+    line-height: 30px;
+    margin-top:5px;
+    width:100%;
+    border-radius: 15px;
+    padding-left: 30px;
+}
+.JDbox-header > .top_banner > .login{
+    position: absolute;
+    top:0;
+    right:0;
+    width: 48px;
+    height:40px;
+    text-align: center;
+    line-height: 40px;
+    color: #ffffff;
+    font-size: 16px;
+}
+/*头部区域结束*/
+/*轮播图开始*/
+.JD-banner{
+    width:100%;
+    overflow: hidden;
+    position: relative;
+}
+.JD-banner > ul:first-child{
+    width:1000%;
+    transform: translate(-10%);
+    -webkit-transform: translate(-10%)
+}
+.JD-banner > ul:first-child li{
+    width:10%;
+    float: left;
+}
+.JD-banner > ul:first-child li img{
+    display: block;
+    width:100%;
+}
+.JD-banner > ul:last-child{
+    width:100px;
+    position: absolute;
+    bottom: 6px;
+    left:50%;
+    margin-left: -50px;
+}
+.JD-banner > ul:last-child li{
+    width:8px;
+    height:8px;
+    border-radius: 4px;
+    border: 1px solid #f0f0f0;
+    float: left;
+}
+.JD-banner > ul:last-child li.active{
+    background-color: #ffffff;
+}
+.JD-banner > ul:last-child li+li{
+    margin-left: 5px;
+}
+/*轮播图结束*/
+/*导航栏开始*/
+.JD-nav {
+    width:100%;
+    height:150px;
+    border-bottom: 1px solid #ded5d5;
+    padding: 12px 20px 0 20px;
+}
+.JD-nav > ul > li {
+    width:25%;
+    height:69px;
+    float: left;
+}
+.JD-nav > ul > li a{
+    width : 100%;
+    text-align: center;
+}
+.JD-nav > ul > li img{
+    display: block;
+    width:40px;
+    height:40px;
+    margin:0 auto;
+}
+.JD-nav > ul > li p{
+    font-size:12px;
+    color: #6b6666;
+    margin-top: 5px;
+}
+/*导航栏结束*/
+
+/*主体部分*/
+/*秒杀部分开始*/
+.JD-srcKill {
+    width:96%;
+    margin: 8px auto;
+    background-color: #ffffff;
+    box-shadow: 0 0 1px 1px #e0e0e0;
+}
+
+.JD-srcKill > .JD-srcKill-top {
+    width:100%;
+    height:25px;
+}
+.JD-srcKill > .JD-srcKill-top > span{
+    display: block;
+    width:40px;
+    height:25px;
+    line-height: 25px;
+    text-align: center;
+    float: left;
+}
+.JD-srcKill > .JD-srcKill-top > span img{
+    width:18px;
+    height:20px;
+}
+.JD-srcKill > .JD-srcKill-top > p{
+    display: block;
+    height:25px;
+    line-height: 25px;
+    float: left;
+    color: #d8505c;
+    margin-right: 10px;
+    font-size: 16px;
+}
+.JD-srcKill > .JD-srcKill-top > .secKillTime {
+    height:25px;
+    width: 125px;
+    float: left;
+    padding-top: 5px;
+}
+.JD-srcKill > .JD-srcKill-top > .secKillTime .num{
+    display: inline-block;
+    font-size: 14px;
+    text-align: center;
+    background-color: #333;
+    width:16px;
+    height:15px;
+    line-height: 15px;
+    color: #ffffff;
+}
+.JD-srcKill > .JD-srcKill-top > .secKillTime span+span{
+    margin-left: -2px;
+}
+.JD-srcKill > .JD-srcKill-top > a{
+    display: block;
+    float: right;
+    width: 54px;
+    height:25px;
+    line-height: 25px;
+    font-size: 15px;
+    color: #333;
+}
+.JD-srcKill > .JD-srcKill-bottom {
+    width:100%;
+}
+.JD-srcKill > .JD-srcKill-bottom li{
+    width: 33.333%;
+    float: left;
+    text-align: center;
+}
+.JD-srcKill > .JD-srcKill-bottom li+li{
+    border-left: 1px solid #e4dddd;
+}
+.JD-srcKill > .JD-srcKill-bottom li img{
+    width: 64%;
+}
+.JD-srcKill > .JD-srcKill-bottom li p:nth-of-type(1){
+    color: red;
+}
+.JD-srcKill > .JD-srcKill-bottom li p:nth-of-type(2){
+    text-decoration: line-through;
+    color: #8a8181;
+}
+/*秒杀部分结束*/
+
+/*超值购部分*/
+.JD-shop{
+    width: 96%;
+    margin: 0px auto;
+    box-shadow: 0 0 1px 1px #e0e0e0;
+}
+.JD-shop > .JD-shop-top ,.JD-activity > .JD-activity-top{
+    width:100%;
+    height:32px;
+    font-size:16px;
+    border-bottom: 1px solid #e4dfdf;
+    line-height: 32px;
+    padding-left: 15px;
+    color: #5d5a5a;
+    position: relative;
+}
+.JD-shop > .JD-shop-top::before ,.JD-activity > .JD-activity-top::before{
+    content: "";
+    width: 3px;
+    height: 14px;
+    background-color: red;
+    position: absolute;
+    top: 31%;
+    left: 9px;
+}
+.JD-shop > .JD-shop-bottom {
+    width:100%;
+    padding-bottom: 2px;
+}
+.JD-shop > .JD-shop-bottom img ,
+.JD-activity > .JD-activity-bottom img{
+    display: block;
+    width:100%;
+}
+.JD-shop > .JD-shop-bottom > .float-left,
+.JD-activity > .JD-activity-bottom > .float-left{
+    float: left;
+    width:50%;
+}
+.JD-shop > .JD-shop-bottom > .float-right,
+.JD-activity > .JD-activity-bottom > .float-right
+{
+    float: right;
+    width:50%;
+}
+.JD-shop > .JD-shop-bottom >.border-right ,
+.JD-activity > .JD-activity-bottom > .border-right{
+    border-right: 1px solid #e4dfdf;
+}
+.JD-shop > .JD-shop-bottom >.border-bottom ,
+.JD-activity > .JD-activity-bottom > .border-bottom{
+    border-bottom: 1px solid #e4dfdf;
+}
+/*超值购部分结束*/
+
+/*热门活动开始*/
+.JD-activity{
+    width:96%;
+    margin: 6px auto;
+    box-shadow: 0 0 1px 1px #e0e0e0;
+}

@@ -1,0 +1,287 @@
+body{
+    background-color: #f5f5f5;
+    width:100%;
+    height:100%;
+    position: absolute;
+}
+.JDTop-banner{
+    position: static;
+}
+.JDTop-banner-cart{
+    display: block;
+    width:100%;
+    height:45px;
+    padding: 4px 40px 0 50px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 18px;
+}
+.payWarm{
+    width:100%;
+    height:40px;
+    background-color: #fff;
+    text-align: center;
+    line-height:40px;
+    border-bottom: 1px solid #ccc;
+}
+.payWarm  span img{
+    width:20px;
+}
+.payWarm p{
+    display: inline-block;
+    width: 236px;
+    height: 35px;
+    font-size: 13px;
+    color: #888484;
+}
+
+/*主体内容*/
+.JDCart-main{
+    width:100%;
+    background-color: #fff;
+    margin-top: 10px;
+    border-top: 1px solid #ccc;
+}
+.JDCart-main > .JDCart-main-one {
+    width:100%;
+    height:40px;
+    padding:12px 10px 0 40px ;
+    border-bottom: 1px solid #ccc;
+}
+.JDCart-main > .JDCart-main-one img{
+    width:18px;
+    float: left;
+}
+.JDCart-main > .JDCart-main-one p{
+    float: left;
+    margin-left: 5px;
+    position: relative;
+}
+.JDCart-main > .JDCart-main-one p::before{
+    content: "";
+    width: 30px;
+    height:30px;
+    background-image: url("../images/shop-icon.png");
+    background-position: 2px -1px;
+    position: absolute;
+    top:0;
+    left: -55px;
+    background-size: 60px 120px;
+}
+
+.JDCart-main > .JDCart-main-one span{
+    float: right;
+    color: #f15353;
+    font-size: 12px;
+}
+.JDCart-main > .JDCart-main-two{
+    width:100%;
+    background-color: #fff;
+}
+.JDCart-main > .JDCart-main-two ul{
+    width:100%;
+}
+.JDCart-main > .JDCart-main-two li{
+    width:100%;
+    position: relative;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+}
+.JDCart-main > .JDCart-main-two .productCheck{
+    width: 30px;
+    height:30px;
+    background-image: url("../images/shop-icon.png");
+    background-position: 2px -1px;
+    position: absolute;
+    top: 15px;
+    left: 9px;
+    background-size: 60px 120px;
+}
+/*.JDCart-main > .JDCart-main-two li:nth-of-type(2) .productCheck{*/
+     /*background-position: 32px -1px;*/
+ /*}*/
+.JDCart-main > .JDCart-main-two .mainProduct{
+    width:100%;
+    padding:10px 10px 0 40px;
+    height:100px;
+}
+.JDCart-main > .JDCart-main-two .mainProduct .img1{
+    width:80px;
+    height:80px;
+    border:1px solid #ccc;
+    display: block;
+    float: left;
+    margin-right: 13px;
+}
+.JDCart-main > .JDCart-main-two .mainProduct .img1 img{
+    width:100%;
+}
+.JDCart-main > .JDCart-main-two .mainProduct .mainProduct-right{
+    height: 80px;
+}
+.JDCart-main > .JDCart-main-two .mainProduct .mainProduct-right a{
+    display: block;
+    font-size: 13px;
+    height:30px;
+    line-height: 15px;
+    margin-bottom: 5px;
+}
+.JDCart-main > .JDCart-main-two .mainProduct .mainProduct-right .info{
+    float: left;
+    margin-top: 3px;
+}
+.JDCart-main > .JDCart-main-two .mainProduct .mainProduct-right .info span{
+    display: block;
+    width:25px;
+    height:25px;
+    border:1px solid #ccc;
+    text-align: center;
+    line-height: 22px;
+    float: left;
+    color: #888484;
+}
+.JDCart-main > .JDCart-main-two .mainProduct .mainProduct-right .info input{
+    width:40px;
+    height:25px;
+    border-top:1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    float: left;
+    padding-left: 3px;
+}
+.JDCart-main > .JDCart-main-two .mainProduct .mainProduct-right .delete{
+    float: right;
+    margin-right: 5px;
+    position: relative;
+}
+.JDCart-main > .JDCart-main-two .mainProduct .mainProduct-right .delete .delete-top{
+    width:36px;
+    height:8px;
+    background: url("../images/delete_up.png") no-repeat;
+    position: absolute;
+    top: 4px;
+    left: -39px;
+    background-size: 24px;
+}
+.JDCart-main > .JDCart-main-two .mainProduct .mainProduct-right .delete .delete-bottom{
+    width:36px;
+    height:20px;
+    background: url("../images/delete_down.png") no-repeat;
+    position: absolute;
+    top: 5px;
+    left: -37px;
+    background-size: 20px;
+}
+/*底部结算部分*/
+.footer{
+    width:100%;
+    height: 57px;
+    position: fixed;
+    bottom:0;
+    left:0;
+    background-color: #333131;
+}
+.footer > .footer-left{
+    width:60px;
+    height:57px;
+    position: absolute;
+    top:0;
+    left:0;
+    line-height: 57px;
+}
+.footer > .footer-left span:first-child{
+      display: block;
+      width:30px;
+      height:30px;
+      background: url("../images/shop-icon.png") no-repeat;
+      background-position: -23px 7px;
+      background-size: 52px 84px;
+      position: absolute;
+      top: 15px;
+      left: 6px;
+  }
+.footer > .footer-left span:last-child{
+    display: block;
+    height:57px;
+    font-size: 12px;
+    color: #fff;
+    line-height: 57px;
+    padding-left: 34px;
+}
+.footer > .footer-middle{
+   width:100%;
+   height:57px;
+   padding-left: 68px;
+   padding-top: 5px;
+}
+.footer > .footer-middle p:first-child{
+    font-size: 16px;
+    color: #fff;
+}
+.footer > .footer-middle p:last-child{
+    color: #bbb7b7;
+    margin-top: 3px;
+}
+.footer-right{
+    width:116px;
+    height:57px;
+    background-color: #f15353;
+    position: absolute;
+    top:0;
+    right:0;
+    line-height: 57px;
+    text-align: center;
+}
+.footer-right a{
+
+    color: #ded9d9;
+    font-size: 16px;
+}
+/*弹出框*/
+.warm-box{
+    /*display: none;*/
+    position: absolute;
+    width:100%;
+    height:100%;
+    background-color: rgba(0,0,0,.5);
+    z-index: 999;
+}
+.warm-box > .warm-box-con{
+    width:80%;
+    margin:0 auto;
+    background-color: #fff;
+    border:1px solid #e0e0e0;
+    border-radius: 4px;
+}
+.warm-box > .warm-box-con > span{
+    display: block;
+    width:100%;
+    height:76px;
+    line-height:76px;
+    font-size: 16px;
+    color: #757070;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+}
+.warm-box > .warm-box-con > .confirm {
+    width:100%;
+    height:50px;
+}
+.warm-box > .warm-box-con > .confirm a:first-child ,.warm-box > .warm-box-con > .confirm a:last-child{
+    display: block;
+    font-size: 16px;
+    text-align: center;
+    height:36px;
+    width:38%;
+    background-color: #fff;
+    line-height: 36px;
+    float: left;
+    margin-top: 7px;
+    margin-left:8% ;
+    border-radius: 5px;
+    border:1px solid #ccc;
+}
+.warm-box > .warm-box-con > .confirm a:last-child{
+    background-color: #f15353;
+    color: #fff;
+    border:1px solid  #f15353;
+}
