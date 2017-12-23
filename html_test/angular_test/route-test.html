@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>路由测试</title>
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-route/angular-route.js"></script>
+</head>
+<body ng-app="myapp">
+<ul>
+    <li><a href="#/a">a</a></li>
+    <li><a href="#/b">b</a></li>
+    <li><a href="#/c">c</a></li>
+</ul>
+    <div ng-view></div>
+    <script>
+        var myapp = angular.module("myapp" ,["ngRoute"]);
+        myapp.config(['$locationProvider', function($locationProvider) {
+            $locationProvider.hashPrefix('');
+        }]);
+        myapp.config(["$routeProvider",function($routeProvider){
+            $routeProvider
+//            某一类特定的地址
+                    .when("/students/:status",{
+                        controller : "studentcontroller",
+                        templateUrl : "./a.html"
+                    })
+                    .when("/a",{
+                        controller : "Acontroller",
+                        templateUrl : "./a.html"
+                    })
+                    .when("/b",{
+                        controller : "Bcontroller",
+                        templateUrl : "./b.html"
+                    })
+                    .when("/c",{
+                        controller :"Ccontroller",
+                        templateUrl :"./c.html"
+                    });
+        }]);
+        myapp.controller("studentcontroller" ,["$scope","$routeParams" ,function($scope ,$routeParams){
+            console.log($routeParams.status);
+        }]);
+        myapp.controller("Acontroller" ,["$scope" ,function($scope){
+            $scope.title = "这是A控制器";
+        }]);
+        myapp.controller("Bcontroller" ,["$scope" ,function($scope){
+            $scope.title = "这是B控制器";
+        }]);
+        myapp.controller("Ccontroller" ,["$scope" ,function($scope){
+            $scope.title = "这是C控制器";
+        }]);
+    </script>
+</body>
+</html>

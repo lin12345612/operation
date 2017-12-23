@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body ng-app>
+    <h1>使用angular实现双边数据绑定</h1>
+    <p><input type="text" placeholder="请输入姓名" ng-model = "user.name"></p>
+    <p>hello <strong>{{user.name}}</strong></p>
+    <script src="node_modules/angular/angular.js"></script>
+
+    <form onsubmit="alert(11)">
+        <input type="text">
+        <input type="text">
+    </form>
+</body>
+</html>

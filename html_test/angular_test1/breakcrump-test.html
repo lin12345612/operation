@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>面包屑导航</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="node_modules/angular/angular.js"></script>
+</head>
+<body ng-app="demoApp" ng-controller="demoController">
+    <breakcrumb data="{{pathData}}"></breakcrumb>
+    <script>
+        var demoApp = angular.module("demoApp",[]);
+
+        demoApp.controller("demoController",["$scope",function($scope){
+           $scope.pathData = ["james","wade" ,"paul" ,"ivring"];
+        }]);
+
+//        定义导航指令
+        demoApp.directive("breadcrumb",[function(){
+            return{
+                scope : {
+                    data :"@data"
+                },
+                templateUrl : "temp/breadcrumb.html",
+                replace : true
+            };
+        }])
+    </script>
+</body>
+</html>

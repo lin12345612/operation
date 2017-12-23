@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>委托机制</title>
+    <script src="jquery-3.1.1.min.js"></script>
+    <style>
+        .box{
+            width:300px;
+            height:210px;
+        }
+        .box > .one {
+            width:300px;
+            height:70px;
+        }
+        .box > .one:nth-of-type(2n){
+            background-color: aqua;
+        }
+        .box > div:first-child div{
+            width:300px;
+            height:35px;
+        }
+        .box > div:first-child div:nth-of-type(2){
+            background-color: orangered;
+        }
+        span{
+            display: block;
+            color: #fff;
+            width:200px;
+            height:20px;
+            background-color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="demo">
+        <div class="one">
+            <div>我是老大大</div>
+            <div>我是老大二</div>
+        </div>
+        <div class="one">我是老二</div>
+        <div class="one">我是老三</div>
+    </div>
+    <span id="box"></span>
+    <script src="ashuo.js"></script>
+    <script src="itcast.js"></script>
+    <script>
+        $(function(){
+            var $span = $("#box");
+//            console.log($$.$id("demo"));
+//            $("#demo").delegate("div","click",function(){
+//                $("#box").text($(this).text());
+//            });
+//
+//        var test = " I ,am  , a ,worker ";
+////        去除前后空格
+//        function Trim(str){
+//            return str.replace(/(^\s*)|(\s*$)/g,"");
+//        }
+//        //        去除所有空格
+//        function TrimAll(str){
+//            var result ;
+//            result = str.replace(/\s/g,"");
+//            return result;
+//        }
+//        test = $.trim(test);
+//
+//        console.log("开始是"+ test +"这里结束了");
+//        console.log(window.getComputedStyle($span[0]).color);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>排序测试</title>
+</head>
+<body>
+<script>
+    var a = [5,8,7,4,6];
+    for( var k = 0 ; k < 4 ; k++){
+        for( var i = 0 ; i < 4 ; i++){
+            if(a[i] > a[i+1]){
+                var num = a[i];
+                a[i] = a[i+1];
+                a[i+1] = num;
+            }
+        }
+    }
+    var flag = 1 ;
+    var count = 0;
+    var count1 = a[2];
+    while (flag){
+        count = 0;
+        for( var k = 0 ; k< 5 ;k++){
+               if(count1 % a[k] == 0 ){
+                   count++;
+                   if(count == 3){
+                       break;
+                   }
+               }
+           }
+        if(count == 3 ){
+            break;
+        }else{
+            count1++;
+        }
+    }
+    console.log(count1);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义filter</title>
+    <script src="node_modules/angular/angular.js"></script>
+</head>
+<body ng-app="myFilter">
+    <div>
+        <h1>{{ true | checkmark }}</h1>
+        <h1>{{ false | checkmark }}</h1>
+    </div>
+
+    <br>
+    <div>
+        <input type="text" placeholder="请输入你的体重" ng-model="weight">
+        <p>你{{weight}}斤，你 {{weight|weight}}</p>
+    </div>
+    <script>
+        angular.module("myFilter",[])
+                .filter("checkmark" ,function(){
+                    return function(input){
+                        return input ? '\u2713' : '\u2718';
+                    }
+                })
+                .filter("weight" ,function(){
+                    return function(input){
+                        if(input > 100){
+                            return "太胖了";
+                        }else{
+                            return "太瘦了";
+                        }
+                    }
+                });
+    </script>
+</body>
+</html>

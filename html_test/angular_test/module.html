@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册模块</title>
+</head>
+<body ng-app = "myApp">
+    <div  ng-controller="DemoController">
+        <h1>使用angular实现双边数据绑定</h1>
+        <p><input type="text" ng-model = "message"></p>
+        <p>hello <strong>{{message}}</strong></p>
+        <button ng-mouseover="login()" ng-mouseout="logout()">按钮</button>
+    </div>
+    <script src="node_modules/angular/angular.js"></script>
+    <script>
+//        <!--注册模块-->
+//        第一个参数是模块的名字
+//
+        var newApp = angular.module("myApp",[]);
+//创建控制器
+        newApp.controller('DemoController',["$scope",function($scope){
+
+//            行为数据
+            $scope.login = function(){
+                console.log("鼠标进来了！");
+            };
+            $scope.logout = function(){
+                console.log("鼠标出去了！");
+            };
+//    初始值
+            $scope.message = "请输入你的名字";
+//            输入用户名
+            $scope.message = "请输入用户名";
+
+//            创建监控
+            $scope.$watch("message",function(now ,old){
+                console.log("现在是："+now);
+                console.log("之前是："+old);
+            })
+        }]);
+
+    </script>
+</body>
+</html>
