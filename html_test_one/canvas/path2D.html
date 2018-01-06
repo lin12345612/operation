@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<canvas id="ca" height="300" width="400"></canvas>
+	<script type="text/javascript">
+		var canvas = document.querySelector("#ca");
+		var context = canvas.getContext("2d");
+		var path1 = new Path2D();
+		path1.rect(20,20,40,40);
+		var path2 = new Path2D(path1);
+		path2.moveTo(20,20);
+		path2.lineTo(60,60);
+		context.strokeStyle = "red";
+		context.stroke(path2); 
+
+// 线性渐变
+		context.beginPath();
+		context.moveTo(100,100);
+		var g1 = context.createLinearGradient(110,110,210,210);
+		g1.addColorStop(0,"red");
+		g1.addColorStop(0.5,"green");
+		g1.addColorStop(1,"blue");
+		context.fillStyle = g1;
+		context.rect(110,110,100,100);
+		context.fill();
+
+		// 径向渐变
+		context.beginPath();
+		context.moveTo(0,60);
+		var g2 = context.createRadialGradient(40,101,5,40,101,30);
+		g2.addColorStop(0,"orange");
+		g2.addColorStop(1,"black");
+		context.fillStyle = g2;
+		context.arc(40,101,40,0,2*Math.PI);
+		context.fill();
+		</script>
+</body>
+</html>

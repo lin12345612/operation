@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<canvas id="ca" height="500" width="600"></canvas>
+	<script>
+		var canvas = document.querySelector("#ca");
+		var context = canvas.getContext("2d");
+		context.fillStyle = "#ccc";
+		context.fillRect(0,0,400,400); 
+		image = new Image();
+		image.src = "456.jpg";
+		image.onload = function(){
+			context.drawImage(image ,0 ,0,100,100);
+			// 放大的图片
+			context.drawImage(image,50,50,50,50,110,0,50,50);
+		}
+	</script>
+</body>
+</html>

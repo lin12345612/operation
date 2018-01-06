@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.11.3.min.js"></script>
+    <script>
+//        window.onload = function(){
+//            var btn = document.querySelector("#btn");
+//            btn.onclick = function(){
+//                var val = document.querySelector("#sel").value;
+//                console.log(val);
+//            }
+//        }
+        $(function(){
+            var ds = call();
+            ds.add();
+
+
+            $("#btn").on("click",function(){
+                console.log($("#sel").val());
+            });
+
+            function call(){
+                var cal = new Object();
+                cal.add = function(){
+                    console.log(456);
+                };
+                return cal;
+            }
+
+        });
+    </script>
+</head>
+<body>
+    <select name="" id="sel">
+        <option value="0">33</option>
+        <option value="1">55</option>
+        <option value="2">34</option>
+    </select>
+    <button id="btn">点击</button>
+</body>
+</html>

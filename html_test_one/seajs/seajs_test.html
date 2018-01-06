@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>seajs测试</title>
+    <script src="node_modules/seajs/dist/sea.js"></script>
+    <script>
+        seajs.use("./calculate.js",function(calculate){
+            var text0 = document.querySelector("#i1");
+            var sel = document.querySelector("#sel");
+            var text1 = document.querySelector("#i2");
+            var text2 = document.querySelector("#i3");
+            var btn = document.querySelector("#btn");
+            console.log(calculate.add);
+            btn.onclick = function(){
+                var val = sel.value;
+                var val1 = text0.value;
+                var val2 = text1.value;
+                switch (val){
+                    case "+" :
+                        text2.value = calculate.add(val1, val2);
+                        break;
+                    case "-" :
+                        text2.value = calculate.subtract(val1, val2);
+                        break;
+                    case "x" :
+                        text2.value = calculate.multiply(val1, val2);
+                        break;
+                    case "/" :
+                        text2.value = calculate.divide(val1, val2);
+                        break;
+                }
+            }
+        });
+    </script>
+</head>
+<body>
+    <input type="text" id="i1">
+    <select id="sel">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="x">x</option>
+        <option value="/">÷</option>
+    </select>
+    <input type="text"  id="i2">=
+    <input type="text"  id="i3">
+    <button id="btn">点击</button>
+
+</body>
+</html>

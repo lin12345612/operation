@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>异步加载包</title>
+    <script src="bower_components/script.js-2.5.8/dist/script.js"></script>
+    <script>
+//        $script(" ./bower_components/jquery/dist/jquery.js",function(){
+//            console.log($);
+//        });
+
+        $script([
+            " ./bower_components/jquery/dist/jquery.js",
+            "./bower_components/angular/angular.js"
+        ],function(){
+
+        });
+    </script>
+</head>
+<body>
+
+
+</body>
+</html>

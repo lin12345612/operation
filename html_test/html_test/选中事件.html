@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选中事件</title>
+</head>
+<body>
+    <input type="text" id="file">
+    <span id="spans"></span>
+    <script src="jquery-1.11.3.min.js"></script>
+    <script>
+        $(function(){
+//            var text = document.activeElement.value;
+//            console.log(text);
+            $("#file").on("select",function(){
+                var a = getSelectedText();
+                console.log(a);
+            });
+
+            function getSelectedText() {
+                if (window.getSelection) {
+                    // This technique is the most likely to be standardized.
+                    // getSelection() returns a Selection object, which we do not document.
+                    return window.getSelection().toString();
+                }
+                else if (document.getSelection) {
+                    // This is an older, simpler technique that returns a string
+                    return document.getSelection();
+                }
+                else if (document.selection) {
+                    // This is the IE-specific technique.
+                    // We do not document the IE selection property or TextRange objects.
+                    return document.selection.createRange().text;
+                }
+            }
+
+        });
+    </script>
+</body>
+</html>

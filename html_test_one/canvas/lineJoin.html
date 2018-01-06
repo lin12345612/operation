@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<canvas id="cans" width="300" height="400"></canvas>
+	<script type="text/javascript">
+		var canvas = document.querySelector("#cans");
+		var context = canvas.getContext("2d");
+		// context.moveTo(10,10);
+		// context.lineTo(10,100);
+		// context.lineTo(100,100);
+		// context.strokeStyle = "blue";
+		// context.lineWidth = 6;
+		// context.lineCap = "round";
+		// context.lineJoin = "bevel";
+		// context.stroke();
+
+		// 虚线
+		context.beginPath();
+		context.setLineDash([5,10]);
+		context.moveTo(20,20);
+		context.lineTo(200,20);
+		context.lineWidth = 5;
+		context.stroke();
+		context.closePath();
+
+		// 曲线
+		context.beginPath();
+		context.moveTo(30,40);
+		context.setLineDash([5,0]);
+		context.lineWidth = 3;
+		// context.lineTo(150,40);
+		context.arcTo(30,80,100,150,60);
+		context.stroke();
+	</script>
+</body>
+</html>

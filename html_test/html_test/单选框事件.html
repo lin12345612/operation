@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type="radio" name="sex" id="boy" checked>男生
+    <input type="radio" name="sex" id="girl">女生
+    <div class="qwe">33</div>
+    <div>123</div>
+    <div>434</div>
+    <script>
+        (function(){
+            var boy = document.getElementById("boy");
+            var girl = document.getElementById("girl");
+            boy.onclick = function(){
+                this.setAttribute("class","red");
+            };
+
+//            var arr = ["a","b","v","d"];
+//            var str = arr.join("-");
+//            console.log(str);
+
+//            var str1 = "a-s-d-s-d-f-s-f-s-d-f";
+//            var arr1 = str1.split("-");
+//            console.log(arr1);
+//            for( var i = 0 ; i < arr1.length ; i++){
+//                console.log(arr1[i]);
+//            }
+
+           console.log(document.querySelector(".qwe").innerHTML);
+            var divs = document.querySelectorAll("div");
+            for( var i = 0 ; i < divs.length ; i++){
+                divs[i].onclick = function(){
+                    console.log(this.innerHTML);
+                }
+            }
+        })();
+    </script>
+</body>
+</html>

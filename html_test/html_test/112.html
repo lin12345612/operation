@@ -6,12 +6,38 @@
     <script src="jquery-1.11.3.min.js"></script>
 </head>
 <body>
-    <button id ="btn">测试 </button>
+
+    <section><p>起始时间 : </p>  <input type="date" id="startTime"></section>
+    <section><p>截止时间 : </p>  <input type="date" id="endTime"></section>
+    <button class="btn-search" id="btn_search">查询</button>
     <script>
         $(function(){
-            $("#btn").click(function(){
-                console.log(1111);
+            $("#btn_search").on("click",function(){
+                timeCheck();
             });
+            function timeCheck(){
+                var flag = 0 ;
+                var sT = $("#startTime").val() == "" ? $("#startTime").val() : $("#startTime").val()+" 00:00:00";
+                var eT = $("#endTime").val() == "" ? $("#endTime").val() : $("#endTime").val() + " 23:59:59";
+                if(sT != "" && eT != ""){    //开始和结束时间都有输入时间进行判断
+                    var aa = $("#startTime").val().split("-");
+                    var bb = $("#endTime").val().split("-");
+                    for(var i = 0;i<aa.length;i++) {
+                        aa[i] = parseInt(aa[i]);
+                        bb[i] = parseInt(bb[i]);
+                        if(aa[i] < bb[i]){
+                            console.log("时间正确");
+                            break;
+                        }else if(aa[i] > bb[i]){
+                            alert("时间输入错误，请重新输入");
+                            $("#startTime").val("");
+                            $("#endTime").val("");
+                        }
+                    }
+                } else if(sT != "" && eT == ""){       //开始有输入，结束没有输入
+                }else{
+                    alert("请输入时间");
+                }}
         });
     </script>
 </body>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<canvas id="asd" height="500" width="600"></canvas>
+	<script type="text/javascript">
+		var canvas = document.querySelector("#asd");
+		var context = canvas.getContext("2d");
+		var img = new Image();
+		img.src = "456.jpg";
+		img.onload = function(){
+			var ptr = context.createPattern(img,"repeat-y");
+			context.fillStyle = ptr;
+			context.fillRect(0 ,0 ,400,300);
+		}
+	</script>
+</body>
+</html>

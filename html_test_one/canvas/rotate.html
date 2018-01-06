@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<canvas id="qwe" width="500" height="500"></canvas>
+	<script type="text/javascript">
+	var canvas = document.querySelector("#qwe");
+	var context = canvas.getContext("2d");
+	context.rect(10,10,200,100);
+	context.stroke();
+	var rad = 60*Math.PI/180;
+	context.setTransform(Math.cos(rad),Math.sin(rad),-Math.sin(rad),Math.cos(rad),0 ,0 );
+	context.strokeStyle = "red";
+	context.strokeRect(300,60,200,100);
+	context.setTransform(Math.sin(rad),Math.cos(rad),-Math.cos(rad),Math.sin(rad),0 ,0 );
+	context.strokeStyle = "blue";
+	context.strokeRect(200,10,200,100);
+	</script>
+</body>
+</html>
