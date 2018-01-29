@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>事件绑定</title>
+    <script src="./node_modules/react/umd/react.production.min.js"></script>
+    <script src="./node_modules/react-dom/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.min.js"></script>
+</head>
+
+<body>
+    <div id="alink"></div>
+    <script type="text/babel">
+        class Toggle extends React.Component{
+            constructor (props){
+                super(props);
+                this.state = {isToggleOn : true};
+                this.handleClick = this.handleClick.bind(this);
+            }
+            handleClick(){
+                this.setState(prevState =>({
+                    isToggleOn : !prevState.isToggleOn
+                }));
+                    console.log(this.state.isToggleOn);
+            }
+            render(){
+                return (
+                    <button onClick = {this.handleClick}>
+                        {this.state.isToggleOn ? "on" : "off"}
+                    </button>
+                );
+            }
+            }
+            ReactDOM.render(
+                <Toggle />,
+                document.querySelector('#alink')
+            );
+
+        
+  
+  
+  
+    // 简易A链接测试
+        // function ActionLink(){
+        //     function handleClick(e){
+        //         e.preventDefault();
+        //         console.log('已连接');
+        //     }
+        //     return(
+        //         <a href = "#"  onClick = {handleClick}>
+        //             点击我
+        //         </a>
+        //     )
+        // }
+
+        // ReactDOM.render(
+        //     <ActionLink />,
+        //     document.querySelector('#alink')
+        // );
+        
+    </script>
+</body>
+
+</html>

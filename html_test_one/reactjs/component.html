@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>封装组件</title>
+    <script src="node_modules/react/umd/react.production.min.js"></script>
+    <script src="node_modules/react-dom/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.min.js"></script>
+</head>
+<body>
+    <div id="test"></div>
+    <script type="text/babel">
+        "use strict";
+        //以函数形式定义
+        // function Lin(props){
+        //     return <h1>hello ,{props.name}</h1>;
+        // }
+
+        //以函数形式定义一个函数调用之前的函数
+        function App(){
+           return (
+               <div>
+                   <Lin id = "shuo" />
+                   <Lin id = "hong"/>
+                   <Lin id = "lin"/>
+               </div>
+           )
+        }
+
+        //以es6的形式定义
+        class Lin extends React.Component{
+            render(){
+                return <h1> hello ,{this.props.id}</h1>;
+            }
+        }
+        // class App extends React.Component{
+        //     render(){
+        //         return (
+        //             <div>
+        //                 <Lin id ="lin"/>
+        //                 <Lin id ="shuo"/>
+        //                 <Lin id ="hong"/>
+        //             </div>
+        //         );
+        //     }
+        // }
+
+
+        ReactDOM.render(
+            <App id="tes" />,
+            document.querySelector("#test")
+        );
+
+    </script>
+</body>
+</html>

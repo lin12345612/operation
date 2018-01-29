@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>时间函数</title>
+    <script src="./node_modules/react/umd/react.production.min.js"></script>
+    <script src="./node_modules/react-dom/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.min.js"></script>
+</head>
+
+<body>
+    <div id="cl"></div>
+    <script type="text/babel">
+        // 去除属性定义，将属性在类中进行定义 
+        class Clock extends React.Component{ 
+            // 添加一个构造类 
+            constructor(props){ 
+                super(props); 
+                this.state = {date : new Date()}; 
+                } 
+
+                // 挂载
+                componentDidMount(){
+                    this.timerID = setInterval(
+                       () => this.tick()
+                    ,1000);
+                }
+
+                // 卸载
+                componentWillUnmount(){
+                    clearInterval(this.timerID);
+                }
+
+                tick(){
+                    this.setState({
+                        date : new Date()
+                    })
+                }
+                render(){ 
+                    return (
+                        <div>
+                            <h1>hello ,world!</h1>
+                            <h1>it is {this.state.date.toLocaleTimeString()}</h1>
+                        </div>
+                    ); 
+                    }
+                     } 
+        ReactDOM.render(
+                <Clock />, 
+                document.querySelector('#cl') 
+        ); 
+        // class Clock extends React.Component{ 
+            // render(){ 
+                // return ( 
+                    //<div>
+                        // <h1>hello ,world!</h1>
+                        // <h1>it is {this.props.date.toLocaleTimeString()}</h1>
+                    // </div>
+        // ); // } // } 
+        // ReactDOM.render( 
+            //        <Clock date={ new Date()}/>, 
+            // document.querySelector('#cl') // );
+    </script>
+</body>
+
+</html>

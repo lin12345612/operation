@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>试做一个组件</title>
+    <style>
+        #root{
+            width: 250px;
+            height: 600px;
+            border: 1px solid orange;
+            padding-left: 10px;
+        }
+    </style>
+    <script src="node_modules/react/umd/react.production.min.js"></script>
+    <script src="node_modules/react-dom/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        // 搜索框
+        class SearchBar extends React.Component{
+            constructor(props){
+                super(props);
+                this.handleChange = this.handleChange.bind(this);
+            }
+            handleChange(e){
+                this.props.onChangeHandle(e.target.value);
+            }
+            render(){
+                    return (
+                        <div>
+                            <input type="text" placeholder="搜索" onChange ={this.handleChange}/>
+                            <br/>
+                            <input type="checkbox"/>Only show products in stock
+                        </div>
+                    );
+            };
+        }
+        //匹配的数组
+        const arr = ["red","blue","green","yellow"];
+        class BigBox extends React.Component{
+            constructor(props){
+                super(props);
+                this.handleValueChange = this.handleValueChange.bind(this);
+                this.state = {color : "red"};
+            }
+            handleValueChange(color){
+                for( let i = 0 ; i < arr.length ; i++){
+                    if(color === arr[i]){
+                        this.setState({color : color});
+                        break;
+                    }else{
+                        this.setState({color : "颜色不存在"});
+                    }
+                }
+
+            }
+            render(){
+                const ys = this.state.color;
+                return (
+                    <div>
+                        <SearchBar onChangeHandle={this.handleValueChange}/>
+                        <p>颜色 ：{ys}</p>
+                    </div>
+                );
+            }
+        }
+        ReactDOM.render(
+                    <BigBox />,
+                    document.querySelector("#root")
+                );
+    </script>
+</body>
+</html>
