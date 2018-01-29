@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试</title>
+    <script src="node_modules/react/umd/react.production.min.js"></script>
+    <script src="node_modules/react-dom/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <div id="app-root"></div>
+    <script type="text/babel">
+        const root = document.querySelector("#root");
+        const appRoot = document.querySelector("#app-root");
+
+        class Modal extends React.Component{
+            constructor(props){
+                super(props);
+                this.el = document.createElement("div");
+            }
+        //    挂载
+            componentDidMount(){
+                appRoot.appendChild(this.el);
+            }
+
+        //    卸载
+            componentWillUnmount(){
+                appRoot.removeChild(this.el);
+            }
+
+            render(){
+                return ReactDOM.createPortal(
+                    this.props.children,
+                    this.el
+                );
+            }
+        }
+
+        class Parent extends React.Component{
+            constructor(props){
+                super(props);
+                this.state = {clicks : 0};
+                this.handleClick = this.handleClick.bind(this);
+            }
+            handleClick(){
+                this.setState(prevState =>({
+                    clicks : prevState.clicks + 1 
+                }));
+            }
+            render(){
+                return (
+                    <div onClick={this.handleClick}>
+                        <p>点击次数：{this.state.clicks}</p>
+                        <Modal>
+                            <Child />
+                        </Modal>   
+                    </div>
+                );
+            }
+        }
+
+        function Child(){
+            return (
+                <div className = "modal">
+                    <button>点击</button>  
+                </div>
+            );
+        }
+
+        ReactDOM.render(
+            <Parent />,
+            root
+        );
+    </script>
+</body>
+</html>

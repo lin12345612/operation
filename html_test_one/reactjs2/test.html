@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        const defaultOpt = {
+            title :{
+                text : "hello world",
+                subtext : "it is my world"
+            }
+        };
+        const opt = Object.assign({},defaultOpt,{
+            title : {
+                title : "",
+                subtext : "yes,your world"
+            }
+        });
+        console.log(opt);
+    </script>
+</body>
+</html>
