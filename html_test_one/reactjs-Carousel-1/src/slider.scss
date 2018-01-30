@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding:0;
+}
+.slider{
+    overflow: hidden;
+    width: 400px;
+    margin: 50px auto;
+    position: relative;
+
+    &>.slider-ul{
+        height: auto;
+        overflow: hidden;
+        position: relative;
+        left: 0;
+
+    }
+    .slider-item{
+        display: inline-block;
+        height: auto;
+        &>img{
+            display: blcok;
+            height: auto;
+            width: 100%;
+        }
+    }
+}

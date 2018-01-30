@@ -1,0 +1,2 @@
+*{margin:0;padding:0}.slider{overflow:hidden;width:400px;margin:50px auto;position:relative}.slider>.slider-ul{height:auto;overflow:hidden;position:relative;left:0}.slider>.slider-uls{transition:left 1s;transition-Duration:1.2s}.slider>.slider-ul-none{transition:left 0s;transition-Duration:0s}.slider .slider-item{display:inline-block;height:auto}.slider .slider-item>img{display:blcok;height:auto;width:100%}
+/*# sourceMappingURL=slider.css.map */
