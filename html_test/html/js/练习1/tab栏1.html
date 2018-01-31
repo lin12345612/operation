@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tab栏</title>
+    <style>
+        ul{
+            position: relative;
+            width: 200px;
+            margin: 100px auto;
+        }
+        li{
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .red{
+            background-color: red;
+        }
+        .blue{
+            background-color: blue;
+        }
+        .orange{
+            background-color: orange;
+        }
+        .green{
+            background-color: green;
+        }
+        .hide{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+        <button id="btn1">红色</button>
+        <button id="btn2">蓝色</button>
+        <button id="btn3">橙色</button>
+        <button id="btn4">绿色</button>
+    <ul id="ul">
+        <li class="red "></li>
+        <li class="blue hide"></li>
+        <li class="orange hide"></li>
+        <li class="green hide"></li>
+    </ul>
+    <script>
+        var btn1 = document.querySelector('#btn1');
+        var btn2 = document.querySelector('#btn2');
+        var btn3 = document.querySelector('#btn3');
+        var btn4 = document.querySelector('#btn4');
+        var ul = document.querySelector('#ul');
+        var list = ul.children;
+        console.log(list[0]);
+        btn1.addEventListener("click",function(){
+            hide(list);
+            list[0].className = "red";
+        });
+        btn2.addEventListener("click", function () {
+            hide(list);
+            list[1].className = "blue";
+        });
+        btn3.addEventListener("click", function () {
+            hide(list);
+            list[2].className = "orange";
+        });
+        btn4.addEventListener("click", function () {
+            hide(list);
+            list[3].className = "green";
+        });
+
+        function hide(obj){
+            for (var i = 0; i < obj.length; i++) {
+                obj[i].className = " hide";
+            }
+        }
+    </script>
+</body>
+</html>
